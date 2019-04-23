@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import DesignSystem
 
-
 class DependencyRegistry {
     static let shared = DependencyRegistry()
 

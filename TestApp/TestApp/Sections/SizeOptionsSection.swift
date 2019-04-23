@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import DesignSystem
 
 public protocol SizeOption {

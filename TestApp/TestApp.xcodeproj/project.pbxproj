@@ -14,37 +14,37 @@
 		9209618F226EE6FE00FC8E6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9209618D226EE6FE00FC8E6F /* LaunchScreen.storyboard */; };
 		9209619A226EE6FE00FC8E6F /* TestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096199226EE6FE00FC8E6F /* TestAppTests.swift */; };
 		920961A5226EE6FE00FC8E6F /* TestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961A4226EE6FE00FC8E6F /* TestAppUITests.swift */; };
-		9209620D226EE7D400FC8E6F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961E1226EE7D300FC8E6F /* NavigationRouter.swift */; };
-		9209620E226EE7D400FC8E6F /* ButtonExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961E7226EE7D300FC8E6F /* ButtonExamplePresenter.swift */; };
-		9209620F226EE7D400FC8E6F /* ButtonExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961E8226EE7D300FC8E6F /* ButtonExampleViewController.swift */; };
-		92096210226EE7D400FC8E6F /* NavigationExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961EA226EE7D300FC8E6F /* NavigationExamplePresenter.swift */; };
-		92096211226EE7D400FC8E6F /* NavigationExampleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961EB226EE7D300FC8E6F /* NavigationExampleInteractor.swift */; };
-		92096212226EE7D400FC8E6F /* NavigationExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961EC226EE7D300FC8E6F /* NavigationExampleViewController.swift */; };
-		92096213226EE7D400FC8E6F /* NavigationExampleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961ED226EE7D300FC8E6F /* NavigationExampleEntity.swift */; };
-		92096214226EE7D400FC8E6F /* TryDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961EF226EE7D300FC8E6F /* TryDemoViewController.swift */; };
-		92096215226EE7D400FC8E6F /* FilteringTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961F1226EE7D300FC8E6F /* FilteringTableViewController.swift */; };
-		92096216226EE7D400FC8E6F /* SelectionAndInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961F3226EE7D300FC8E6F /* SelectionAndInfoViewController.swift */; };
-		92096217226EE7D400FC8E6F /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961F4226EE7D300FC8E6F /* MainMenuPresenter.swift */; };
-		92096218226EE7D400FC8E6F /* TypographyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961F6226EE7D300FC8E6F /* TypographyViewModel.swift */; };
-		92096219226EE7D400FC8E6F /* TypographyOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961F7226EE7D300FC8E6F /* TypographyOptionsViewController.swift */; };
-		9209621A226EE7D400FC8E6F /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961F8226EE7D300FC8E6F /* ForYouViewController.swift */; };
-		9209621B226EE7D400FC8E6F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961F9226EE7D300FC8E6F /* HomeViewController.swift */; };
-		9209621C226EE7D400FC8E6F /* SizeOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961FB226EE7D400FC8E6F /* SizeOptionsViewController.swift */; };
-		9209621D226EE7D400FC8E6F /* ColorPaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961FC226EE7D400FC8E6F /* ColorPaletteViewController.swift */; };
-		9209621E226EE7D400FC8E6F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961FD226EE7D400FC8E6F /* MainMenuViewController.swift */; };
-		9209621F226EE7D400FC8E6F /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961FE226EE7D400FC8E6F /* SellViewController.swift */; };
-		92096220226EE7D400FC8E6F /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920961FF226EE7D400FC8E6F /* MyPageViewController.swift */; };
-		92096221226EE7D400FC8E6F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096200226EE7D400FC8E6F /* TabBarViewController.swift */; };
-		92096222226EE7D400FC8E6F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096201226EE7D400FC8E6F /* FeedViewController.swift */; };
-		92096223226EE7D400FC8E6F /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096202226EE7D400FC8E6F /* MyPageViewModel.swift */; };
-		92096224226EE7D400FC8E6F /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096203226EE7D400FC8E6F /* DependencyRegistry.swift */; };
-		92096225226EE7D400FC8E6F /* SizeOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096205226EE7D400FC8E6F /* SizeOptionsSection.swift */; };
-		92096226226EE7D400FC8E6F /* TypographyOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096206226EE7D400FC8E6F /* TypographyOptionsSection.swift */; };
-		92096227226EE7D400FC8E6F /* ColorPaletteOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096207226EE7D400FC8E6F /* ColorPaletteOptionsSection.swift */; };
-		92096228226EE7D400FC8E6F /* TypographyOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096209226EE7D400FC8E6F /* TypographyOptionView.swift */; };
-		92096229226EE7D400FC8E6F /* SizeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209620A226EE7D400FC8E6F /* SizeOptionView.swift */; };
-		9209622A226EE7D400FC8E6F /* ColorPaletteOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209620B226EE7D400FC8E6F /* ColorPaletteOptionView.swift */; };
-		9209622B226EE7D400FC8E6F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209620C226EE7D400FC8E6F /* Helpers.swift */; };
+		9209626B226EFB2400FC8E6F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209626A226EFB2400FC8E6F /* Helpers.swift */; };
+		92096295226EFB2D00FC8E6F /* ButtonExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096271226EFB2D00FC8E6F /* ButtonExamplePresenter.swift */; };
+		92096296226EFB2D00FC8E6F /* ButtonExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096272226EFB2D00FC8E6F /* ButtonExampleViewController.swift */; };
+		92096297226EFB2D00FC8E6F /* NavigationExamplePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096274226EFB2D00FC8E6F /* NavigationExamplePresenter.swift */; };
+		92096298226EFB2D00FC8E6F /* NavigationExampleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096275226EFB2D00FC8E6F /* NavigationExampleInteractor.swift */; };
+		92096299226EFB2D00FC8E6F /* NavigationExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096276226EFB2D00FC8E6F /* NavigationExampleViewController.swift */; };
+		9209629A226EFB2D00FC8E6F /* NavigationExampleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096277226EFB2D00FC8E6F /* NavigationExampleEntity.swift */; };
+		9209629B226EFB2D00FC8E6F /* TryDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096279226EFB2D00FC8E6F /* TryDemoViewController.swift */; };
+		9209629C226EFB2D00FC8E6F /* FilteringTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209627B226EFB2D00FC8E6F /* FilteringTableViewController.swift */; };
+		9209629D226EFB2D00FC8E6F /* SelectionAndInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209627D226EFB2D00FC8E6F /* SelectionAndInfoViewController.swift */; };
+		9209629E226EFB2D00FC8E6F /* MainMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209627E226EFB2D00FC8E6F /* MainMenuPresenter.swift */; };
+		9209629F226EFB2D00FC8E6F /* TypographyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096280226EFB2D00FC8E6F /* TypographyViewModel.swift */; };
+		920962A0226EFB2D00FC8E6F /* TypographyOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096281226EFB2D00FC8E6F /* TypographyOptionsViewController.swift */; };
+		920962A1226EFB2D00FC8E6F /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096282226EFB2D00FC8E6F /* ForYouViewController.swift */; };
+		920962A2226EFB2D00FC8E6F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096283226EFB2D00FC8E6F /* HomeViewController.swift */; };
+		920962A3226EFB2D00FC8E6F /* SizeOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096285226EFB2D00FC8E6F /* SizeOptionsViewController.swift */; };
+		920962A4226EFB2D00FC8E6F /* ColorPaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096286226EFB2D00FC8E6F /* ColorPaletteViewController.swift */; };
+		920962A5226EFB2D00FC8E6F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096287226EFB2D00FC8E6F /* MainMenuViewController.swift */; };
+		920962A6226EFB2D00FC8E6F /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096288226EFB2D00FC8E6F /* SellViewController.swift */; };
+		920962A7226EFB2D00FC8E6F /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096289226EFB2D00FC8E6F /* MyPageViewController.swift */; };
+		920962A8226EFB2D00FC8E6F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209628A226EFB2D00FC8E6F /* TabBarViewController.swift */; };
+		920962A9226EFB2D00FC8E6F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209628B226EFB2D00FC8E6F /* FeedViewController.swift */; };
+		920962AA226EFB2D00FC8E6F /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209628C226EFB2D00FC8E6F /* MyPageViewModel.swift */; };
+		920962AB226EFB2D00FC8E6F /* TypographyOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209628E226EFB2D00FC8E6F /* TypographyOptionView.swift */; };
+		920962AC226EFB2D00FC8E6F /* SizeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9209628F226EFB2D00FC8E6F /* SizeOptionView.swift */; };
+		920962AD226EFB2D00FC8E6F /* ColorPaletteOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096290226EFB2D00FC8E6F /* ColorPaletteOptionView.swift */; };
+		920962AE226EFB2D00FC8E6F /* SizeOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096292226EFB2D00FC8E6F /* SizeOptionsSection.swift */; };
+		920962AF226EFB2D00FC8E6F /* TypographyOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096293226EFB2D00FC8E6F /* TypographyOptionsSection.swift */; };
+		920962B0226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096294226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift */; };
+		920962B3226EFB4700FC8E6F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962B1226EFB4700FC8E6F /* NavigationRouter.swift */; };
+		920962B4226EFB4700FC8E6F /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962B2226EFB4700FC8E6F /* DependencyRegistry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,37 +78,37 @@
 		920961A0226EE6FE00FC8E6F /* TestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		920961A4226EE6FE00FC8E6F /* TestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppUITests.swift; sourceTree = "<group>"; };
 		920961A6226EE6FE00FC8E6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		920961E1226EE7D300FC8E6F /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
-		920961E7226EE7D300FC8E6F /* ButtonExamplePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExamplePresenter.swift; sourceTree = "<group>"; };
-		920961E8226EE7D300FC8E6F /* ButtonExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExampleViewController.swift; sourceTree = "<group>"; };
-		920961EA226EE7D300FC8E6F /* NavigationExamplePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExamplePresenter.swift; sourceTree = "<group>"; };
-		920961EB226EE7D300FC8E6F /* NavigationExampleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExampleInteractor.swift; sourceTree = "<group>"; };
-		920961EC226EE7D300FC8E6F /* NavigationExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExampleViewController.swift; sourceTree = "<group>"; };
-		920961ED226EE7D300FC8E6F /* NavigationExampleEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExampleEntity.swift; sourceTree = "<group>"; };
-		920961EF226EE7D300FC8E6F /* TryDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryDemoViewController.swift; sourceTree = "<group>"; };
-		920961F1226EE7D300FC8E6F /* FilteringTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteringTableViewController.swift; sourceTree = "<group>"; };
-		920961F3226EE7D300FC8E6F /* SelectionAndInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionAndInfoViewController.swift; sourceTree = "<group>"; };
-		920961F4226EE7D300FC8E6F /* MainMenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
-		920961F6226EE7D300FC8E6F /* TypographyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyViewModel.swift; sourceTree = "<group>"; };
-		920961F7226EE7D300FC8E6F /* TypographyOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyOptionsViewController.swift; sourceTree = "<group>"; };
-		920961F8226EE7D300FC8E6F /* ForYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
-		920961F9226EE7D300FC8E6F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		920961FB226EE7D400FC8E6F /* SizeOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeOptionsViewController.swift; sourceTree = "<group>"; };
-		920961FC226EE7D400FC8E6F /* ColorPaletteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteViewController.swift; sourceTree = "<group>"; };
-		920961FD226EE7D400FC8E6F /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
-		920961FE226EE7D400FC8E6F /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
-		920961FF226EE7D400FC8E6F /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		92096200226EE7D400FC8E6F /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		92096201226EE7D400FC8E6F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		92096202226EE7D400FC8E6F /* MyPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
-		92096203226EE7D400FC8E6F /* DependencyRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
-		92096205226EE7D400FC8E6F /* SizeOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeOptionsSection.swift; sourceTree = "<group>"; };
-		92096206226EE7D400FC8E6F /* TypographyOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyOptionsSection.swift; sourceTree = "<group>"; };
-		92096207226EE7D400FC8E6F /* ColorPaletteOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteOptionsSection.swift; sourceTree = "<group>"; };
-		92096209226EE7D400FC8E6F /* TypographyOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyOptionView.swift; sourceTree = "<group>"; };
-		9209620A226EE7D400FC8E6F /* SizeOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeOptionView.swift; sourceTree = "<group>"; };
-		9209620B226EE7D400FC8E6F /* ColorPaletteOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteOptionView.swift; sourceTree = "<group>"; };
-		9209620C226EE7D400FC8E6F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		9209626A226EFB2400FC8E6F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		92096271226EFB2D00FC8E6F /* ButtonExamplePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExamplePresenter.swift; sourceTree = "<group>"; };
+		92096272226EFB2D00FC8E6F /* ButtonExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonExampleViewController.swift; sourceTree = "<group>"; };
+		92096274226EFB2D00FC8E6F /* NavigationExamplePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExamplePresenter.swift; sourceTree = "<group>"; };
+		92096275226EFB2D00FC8E6F /* NavigationExampleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExampleInteractor.swift; sourceTree = "<group>"; };
+		92096276226EFB2D00FC8E6F /* NavigationExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExampleViewController.swift; sourceTree = "<group>"; };
+		92096277226EFB2D00FC8E6F /* NavigationExampleEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationExampleEntity.swift; sourceTree = "<group>"; };
+		92096279226EFB2D00FC8E6F /* TryDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TryDemoViewController.swift; sourceTree = "<group>"; };
+		9209627B226EFB2D00FC8E6F /* FilteringTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteringTableViewController.swift; sourceTree = "<group>"; };
+		9209627D226EFB2D00FC8E6F /* SelectionAndInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionAndInfoViewController.swift; sourceTree = "<group>"; };
+		9209627E226EFB2D00FC8E6F /* MainMenuPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuPresenter.swift; sourceTree = "<group>"; };
+		92096280226EFB2D00FC8E6F /* TypographyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyViewModel.swift; sourceTree = "<group>"; };
+		92096281226EFB2D00FC8E6F /* TypographyOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyOptionsViewController.swift; sourceTree = "<group>"; };
+		92096282226EFB2D00FC8E6F /* ForYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
+		92096283226EFB2D00FC8E6F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		92096285226EFB2D00FC8E6F /* SizeOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeOptionsViewController.swift; sourceTree = "<group>"; };
+		92096286226EFB2D00FC8E6F /* ColorPaletteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteViewController.swift; sourceTree = "<group>"; };
+		92096287226EFB2D00FC8E6F /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		92096288226EFB2D00FC8E6F /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
+		92096289226EFB2D00FC8E6F /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		9209628A226EFB2D00FC8E6F /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		9209628B226EFB2D00FC8E6F /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		9209628C226EFB2D00FC8E6F /* MyPageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		9209628E226EFB2D00FC8E6F /* TypographyOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyOptionView.swift; sourceTree = "<group>"; };
+		9209628F226EFB2D00FC8E6F /* SizeOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeOptionView.swift; sourceTree = "<group>"; };
+		92096290226EFB2D00FC8E6F /* ColorPaletteOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteOptionView.swift; sourceTree = "<group>"; };
+		92096292226EFB2D00FC8E6F /* SizeOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeOptionsSection.swift; sourceTree = "<group>"; };
+		92096293226EFB2D00FC8E6F /* TypographyOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypographyOptionsSection.swift; sourceTree = "<group>"; };
+		92096294226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteOptionsSection.swift; sourceTree = "<group>"; };
+		920962B1226EFB4700FC8E6F /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		920962B2226EFB4700FC8E6F /* DependencyRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,13 +159,13 @@
 		92096183226EE6FD00FC8E6F /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
-				920961E2226EE7D300FC8E6F /* Controller */,
-				92096203226EE7D400FC8E6F /* DependencyRegistry.swift */,
-				9209620C226EE7D400FC8E6F /* Helpers.swift */,
-				920961E1226EE7D300FC8E6F /* NavigationRouter.swift */,
-				92096204226EE7D400FC8E6F /* Sections */,
-				92096208226EE7D400FC8E6F /* View */,
+				9209626C226EFB2D00FC8E6F /* Controller */,
+				92096291226EFB2D00FC8E6F /* Sections */,
+				9209628D226EFB2D00FC8E6F /* View */,
+				9209626A226EFB2400FC8E6F /* Helpers.swift */,
 				92096184226EE6FD00FC8E6F /* AppDelegate.swift */,
+				920962B2226EFB4700FC8E6F /* DependencyRegistry.swift */,
+				920962B1226EFB4700FC8E6F /* NavigationRouter.swift */,
 				92096186226EE6FD00FC8E6F /* ViewController.swift */,
 				92096188226EE6FD00FC8E6F /* Main.storyboard */,
 				9209618B226EE6FE00FC8E6F /* Assets.xcassets */,
@@ -193,134 +193,133 @@
 			path = TestAppUITests;
 			sourceTree = "<group>";
 		};
-		920961E2226EE7D300FC8E6F /* Controller */ = {
+		9209626C226EFB2D00FC8E6F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				920961E3226EE7D300FC8E6F /* Templates */,
-				920961E4226EE7D300FC8E6F /* MainMenu */,
+				9209626D226EFB2D00FC8E6F /* Templates */,
+				9209626E226EFB2D00FC8E6F /* MainMenu */,
 			);
-			name = Controller;
-			path = ../../../../Desktop/newcode/Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		920961E3226EE7D300FC8E6F /* Templates */ = {
+		9209626D226EFB2D00FC8E6F /* Templates */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Templates;
 			sourceTree = "<group>";
 		};
-		920961E4226EE7D300FC8E6F /* MainMenu */ = {
+		9209626E226EFB2D00FC8E6F /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				920961E5226EE7D300FC8E6F /* Options */,
-				920961F4226EE7D300FC8E6F /* MainMenuPresenter.swift */,
-				920961F5226EE7D300FC8E6F /* TypographyOptions */,
-				920961F8226EE7D300FC8E6F /* ForYouViewController.swift */,
-				920961F9226EE7D300FC8E6F /* HomeViewController.swift */,
-				920961FA226EE7D300FC8E6F /* Examples */,
-				920961FD226EE7D400FC8E6F /* MainMenuViewController.swift */,
-				920961FE226EE7D400FC8E6F /* SellViewController.swift */,
-				920961FF226EE7D400FC8E6F /* MyPageViewController.swift */,
-				92096200226EE7D400FC8E6F /* TabBarViewController.swift */,
-				92096201226EE7D400FC8E6F /* FeedViewController.swift */,
-				92096202226EE7D400FC8E6F /* MyPageViewModel.swift */,
+				9209626F226EFB2D00FC8E6F /* Options */,
+				9209627E226EFB2D00FC8E6F /* MainMenuPresenter.swift */,
+				9209627F226EFB2D00FC8E6F /* TypographyOptions */,
+				92096282226EFB2D00FC8E6F /* ForYouViewController.swift */,
+				92096283226EFB2D00FC8E6F /* HomeViewController.swift */,
+				92096284226EFB2D00FC8E6F /* Examples */,
+				92096287226EFB2D00FC8E6F /* MainMenuViewController.swift */,
+				92096288226EFB2D00FC8E6F /* SellViewController.swift */,
+				92096289226EFB2D00FC8E6F /* MyPageViewController.swift */,
+				9209628A226EFB2D00FC8E6F /* TabBarViewController.swift */,
+				9209628B226EFB2D00FC8E6F /* FeedViewController.swift */,
+				9209628C226EFB2D00FC8E6F /* MyPageViewModel.swift */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
 		};
-		920961E5226EE7D300FC8E6F /* Options */ = {
+		9209626F226EFB2D00FC8E6F /* Options */ = {
 			isa = PBXGroup;
 			children = (
-				920961E6226EE7D300FC8E6F /* ButtonExample */,
-				920961E9226EE7D300FC8E6F /* NavigationExample */,
-				920961EE226EE7D300FC8E6F /* TryDemo */,
-				920961F0226EE7D300FC8E6F /* FilteringExample */,
-				920961F2226EE7D300FC8E6F /* SelectionAndInfo */,
+				92096270226EFB2D00FC8E6F /* ButtonExample */,
+				92096273226EFB2D00FC8E6F /* NavigationExample */,
+				92096278226EFB2D00FC8E6F /* TryDemo */,
+				9209627A226EFB2D00FC8E6F /* FilteringExample */,
+				9209627C226EFB2D00FC8E6F /* SelectionAndInfo */,
 			);
 			path = Options;
 			sourceTree = "<group>";
 		};
-		920961E6226EE7D300FC8E6F /* ButtonExample */ = {
+		92096270226EFB2D00FC8E6F /* ButtonExample */ = {
 			isa = PBXGroup;
 			children = (
-				920961E7226EE7D300FC8E6F /* ButtonExamplePresenter.swift */,
-				920961E8226EE7D300FC8E6F /* ButtonExampleViewController.swift */,
+				92096271226EFB2D00FC8E6F /* ButtonExamplePresenter.swift */,
+				92096272226EFB2D00FC8E6F /* ButtonExampleViewController.swift */,
 			);
 			path = ButtonExample;
 			sourceTree = "<group>";
 		};
-		920961E9226EE7D300FC8E6F /* NavigationExample */ = {
+		92096273226EFB2D00FC8E6F /* NavigationExample */ = {
 			isa = PBXGroup;
 			children = (
-				920961EA226EE7D300FC8E6F /* NavigationExamplePresenter.swift */,
-				920961EB226EE7D300FC8E6F /* NavigationExampleInteractor.swift */,
-				920961EC226EE7D300FC8E6F /* NavigationExampleViewController.swift */,
-				920961ED226EE7D300FC8E6F /* NavigationExampleEntity.swift */,
+				92096274226EFB2D00FC8E6F /* NavigationExamplePresenter.swift */,
+				92096275226EFB2D00FC8E6F /* NavigationExampleInteractor.swift */,
+				92096276226EFB2D00FC8E6F /* NavigationExampleViewController.swift */,
+				92096277226EFB2D00FC8E6F /* NavigationExampleEntity.swift */,
 			);
 			path = NavigationExample;
 			sourceTree = "<group>";
 		};
-		920961EE226EE7D300FC8E6F /* TryDemo */ = {
+		92096278226EFB2D00FC8E6F /* TryDemo */ = {
 			isa = PBXGroup;
 			children = (
-				920961EF226EE7D300FC8E6F /* TryDemoViewController.swift */,
+				92096279226EFB2D00FC8E6F /* TryDemoViewController.swift */,
 			);
 			path = TryDemo;
 			sourceTree = "<group>";
 		};
-		920961F0226EE7D300FC8E6F /* FilteringExample */ = {
+		9209627A226EFB2D00FC8E6F /* FilteringExample */ = {
 			isa = PBXGroup;
 			children = (
-				920961F1226EE7D300FC8E6F /* FilteringTableViewController.swift */,
+				9209627B226EFB2D00FC8E6F /* FilteringTableViewController.swift */,
 			);
 			path = FilteringExample;
 			sourceTree = "<group>";
 		};
-		920961F2226EE7D300FC8E6F /* SelectionAndInfo */ = {
+		9209627C226EFB2D00FC8E6F /* SelectionAndInfo */ = {
 			isa = PBXGroup;
 			children = (
-				920961F3226EE7D300FC8E6F /* SelectionAndInfoViewController.swift */,
+				9209627D226EFB2D00FC8E6F /* SelectionAndInfoViewController.swift */,
 			);
 			path = SelectionAndInfo;
 			sourceTree = "<group>";
 		};
-		920961F5226EE7D300FC8E6F /* TypographyOptions */ = {
+		9209627F226EFB2D00FC8E6F /* TypographyOptions */ = {
 			isa = PBXGroup;
 			children = (
-				920961F6226EE7D300FC8E6F /* TypographyViewModel.swift */,
-				920961F7226EE7D300FC8E6F /* TypographyOptionsViewController.swift */,
+				92096280226EFB2D00FC8E6F /* TypographyViewModel.swift */,
+				92096281226EFB2D00FC8E6F /* TypographyOptionsViewController.swift */,
 			);
 			path = TypographyOptions;
 			sourceTree = "<group>";
 		};
-		920961FA226EE7D300FC8E6F /* Examples */ = {
+		92096284226EFB2D00FC8E6F /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				920961FB226EE7D400FC8E6F /* SizeOptionsViewController.swift */,
-				920961FC226EE7D400FC8E6F /* ColorPaletteViewController.swift */,
+				92096285226EFB2D00FC8E6F /* SizeOptionsViewController.swift */,
+				92096286226EFB2D00FC8E6F /* ColorPaletteViewController.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
 		};
-		92096204226EE7D400FC8E6F /* Sections */ = {
+		9209628D226EFB2D00FC8E6F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				92096205226EE7D400FC8E6F /* SizeOptionsSection.swift */,
-				92096206226EE7D400FC8E6F /* TypographyOptionsSection.swift */,
-				92096207226EE7D400FC8E6F /* ColorPaletteOptionsSection.swift */,
-			);
-			path = Sections;
-			sourceTree = "<group>";
-		};
-		92096208226EE7D400FC8E6F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				92096209226EE7D400FC8E6F /* TypographyOptionView.swift */,
-				9209620A226EE7D400FC8E6F /* SizeOptionView.swift */,
-				9209620B226EE7D400FC8E6F /* ColorPaletteOptionView.swift */,
+				9209628E226EFB2D00FC8E6F /* TypographyOptionView.swift */,
+				9209628F226EFB2D00FC8E6F /* SizeOptionView.swift */,
+				92096290226EFB2D00FC8E6F /* ColorPaletteOptionView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92096291226EFB2D00FC8E6F /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				92096292226EFB2D00FC8E6F /* SizeOptionsSection.swift */,
+				92096293226EFB2D00FC8E6F /* TypographyOptionsSection.swift */,
+				92096294226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift */,
+			);
+			path = Sections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,39 +453,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92096229226EE7D400FC8E6F /* SizeOptionView.swift in Sources */,
-				92096210226EE7D400FC8E6F /* NavigationExamplePresenter.swift in Sources */,
-				9209621D226EE7D400FC8E6F /* ColorPaletteViewController.swift in Sources */,
-				9209620F226EE7D400FC8E6F /* ButtonExampleViewController.swift in Sources */,
-				9209622B226EE7D400FC8E6F /* Helpers.swift in Sources */,
-				92096215226EE7D400FC8E6F /* FilteringTableViewController.swift in Sources */,
-				9209621B226EE7D400FC8E6F /* HomeViewController.swift in Sources */,
-				92096226226EE7D400FC8E6F /* TypographyOptionsSection.swift in Sources */,
-				92096216226EE7D400FC8E6F /* SelectionAndInfoViewController.swift in Sources */,
 				92096187226EE6FD00FC8E6F /* ViewController.swift in Sources */,
-				9209621C226EE7D400FC8E6F /* SizeOptionsViewController.swift in Sources */,
-				92096212226EE7D400FC8E6F /* NavigationExampleViewController.swift in Sources */,
-				92096228226EE7D400FC8E6F /* TypographyOptionView.swift in Sources */,
+				9209629B226EFB2D00FC8E6F /* TryDemoViewController.swift in Sources */,
+				920962B3226EFB4700FC8E6F /* NavigationRouter.swift in Sources */,
+				920962A5226EFB2D00FC8E6F /* MainMenuViewController.swift in Sources */,
+				920962A2226EFB2D00FC8E6F /* HomeViewController.swift in Sources */,
 				92096185226EE6FD00FC8E6F /* AppDelegate.swift in Sources */,
-				92096218226EE7D400FC8E6F /* TypographyViewModel.swift in Sources */,
-				9209621A226EE7D400FC8E6F /* ForYouViewController.swift in Sources */,
-				9209620D226EE7D400FC8E6F /* NavigationRouter.swift in Sources */,
-				92096219226EE7D400FC8E6F /* TypographyOptionsViewController.swift in Sources */,
-				9209621F226EE7D400FC8E6F /* SellViewController.swift in Sources */,
-				92096227226EE7D400FC8E6F /* ColorPaletteOptionsSection.swift in Sources */,
-				92096224226EE7D400FC8E6F /* DependencyRegistry.swift in Sources */,
-				92096225226EE7D400FC8E6F /* SizeOptionsSection.swift in Sources */,
-				92096221226EE7D400FC8E6F /* TabBarViewController.swift in Sources */,
-				92096217226EE7D400FC8E6F /* MainMenuPresenter.swift in Sources */,
-				92096223226EE7D400FC8E6F /* MyPageViewModel.swift in Sources */,
-				92096213226EE7D400FC8E6F /* NavigationExampleEntity.swift in Sources */,
-				9209622A226EE7D400FC8E6F /* ColorPaletteOptionView.swift in Sources */,
-				92096220226EE7D400FC8E6F /* MyPageViewController.swift in Sources */,
-				9209621E226EE7D400FC8E6F /* MainMenuViewController.swift in Sources */,
-				92096211226EE7D400FC8E6F /* NavigationExampleInteractor.swift in Sources */,
-				9209620E226EE7D400FC8E6F /* ButtonExamplePresenter.swift in Sources */,
-				92096222226EE7D400FC8E6F /* FeedViewController.swift in Sources */,
-				92096214226EE7D400FC8E6F /* TryDemoViewController.swift in Sources */,
+				920962AD226EFB2D00FC8E6F /* ColorPaletteOptionView.swift in Sources */,
+				92096296226EFB2D00FC8E6F /* ButtonExampleViewController.swift in Sources */,
+				920962A7226EFB2D00FC8E6F /* MyPageViewController.swift in Sources */,
+				92096295226EFB2D00FC8E6F /* ButtonExamplePresenter.swift in Sources */,
+				92096298226EFB2D00FC8E6F /* NavigationExampleInteractor.swift in Sources */,
+				920962B4226EFB4700FC8E6F /* DependencyRegistry.swift in Sources */,
+				9209629F226EFB2D00FC8E6F /* TypographyViewModel.swift in Sources */,
+				920962A1226EFB2D00FC8E6F /* ForYouViewController.swift in Sources */,
+				920962AB226EFB2D00FC8E6F /* TypographyOptionView.swift in Sources */,
+				9209629C226EFB2D00FC8E6F /* FilteringTableViewController.swift in Sources */,
+				920962A8226EFB2D00FC8E6F /* TabBarViewController.swift in Sources */,
+				9209626B226EFB2400FC8E6F /* Helpers.swift in Sources */,
+				920962AF226EFB2D00FC8E6F /* TypographyOptionsSection.swift in Sources */,
+				920962A6226EFB2D00FC8E6F /* SellViewController.swift in Sources */,
+				9209629D226EFB2D00FC8E6F /* SelectionAndInfoViewController.swift in Sources */,
+				920962AC226EFB2D00FC8E6F /* SizeOptionView.swift in Sources */,
+				92096299226EFB2D00FC8E6F /* NavigationExampleViewController.swift in Sources */,
+				9209629E226EFB2D00FC8E6F /* MainMenuPresenter.swift in Sources */,
+				92096297226EFB2D00FC8E6F /* NavigationExamplePresenter.swift in Sources */,
+				920962AE226EFB2D00FC8E6F /* SizeOptionsSection.swift in Sources */,
+				920962AA226EFB2D00FC8E6F /* MyPageViewModel.swift in Sources */,
+				920962A4226EFB2D00FC8E6F /* ColorPaletteViewController.swift in Sources */,
+				920962B0226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift in Sources */,
+				920962A3226EFB2D00FC8E6F /* SizeOptionsViewController.swift in Sources */,
+				9209629A226EFB2D00FC8E6F /* NavigationExampleEntity.swift in Sources */,
+				920962A0226EFB2D00FC8E6F /* TypographyOptionsViewController.swift in Sources */,
+				920962A9226EFB2D00FC8E6F /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
