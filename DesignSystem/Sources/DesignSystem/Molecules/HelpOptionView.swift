@@ -45,7 +45,6 @@ public class HelpOptionView: UIView, Highlightable {
 
     private var label: Label = {
         let label = Label()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.apply(typography: HelpOptionView.typography, color: .brand())
         label.textAlignment = .right
         return label
@@ -53,7 +52,6 @@ public class HelpOptionView: UIView, Highlightable {
 
     private var imageView: ImageView = {
         let imageView = ImageView(design: .smallArrow)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.tintColor = .brand()
         return imageView
     }()

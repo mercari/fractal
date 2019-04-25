@@ -203,14 +203,19 @@
 		920962B52271518D00FC8E6F /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				920962B62271518D00FC8E6F /* Molecules */,
-				920962C92271518D00FC8E6F /* Atoms */,
+				920962E32271518D00FC8E6F /* Extensions */,
 				920962D22271518D00FC8E6F /* Brands */,
+				920962DE2271518D00FC8E6F /* DateManager.swift */,
+				920962D72271518D00FC8E6F /* BrandingManager+Button.swift */,
+				920962D92271518D00FC8E6F /* BrandingManager+String.swift */,
+				920962DF2271518D00FC8E6F /* BrandingManager+UIView.swift */,
+				920962E02271518D00FC8E6F /* BrandingManager.swift */,
+				920962C92271518D00FC8E6F /* Atoms */,
+				920962B62271518D00FC8E6F /* Molecules */,
+				920962E82271518D00FC8E6F /* Organisms */,
 				920962E12271518D00FC8E6F /* Helpers.swift */,
 				920963602271527E00FC8E6F /* Info.plist */,
 				920962E22271518D00FC8E6F /* DesignSystem.h */,
-				920962E32271518D00FC8E6F /* Extensions */,
-				920962E82271518D00FC8E6F /* Organisms */,
 			);
 			name = DesignSystem;
 			path = Sources/DesignSystem;
@@ -260,12 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				920962D32271518D00FC8E6F /* HexBrand */,
-				920962D72271518D00FC8E6F /* BrandingManager+Button.swift */,
-				920962D92271518D00FC8E6F /* BrandingManager+String.swift */,
 				920962DA2271518D00FC8E6F /* BoxBrand */,
-				920962DE2271518D00FC8E6F /* DateManager.swift */,
-				920962DF2271518D00FC8E6F /* BrandingManager+UIView.swift */,
-				920962E02271518D00FC8E6F /* BrandingManager.swift */,
 			);
 			path = Brands;
 			sourceTree = "<group>";
@@ -273,8 +273,8 @@
 		920962D32271518D00FC8E6F /* HexBrand */ = {
 			isa = PBXGroup;
 			children = (
-				920962D42271518D00FC8E6F /* HexBrand+Button.swift */,
 				920962D52271518D00FC8E6F /* HexBrand.swift */,
+				920962D42271518D00FC8E6F /* HexBrand+Button.swift */,
 				920962D62271518D00FC8E6F /* HexBrand+Navigation.swift */,
 			);
 			path = HexBrand;
@@ -283,8 +283,8 @@
 		920962DA2271518D00FC8E6F /* BoxBrand */ = {
 			isa = PBXGroup;
 			children = (
-				920962DB2271518D00FC8E6F /* BoxBrand+Navigation.swift */,
 				920962DC2271518D00FC8E6F /* BoxBrand.swift */,
+				920962DB2271518D00FC8E6F /* BoxBrand+Navigation.swift */,
 				920962DD2271518D00FC8E6F /* BoxBrand+Button.swift */,
 			);
 			path = BoxBrand;

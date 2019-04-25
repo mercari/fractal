@@ -77,14 +77,12 @@ public class CheckboxOptionView: UIView {
     private var titleLabel: Label = {
         let label = Label()
         label.apply(typography: .xxlarge)
-        label.numberOfLines = 1
         return label
     }()
 
     private lazy var detailLabel: Label = {
         let label = Label()
         label.apply(typography: .medium, color: .text(.information))
-        label.numberOfLines = 1
         return label
     }()
 

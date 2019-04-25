@@ -21,7 +21,7 @@ extension ImageView {
 
     fileprivate static func localImage(named name: String) -> UIImage? {
         guard let image = UIImage(named: name, in: Bundle(for: self), compatibleWith: nil) else {
-            assertionFailure("failed to find image \(name)")
+            Assert("failed to find image \(name)")
             return nil
         }
         return image

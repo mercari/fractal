@@ -85,7 +85,7 @@ public class SwitchOptionView: UIView {
         return label
     }()
 
-    private var toggleSwitch: Switch = {
+    private lazy var toggleSwitch: Switch = {
         let toggleSwitch = Switch()
         toggleSwitch.addTarget(self, action: #selector(toggled), for: .valueChanged)
         return toggleSwitch

@@ -123,26 +123,21 @@ public class BounceScaleImageView: UIView {
     // MARK: - Properties
 
     private lazy var imageView: ImageView = {
-
         let imageView = ImageView(frame: .zero)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-
         return imageView
     }()
 
     private lazy var blurView: CustomIntensityVisualEffectView = {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let view = CustomIntensityVisualEffectView(effect: blurEffect, intensity: self.blurIntensity)
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
     private lazy var darkCoverView: UIView = {
         let view = UIView()
-        view.backgroundColor = .blue
+        view.backgroundColor = .black
         view.alpha = 0.2
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 }

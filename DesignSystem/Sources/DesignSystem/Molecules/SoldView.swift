@@ -30,7 +30,6 @@ class SoldView: UIView {
     private var titleLabel: Label = {
 
         let label = Label()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.apply(typography: .mediumStrong)
         label.text = "Sold".uppercased() // TODO: Localized
         label.textAlignment = .center

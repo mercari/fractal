@@ -49,7 +49,7 @@ public class Observed<V> {
 
     public func addObserver(_ object: AnyObject, skipFirst: Bool = true, closure: @escaping (V) -> Void) {
         let wrapper = ClosureWrapper(closure)
-        let reference = "observer\(UUID().uuidString)"
+        let reference = "observer\(UUID().uuidString)".replacingOccurrences(of: "-", with: "")
         // Giving the closure back to the object that is observing
         // allows ClosureWrapper to die at the same time as observing object
         objc_setAssociatedObject(object, reference, wrapper, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
