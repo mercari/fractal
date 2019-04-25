@@ -9,8 +9,6 @@
 import Foundation
 import DesignSystem
 
-
-
 class TypographyViewModel {
 
     private var options = [BrandingManager.Typography]() { didSet { didChange?([1]) }}
