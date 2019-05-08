@@ -18,12 +18,12 @@ Rapid Prototyping • Quick Rebranding • Reusable UI • Minimum Code
   s.homepage     = "https://github.com/kouzoh/fractal" #"https://github.com/mercari/MewNicorn"
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = ['Mercari, Inc.']
-  s.source           = { :git => 'https://github.com/kouzoh/fractal', :tag => s.version.to_s } #https://github.com/mercari/Fractal.git
+  s.source           = { :git => 'git@github.com:kouzoh/fractal.git', :tag => s.version.to_s } #https://github.com/mercari/Fractal.git
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'Sources/**/*.{swift,h,plist}'
-  s.resources = 'DesignSystem/Resources/Images.xcassets/**/*.{jpg,png,pdf,json}'
+  s.source_files = 'DesignSystem/Sources/**/*.{swift,h,plist}'
+  s.resources = 'DesignSystem/Resources/Images.xcassets/**/*.{png,jpeg,jpg,pdf,json,storyboard,xib,xcassets}'
 
   s.frameworks = 'UIKit'
 
