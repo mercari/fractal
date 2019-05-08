@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		728D057A2282996000B44543 /* BrandingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05752282996000B44543 /* BrandingManager.swift */; };
+		728D057B2282996000B44543 /* BrandingManager+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05762282996000B44543 /* BrandingManager+UIView.swift */; };
+		728D057C2282996000B44543 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05772282996000B44543 /* DateManager.swift */; };
+		728D057D2282996000B44543 /* BrandingManager+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05782282996000B44543 /* BrandingManager+Button.swift */; };
+		728D057E2282996000B44543 /* BrandingManager+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05792282996000B44543 /* BrandingManager+String.swift */; };
 		920963112271518E00FC8E6F /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962B72271518D00FC8E6F /* DividerView.swift */; };
 		920963122271518E00FC8E6F /* SingleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962B82271518D00FC8E6F /* SingleButtonView.swift */; };
 		920963132271518E00FC8E6F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962B92271518D00FC8E6F /* ItemView.swift */; };
@@ -36,14 +41,9 @@
 		9209632B2271518E00FC8E6F /* HexBrand+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962D42271518D00FC8E6F /* HexBrand+Button.swift */; };
 		9209632C2271518E00FC8E6F /* HexBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962D52271518D00FC8E6F /* HexBrand.swift */; };
 		9209632D2271518E00FC8E6F /* HexBrand+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962D62271518D00FC8E6F /* HexBrand+Navigation.swift */; };
-		9209632E2271518E00FC8E6F /* BrandingManager+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962D72271518D00FC8E6F /* BrandingManager+Button.swift */; };
-		920963302271518E00FC8E6F /* BrandingManager+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962D92271518D00FC8E6F /* BrandingManager+String.swift */; };
 		920963312271518E00FC8E6F /* BoxBrand+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962DB2271518D00FC8E6F /* BoxBrand+Navigation.swift */; };
 		920963322271518E00FC8E6F /* BoxBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962DC2271518D00FC8E6F /* BoxBrand.swift */; };
 		920963332271518E00FC8E6F /* BoxBrand+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962DD2271518D00FC8E6F /* BoxBrand+Button.swift */; };
-		920963342271518E00FC8E6F /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962DE2271518D00FC8E6F /* DateManager.swift */; };
-		920963352271518E00FC8E6F /* BrandingManager+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962DF2271518D00FC8E6F /* BrandingManager+UIView.swift */; };
-		920963362271518E00FC8E6F /* BrandingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962E02271518D00FC8E6F /* BrandingManager.swift */; };
 		920963372271518E00FC8E6F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962E12271518D00FC8E6F /* Helpers.swift */; };
 		920963382271518E00FC8E6F /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 920962E22271518D00FC8E6F /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		920963392271518E00FC8E6F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962E42271518D00FC8E6F /* UIColor+Extensions.swift */; };
@@ -98,6 +98,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		728D05752282996000B44543 /* BrandingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrandingManager.swift; path = Sources/DesignSystem/BrandingManager.swift; sourceTree = SOURCE_ROOT; };
+		728D05762282996000B44543 /* BrandingManager+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BrandingManager+UIView.swift"; path = "Sources/DesignSystem/BrandingManager+UIView.swift"; sourceTree = SOURCE_ROOT; };
+		728D05772282996000B44543 /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateManager.swift; path = Sources/DesignSystem/DateManager.swift; sourceTree = SOURCE_ROOT; };
+		728D05782282996000B44543 /* BrandingManager+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BrandingManager+Button.swift"; path = "Sources/DesignSystem/BrandingManager+Button.swift"; sourceTree = SOURCE_ROOT; };
+		728D05792282996000B44543 /* BrandingManager+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BrandingManager+String.swift"; path = "Sources/DesignSystem/BrandingManager+String.swift"; sourceTree = SOURCE_ROOT; };
 		920962B72271518D00FC8E6F /* DividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		920962B82271518D00FC8E6F /* SingleButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleButtonView.swift; sourceTree = "<group>"; };
 		920962B92271518D00FC8E6F /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
@@ -127,14 +132,9 @@
 		920962D42271518D00FC8E6F /* HexBrand+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HexBrand+Button.swift"; sourceTree = "<group>"; };
 		920962D52271518D00FC8E6F /* HexBrand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexBrand.swift; sourceTree = "<group>"; };
 		920962D62271518D00FC8E6F /* HexBrand+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HexBrand+Navigation.swift"; sourceTree = "<group>"; };
-		920962D72271518D00FC8E6F /* BrandingManager+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrandingManager+Button.swift"; sourceTree = "<group>"; };
-		920962D92271518D00FC8E6F /* BrandingManager+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrandingManager+String.swift"; sourceTree = "<group>"; };
 		920962DB2271518D00FC8E6F /* BoxBrand+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BoxBrand+Navigation.swift"; sourceTree = "<group>"; };
 		920962DC2271518D00FC8E6F /* BoxBrand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxBrand.swift; sourceTree = "<group>"; };
 		920962DD2271518D00FC8E6F /* BoxBrand+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BoxBrand+Button.swift"; sourceTree = "<group>"; };
-		920962DE2271518D00FC8E6F /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
-		920962DF2271518D00FC8E6F /* BrandingManager+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BrandingManager+UIView.swift"; sourceTree = "<group>"; };
-		920962E02271518D00FC8E6F /* BrandingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandingManager.swift; sourceTree = "<group>"; };
 		920962E12271518D00FC8E6F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		920962E22271518D00FC8E6F /* DesignSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
 		920962E42271518D00FC8E6F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -205,11 +205,6 @@
 			children = (
 				920962E32271518D00FC8E6F /* Extensions */,
 				920962D22271518D00FC8E6F /* Brands */,
-				920962DE2271518D00FC8E6F /* DateManager.swift */,
-				920962D72271518D00FC8E6F /* BrandingManager+Button.swift */,
-				920962D92271518D00FC8E6F /* BrandingManager+String.swift */,
-				920962DF2271518D00FC8E6F /* BrandingManager+UIView.swift */,
-				920962E02271518D00FC8E6F /* BrandingManager.swift */,
 				920962C92271518D00FC8E6F /* Atoms */,
 				920962B62271518D00FC8E6F /* Molecules */,
 				920962E82271518D00FC8E6F /* Organisms */,
@@ -264,6 +259,11 @@
 		920962D22271518D00FC8E6F /* Brands */ = {
 			isa = PBXGroup;
 			children = (
+				728D05752282996000B44543 /* BrandingManager.swift */,
+				728D05782282996000B44543 /* BrandingManager+Button.swift */,
+				728D05792282996000B44543 /* BrandingManager+String.swift */,
+				728D05762282996000B44543 /* BrandingManager+UIView.swift */,
+				728D05772282996000B44543 /* DateManager.swift */,
 				920962D32271518D00FC8E6F /* HexBrand */,
 				920962DA2271518D00FC8E6F /* BoxBrand */,
 			);
@@ -530,6 +530,7 @@
 				9209635E2271518E00FC8E6F /* SectionCollectionViewController.swift in Sources */,
 				9209633D2271518E00FC8E6F /* CarouselViewController.swift in Sources */,
 				920963532271518E00FC8E6F /* ItemSection.swift in Sources */,
+				728D057D2282996000B44543 /* BrandingManager+Button.swift in Sources */,
 				9209635A2271518E00FC8E6F /* SectionTableViewController.swift in Sources */,
 				920963282271518E00FC8E6F /* ImageView.swift in Sources */,
 				920963142271518E00FC8E6F /* HelpOptionView.swift in Sources */,
@@ -564,7 +565,6 @@
 				920963242271518E00FC8E6F /* Switch.swift in Sources */,
 				920963232271518E00FC8E6F /* Label.swift in Sources */,
 				9209635F2271518E00FC8E6F /* SectionController.swift in Sources */,
-				920963352271518E00FC8E6F /* BrandingManager+UIView.swift in Sources */,
 				920963592271518E00FC8E6F /* Section+DefaultValues.swift in Sources */,
 				920963112271518E00FC8E6F /* DividerView.swift in Sources */,
 				9209632C2271518E00FC8E6F /* HexBrand.swift in Sources */,
@@ -575,21 +575,21 @@
 				9209631C2271518E00FC8E6F /* AdvertView.swift in Sources */,
 				920963422271518E00FC8E6F /* ButtonGroupSection.swift in Sources */,
 				920963522271518E00FC8E6F /* NavigationGroupSection.swift in Sources */,
+				728D057E2282996000B44543 /* BrandingManager+String.swift in Sources */,
 				9209634E2271518E00FC8E6F /* CheckboxOptionsSection.swift in Sources */,
-				920963342271518E00FC8E6F /* DateManager.swift in Sources */,
 				920963472271518E00FC8E6F /* AdvertSection.swift in Sources */,
 				9209634C2271518E00FC8E6F /* SwitchOptionSection.swift in Sources */,
-				9209632E2271518E00FC8E6F /* BrandingManager+Button.swift in Sources */,
+				728D057B2282996000B44543 /* BrandingManager+UIView.swift in Sources */,
 				9209634B2271518E00FC8E6F /* HeadlineSection.swift in Sources */,
 				920963502271518E00FC8E6F /* MyPageProfileSection.swift in Sources */,
-				920963362271518E00FC8E6F /* BrandingManager.swift in Sources */,
 				920963432271518E00FC8E6F /* DividerSection.swift in Sources */,
 				9209631B2271518E00FC8E6F /* DateDisplayView.swift in Sources */,
 				9209633A2271518E00FC8E6F /* UIView+Pin.swift in Sources */,
-				920963302271518E00FC8E6F /* BrandingManager+String.swift in Sources */,
+				728D057A2282996000B44543 /* BrandingManager.swift in Sources */,
 				920963152271518E00FC8E6F /* NavigationOptionView.swift in Sources */,
 				9209635C2271518E00FC8E6F /* SectionControllerDataSource.swift in Sources */,
 				9209632B2271518E00FC8E6F /* HexBrand+Button.swift in Sources */,
+				728D057C2282996000B44543 /* DateManager.swift in Sources */,
 				9209632D2271518E00FC8E6F /* HexBrand+Navigation.swift in Sources */,
 				920963552271518E00FC8E6F /* ReloadableSection.swift in Sources */,
 				9209633E2271518E00FC8E6F /* MyPageProfileViewController.swift in Sources */,
