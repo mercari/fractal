@@ -78,6 +78,7 @@ public struct Pin {
     public static var topMargin: Pin { return .topMargin() }
     public static var bottomMargin: Pin { return .bottomMargin() }
     public static var leadingMargin: Pin { return .leadingMargin() }
+    public static var trailingMargin: Pin { return .trailingMargin() }
     public static var centerXWithinMargins: Pin { return .centerXWithinMargins() }
     public static var centerYWithinMargins: Pin { return .centerYWithinMargins() }
 
