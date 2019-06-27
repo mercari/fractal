@@ -180,6 +180,7 @@ public class BrandingManager {
 public protocol Brand {
     var id: String { get }
     var keyboardAppearance: UIKeyboardAppearance { get }
+    var preferredStatusBarStyle: UIStatusBarStyle { get }
     var defaultCellHeight: CGFloat { get }
     func value(for spacing: BrandingManager.Spacing) -> CGFloat
     func value(for size: BrandingManager.IconSize) -> CGSize
@@ -238,4 +239,8 @@ public extension UIColor {
     static func divider(_ key: BrandingManager.Color.Key = BrandingManager.Color.Key("")) -> UIColor {
         return BrandingManager.brand.value(for: .divider(key))
     }
+}
+
+public extension UIStatusBarStyle {
+    static var brand: UIStatusBarStyle { return BrandingManager.brand.preferredStatusBarStyle }
 }

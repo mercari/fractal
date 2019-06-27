@@ -14,6 +14,8 @@ class DefaultBrand: Brand {
 
     var keyboardAppearance: UIKeyboardAppearance = .default
 
+    var preferredStatusBarStyle: UIStatusBarStyle { return .default }
+
     var defaultCellHeight: CGFloat = 44.0
 
     func value(for spacing: BrandingManager.Spacing) -> CGFloat {
