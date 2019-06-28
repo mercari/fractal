@@ -26,6 +26,7 @@ extension SectionTableViewController: SectionController {
 
         if indexes.count > 0 {
             for index in indexes {
+                guard index < data.sections.count else { continue }
                 let section = data.sections[index]
                 if let n = section as? NestedSection { notifyNestOfReload(n) }
                 section.willReload()
