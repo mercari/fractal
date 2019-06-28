@@ -37,6 +37,7 @@ final public class TextView: UITextView {
     private func setup() {
         font = TextView.defaultTypography.font
         textColor = .text()
+        heldTextColor = textColor
         tintColor = .brand()
         backgroundColor = .clear
         contentInset = .zero
