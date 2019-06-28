@@ -46,7 +46,6 @@ final public class TextView: UITextView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        textContainerInset = .zero
         textContainer.lineFragmentPadding = 0
     }
 
