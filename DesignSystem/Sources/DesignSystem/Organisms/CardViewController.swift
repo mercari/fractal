@@ -253,7 +253,7 @@ extension CardViewController: CardViewDelegate {
     
     public func cardViewDidDismiss(_ cardView: CardView) {
         
-        guard let index = cardViews.index(of: cardView) else {
+        guard let index = cardViews.firstIndex(of: cardView) else {
             //TODO: assert
             return
         }
