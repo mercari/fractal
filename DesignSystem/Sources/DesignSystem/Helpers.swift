@@ -36,7 +36,7 @@ extension UIView {
 // While reactive frameworks do the same job, keeping this framework dependency free is the goal..
 // Using this helper is completely optional, using reactive a framework to make Sections is of course possible
 
-public class Observed<V> {
+open class Observed<V> {
 
     private class ClosureWrapper<V> {
         var closure: (V) -> Void
