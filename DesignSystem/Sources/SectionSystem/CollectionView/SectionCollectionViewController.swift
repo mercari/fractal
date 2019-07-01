@@ -25,7 +25,10 @@ extension SectionCollectionViewController: SectionController {
         }
 
         if indexes.count > 0 {
-            for index in indexes { data.sections[index].willReload() }
+            for index in indexes {
+                guard index < data.sections.count else { continue }
+                data.sections[index].willReload()
+            }
         } else {
             for section in data.sections { section.willReload() }
         }

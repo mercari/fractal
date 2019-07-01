@@ -110,6 +110,7 @@ extension SectionControllerDataSource: UITableViewDataSource, UITableViewDelegat
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard section < sections.count else { return 0 }
         return sections[section].itemCount
     }
 
@@ -219,6 +220,7 @@ extension SectionControllerDataSource: UICollectionViewDataSource, UICollectionV
     }
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard section < sections.count else { return 0 }
         return sections[section].itemCount
     }
 
@@ -332,14 +334,17 @@ extension SectionControllerDataSource: UICollectionViewDataSource, UICollectionV
     // MARK: - UICollectionViewDelegateFlowLayout
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        guard section < sections.count else { return .zero }
         return sections[section].itemInsets
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        guard section < sections.count else { return 0 }
         return sections[section].minimumLineSpacing
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        guard section < sections.count else { return 0 }
         return sections[section].minimumInteritemSpacing
     }
 }

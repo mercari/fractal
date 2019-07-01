@@ -37,6 +37,7 @@ final public class TextView: UITextView {
     private func setup() {
         font = TextView.defaultTypography.font
         textColor = .text()
+        heldTextColor = textColor
         tintColor = .brand()
         backgroundColor = .clear
         contentInset = .zero
@@ -45,7 +46,6 @@ final public class TextView: UITextView {
 
     override public func layoutSubviews() {
         super.layoutSubviews()
-        textContainerInset = .zero
         textContainer.lineFragmentPadding = 0
     }
 
