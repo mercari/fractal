@@ -58,11 +58,14 @@ public class SectionCollectionViewController: UICollectionViewController {
     private var data: SectionControllerDataSource!
     private var registeredReuseIdentifiers: Set<String> = [defaultReuseIdentifier]
     fileprivate var refresh: (() -> Void)?
-    public init(useRefreshControl: Bool = false, layout: UICollectionViewLayout? = nil) {
+    
+    
+    public init(useRefreshControl: Bool = false, layout: UICollectionViewLayout? = nil, direction: UICollectionView.ScrollDirection = .vertical) {
         self.useRefreshControl = useRefreshControl
-        super.init(collectionViewLayout: layout ?? SectionCollectionViewController.defaultFlowLayout())
+        super.init(collectionViewLayout: layout ?? SectionCollectionViewController.defaultFlowLayout(direction))
         data = SectionControllerDataSource(viewController: self)
     }
+
     public var didScrollClosure: ((UIScrollView) -> Void)? {
         get { return data.didScroll }
         set { data.didScroll = newValue }
@@ -101,16 +104,17 @@ public class SectionCollectionViewController: UICollectionViewController {
     }
 
     // MARK: - Properties
-
-    private static func defaultFlowLayout() -> UICollectionViewFlowLayout {
+    
+    private static func defaultFlowLayout(_ direction: UICollectionView.ScrollDirection) -> UICollectionViewFlowLayout {
+        
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
+        flowLayout.scrollDirection = direction
         flowLayout.minimumInteritemSpacing = 0.0
         flowLayout.minimumLineSpacing = 0.0
         flowLayout.sectionInset = .zero
         flowLayout.headerReferenceSize = .zero
         flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-
+        
         return flowLayout
     }
 

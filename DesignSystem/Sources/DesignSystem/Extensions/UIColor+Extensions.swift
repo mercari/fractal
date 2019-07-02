@@ -82,4 +82,26 @@ extension UIColor {
 
         return  lhsR == rhsR && lhsG == rhsG && lhsB == rhsB && lhsA == rhsA
     }
+    
+    public func mixed(with color: UIColor, percentage: CGFloat = 0.5) -> UIColor {
+        var r: CGFloat = 0.0
+        var g: CGFloat = 0.0
+        var b: CGFloat = 0.0
+        var a: CGFloat = 0.0
+        
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        
+        var r2: CGFloat = 0.0
+        var g2: CGFloat = 0.0
+        var b2: CGFloat = 0.0
+        var a2: CGFloat = 0.0
+        
+        color.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
+        let finalR = ((1.0 - percentage) * r) + (percentage * r2)
+        let finalG = ((1.0 - percentage) * g) + (percentage * g2)
+        let finalB = ((1.0 - percentage) * b) + (percentage * b2)
+        let finalA = ((1.0 - percentage) * a) + (percentage * a2)
+        
+        return UIColor(displayP3Red: finalR, green: finalG, blue: finalB, alpha: finalA)
+    }
 }
