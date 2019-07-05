@@ -40,22 +40,33 @@ extension SectionTableViewController: SectionController {
 
         DispatchQueue.main.async {
 
-            if indexes.count > 0 {
-                UIView.performWithoutAnimation {
-                    self.tableView.reloadSections(IndexSet(indexes), with: .none)
+            guard self.useRefreshControl else {
+
+                if indexes.count > 0 {
+                    UIView.performWithoutAnimation { self.tableView.reloadSections(IndexSet(indexes), with: .none) }
+                } else {
+                    self.tableView.reloadData()
                 }
+
                 return
             }
 
-            guard self.useRefreshControl else { self.tableView.reloadData(); return }
-
             if self.refreshControl?.isRefreshing ?? false {
-                self.refreshControl?.perform(#selector(self.refreshControl?.endRefreshing), with: nil, afterDelay: 0.5, inModes: [RunLoop.Mode.common])
-                self.tableView.perform(#selector(self.tableView.reloadData), with: nil, afterDelay: 0.8, inModes: [RunLoop.Mode.common])
+                self.perform(#selector(self.reloadRefresh), with: nil, afterDelay: 0.4, inModes: [RunLoop.Mode.common])
             } else {
-                self.tableView.reloadData()
+
+                if indexes.count > 0 {
+                    UIView.performWithoutAnimation { self.tableView.reloadSections(IndexSet(indexes), with: .none) }
+                } else {
+                    self.tableView.reloadData()
+                }
             }
         }
+    }
+
+    @objc private func reloadRefresh() {
+        tableView.reloadData()
+        refreshControl?.perform(#selector(refreshControl?.endRefreshing), with: nil, afterDelay: 0.1, inModes: [RunLoop.Mode.common])
     }
 
     private func notifyNestOfReload(_ nestedSection: NestedSection) {
@@ -66,10 +77,10 @@ extension SectionTableViewController: SectionController {
     }
 }
 
-public class SectionTableViewController: UITableViewController {
+open class SectionTableViewController: UITableViewController {
 
     private let useRefreshControl: Bool
-    private var registeredReuseIdentifiers: Set<String> = [defaultReuseIdentifier]
+    private var registeredReuseIdentifiers: Set<String> = []
     private var data: SectionControllerDataSource!
     private var configureTableView: ((UITableView) -> Void)?
     public var refresh: (() -> Void)?
@@ -85,7 +96,7 @@ public class SectionTableViewController: UITableViewController {
         set { data.didScroll = newValue }
     }
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
         if useRefreshControl {

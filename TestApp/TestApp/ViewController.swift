@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .black
         let vc = MainMenuViewController()
         let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.navigationBar.prefersLargeTitles = true
         let cardViewController = CardViewController(topLevelViewController: navigationController)
 
         contain(navigationController)

@@ -26,37 +26,64 @@ extension SectionCollectionViewController: SectionController {
 
         if indexes.count > 0 {
             for index in indexes {
-                guard index < data.sections.count else { continue }
-                data.sections[index].willReload()
+                let section = data.sections[index]
+                if let n = section as? NestedSection { notifyNestOfReload(n) }
+                section.willReload()
             }
         } else {
-            for section in data.sections { section.willReload() }
+            for section in data.sections {
+                if let n = section as? NestedSection { notifyNestOfReload(n) }
+                section.willReload()
+            }
         }
 
         DispatchQueue.main.async {
 
-            if indexes.count > 0 {
-                UIView.performWithoutAnimation { self.collectionView.reloadSections(IndexSet(indexes)) }
+            guard self.useRefreshControl else {
+
+                if indexes.count > 0 {
+                    UIView.performWithoutAnimation { self.collectionView.reloadSections(IndexSet(indexes)) }
+                } else {
+                    self.collectionView.reloadData()
+                    self.collectionView.layoutIfNeeded()
+                }
+
                 return
             }
 
-            guard self.useRefreshControl else { self.collectionView.reloadData(); self.collectionView.layoutIfNeeded(); return }
-
-            if self.refreshControl.isRefreshing {
-                self.refreshControl.perform(#selector(self.refreshControl.endRefreshing), with: nil, afterDelay: 0.5, inModes: [RunLoop.Mode.common])
-                self.collectionView.perform(#selector(self.collectionView.reloadData), with: nil, afterDelay: 0.8, inModes: [RunLoop.Mode.common])
+            if self.collectionView.refreshControl?.isRefreshing ?? false {
+                self.perform(#selector(self.reloadRefresh), with: nil, afterDelay: 0.4, inModes: [RunLoop.Mode.common])
             } else {
-                self.collectionView.reloadData()
+
+                if indexes.count > 0 {
+                    UIView.performWithoutAnimation { self.collectionView.reloadSections(IndexSet(indexes)) }
+                } else {
+                    self.collectionView.reloadData()
+                    self.collectionView.layoutIfNeeded()
+                }
             }
+        }
+    }
+
+    @objc private func reloadRefresh() {
+        collectionView.reloadData()
+        collectionView.layoutIfNeeded()
+        collectionView.refreshControl?.perform(#selector(collectionView.refreshControl?.endRefreshing), with: nil, afterDelay: 0.2, inModes: [RunLoop.Mode.common])
+    }
+
+    private func notifyNestOfReload(_ nestedSection: NestedSection) {
+        for section in nestedSection.allSections {
+            section.willReload()
+            if let n = section as? NestedSection { notifyNestOfReload(n) }
         }
     }
 }
 
-public class SectionCollectionViewController: UICollectionViewController {
+open class SectionCollectionViewController: UICollectionViewController {
 
     private let useRefreshControl: Bool
     private var data: SectionControllerDataSource!
-    private var registeredReuseIdentifiers: Set<String> = [defaultReuseIdentifier]
+    private var registeredReuseIdentifiers: Set<String> = []
     fileprivate var refresh: (() -> Void)?
     
     
@@ -71,10 +98,11 @@ public class SectionCollectionViewController: UICollectionViewController {
         set { data.didScroll = newValue }
     }
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
         if useRefreshControl {
+            testLargeTitleSanity()
             collectionView.alwaysBounceVertical = true
             if #available(iOS 10.0, *) {
                 collectionView.refreshControl = refreshControl
@@ -95,6 +123,18 @@ public class SectionCollectionViewController: UICollectionViewController {
 
     @objc open func refreshTriggered() {
         refresh?()
+    }
+
+    private func testLargeTitleSanity() {
+        if let nc = navigationController {
+            if (nc.navigationBar.prefersLargeTitles && navigationItem.largeTitleDisplayMode != .never) ||
+                navigationItem.largeTitleDisplayMode == .always {
+                print("*** Fractal Warning: estimatedItemSize does not work with prefersLargeTitles / largeTitleDisplayMode ***")
+                (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.estimatedItemSize = .zero
+            }
+        } else {
+            print("*** Fractal Warning: No navigation controller set, could not assert using large titles or not ***")
+        }
     }
 
     // MARK: - Accessors
