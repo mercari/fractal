@@ -43,6 +43,12 @@ open class SectionControllerDataSource: NSObject {
     }
 
     public func registerCells(in collectionView: UICollectionView, with registeredReuseIdentifiers: inout Set<String>) {
+
+        if registeredReuseIdentifiers.isEmpty {
+            collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: defaultReuseIdentifier)
+            registeredReuseIdentifiers.insert(defaultReuseIdentifier)
+        }
+
         for section in sections {
             if let nestedSection = section as? NestedSection {
                 for id in nestedSection.reuseIdentifiers {
@@ -61,6 +67,12 @@ open class SectionControllerDataSource: NSObject {
     }
 
     func registerCells(in tableView: UITableView, with registeredReuseIdentifiers: inout Set<String>) {
+
+        if registeredReuseIdentifiers.isEmpty {
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: defaultReuseIdentifier)
+            registeredReuseIdentifiers.insert(defaultReuseIdentifier)
+        }
+
         for section in sections {
             if let nestedSection = section as? NestedSection {
                 for id in nestedSection.reuseIdentifiers {
@@ -332,14 +344,17 @@ extension SectionControllerDataSource: UICollectionViewDataSource, UICollectionV
     // MARK: - UICollectionViewDelegateFlowLayout
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        guard sections.count > section else { return .zero }
         return sections[section].itemInsets
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        guard sections.count > section else { return 0.0 }
         return sections[section].minimumLineSpacing
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        guard sections.count > section else { return 0.0 }
         return sections[section].minimumInteritemSpacing
     }
 }

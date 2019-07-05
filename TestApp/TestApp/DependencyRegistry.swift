@@ -20,8 +20,7 @@ class DependencyRegistry {
 
     func prepare(viewController: MainMenuViewController) {
         let presenter = MainMenuPresenter()
-        let vc = SectionTableViewController()
-        viewController.inject(presenter: presenter, sectionViewController: vc)
+        viewController.inject(presenter: presenter)
     }
 
     func prepare(viewController: ColorPaletteViewController) {
