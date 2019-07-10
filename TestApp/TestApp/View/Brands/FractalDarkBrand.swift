@@ -48,6 +48,15 @@ class FractalDarkBrand: Brand {
                                                          for: .selected)
     }
 
+    func image(for key: UIImage.Key) -> UIImage? {
+        switch key {
+        case .logo:
+            return UIImage(named: "fractal_large_dark")
+        default:
+            return nil
+        }
+    }
+
     func value(for spacing: BrandingManager.Spacing) -> CGFloat {
         switch spacing {
         case .xxsmall:

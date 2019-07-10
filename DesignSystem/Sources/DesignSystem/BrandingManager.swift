@@ -241,6 +241,7 @@ public protocol Brand {
     var preferredStatusBarStyle: UIStatusBarStyle { get }
     var defaultCellHeight: CGFloat { get }
     func setAppearance()
+    func image(for key: UIImage.Key) -> UIImage?
     func value(for spacing: BrandingManager.Spacing) -> CGFloat
     func value(for size: BrandingManager.IconSize) -> CGSize
     func value(for color: BrandingManager.Color) -> UIColor
@@ -263,6 +264,29 @@ public extension CGFloat { // Spacing and size
 
     static var keyline: CGFloat     { return BrandingManager.brand.value(for: .keyline) }
     static var divider: CGFloat     { return BrandingManager.brand.value(for: .divider) }
+}
+
+public extension UIImage {
+
+    static func image(_ key: Key) -> UIImage? {
+        return BrandingManager.brand.image(for: key)
+    }
+
+    struct Key: Equatable, RawRepresentable {
+        public let rawValue: String
+
+        public init(_ value: String) {
+            self.rawValue = value
+        }
+
+        public init(rawValue: String) {
+            self.rawValue = rawValue
+        }
+
+        public static func ==(lhs: Key, rhs: Key) -> Bool {
+            return lhs.rawValue == rhs.rawValue
+        }
+    }
 }
 
 public extension CGSize { // IconSize

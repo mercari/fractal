@@ -33,7 +33,6 @@
 		920962B0226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096294226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift */; };
 		920962B3226EFB4700FC8E6F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962B1226EFB4700FC8E6F /* NavigationRouter.swift */; };
 		920962B4226EFB4700FC8E6F /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962B2226EFB4700FC8E6F /* DependencyRegistry.swift */; };
-		9222D3CB22D4546F008C6A48 /* IOSBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9222D3CA22D4546F008C6A48 /* IOSBrand.swift */; };
 		9228C5DE229CCE2200B8972B /* SingleButtonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5CC229CCE2100B8972B /* SingleButtonSection.swift */; };
 		9228C5DF229CCE2200B8972B /* CheckboxOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5CD229CCE2100B8972B /* CheckboxOptionsSection.swift */; };
 		9228C5E0229CCE2200B8972B /* NavigationGroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5CE229CCE2100B8972B /* NavigationGroupSection.swift */; };
@@ -73,6 +72,7 @@
 		9228C620229F934200B8972B /* BrandingManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C61F229F934200B8972B /* BrandingManager+Extensions.swift */; };
 		922F556622BC9DC3005ABF39 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922F555922BA8F45005ABF39 /* DesignSystem.framework */; };
 		922F556722BC9DC3005ABF39 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 922F555922BA8F45005ABF39 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92810CAD22D5E8C500F8F0DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,7 +139,6 @@
 		92096294226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteOptionsSection.swift; sourceTree = "<group>"; };
 		920962B1226EFB4700FC8E6F /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		920962B2226EFB4700FC8E6F /* DependencyRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
-		9222D3CA22D4546F008C6A48 /* IOSBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSBrand.swift; sourceTree = "<group>"; };
 		9228C5CC229CCE2100B8972B /* SingleButtonSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleButtonSection.swift; sourceTree = "<group>"; };
 		9228C5CD229CCE2100B8972B /* CheckboxOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxOptionsSection.swift; sourceTree = "<group>"; };
 		9228C5CE229CCE2100B8972B /* NavigationGroupSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationGroupSection.swift; sourceTree = "<group>"; };
@@ -178,6 +177,7 @@
 		9228C61B229E1DFA00B8972B /* ImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extensions.swift"; sourceTree = "<group>"; };
 		9228C61F229F934200B8972B /* BrandingManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrandingManager+Extensions.swift"; sourceTree = "<group>"; };
 		922F555922BA8F45005ABF39 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +301,7 @@
 		92096284226EFB2D00FC8E6F /* ExampleViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				92810CAB22D5E8B100F8F0DE /* Settings */,
 				92096287226EFB2D00FC8E6F /* MainMenuViewController.swift */,
 				9209627E226EFB2D00FC8E6F /* MainMenuPresenter.swift */,
 				92096270226EFB2D00FC8E6F /* ButtonExample */,
@@ -403,7 +404,6 @@
 		9228C617229CD80C00B8972B /* Brands */ = {
 			isa = PBXGroup;
 			children = (
-				9222D3CA22D4546F008C6A48 /* IOSBrand.swift */,
 				9228C615229CD80800B8972B /* FractalBrand.swift */,
 				9228C618229CD82C00B8972B /* FractalDarkBrand.swift */,
 			);
@@ -433,6 +433,14 @@
 				920962B1226EFB4700FC8E6F /* NavigationRouter.swift */,
 			);
 			path = Routing;
+			sourceTree = "<group>";
+		};
+		92810CAB22D5E8B100F8F0DE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,7 +582,6 @@
 				9228C60C229CCEE300B8972B /* LoadingView.swift in Sources */,
 				9228C605229CCEE300B8972B /* HeadlineView.swift in Sources */,
 				9228C606229CCEE300B8972B /* NavigationOptionView.swift in Sources */,
-				9222D3CB22D4546F008C6A48 /* IOSBrand.swift in Sources */,
 				9228C60B229CCEE300B8972B /* BounceScaleImageView.swift in Sources */,
 				92096187226EE6FD00FC8E6F /* ViewController.swift in Sources */,
 				920962B3226EFB4700FC8E6F /* NavigationRouter.swift in Sources */,
@@ -590,6 +597,7 @@
 				9228C5DE229CCE2200B8972B /* SingleButtonSection.swift in Sources */,
 				9228C60E229CCEE300B8972B /* TextFieldView.swift in Sources */,
 				920962B4226EFB4700FC8E6F /* DependencyRegistry.swift in Sources */,
+				92810CAD22D5E8C500F8F0DE /* SettingsViewController.swift in Sources */,
 				9209629F226EFB2D00FC8E6F /* TypographyViewModel.swift in Sources */,
 				920962AB226EFB2D00FC8E6F /* TypographyOptionView.swift in Sources */,
 				9228C60D229CCEE300B8972B /* SwitchOptionView.swift in Sources */,

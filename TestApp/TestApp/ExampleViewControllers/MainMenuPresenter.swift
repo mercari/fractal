@@ -47,6 +47,13 @@ class MainMenuPresenter  {
         }
     }
 
+    var demoOptions:() -> [NavigationOption] {
+        return { [weak self] in
+            guard let `self` = self else { return [] }
+            return self.staticDemo
+        }
+    }
+
     var staticOptions: [NavigationOption] = {
         let typo = MenuOption(title: "Typography", intent: NavigationRouter.Intent.typography.rawValue)
         let color = MenuOption(title: "Color Palette", intent: NavigationRouter.Intent.palette.rawValue)
@@ -60,5 +67,10 @@ class MainMenuPresenter  {
         let filtering = MenuOption(title: "Filtering", intent: NavigationRouter.Intent.filteringExample.rawValue)
         let card = MenuOption(title: "Card", intent: NavigationRouter.Intent.cardExample.rawValue)
         return [button, selection, filtering, card]
+    }()
+
+    var staticDemo: [NavigationOption] = {
+        let settings = MenuOption(title: "Settings", intent: NavigationRouter.Intent.settings.rawValue)
+        return [settings]
     }()
 }

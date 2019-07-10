@@ -19,7 +19,8 @@ class NavigationRouter {
         buttonExample,
         selectionExample,
         filteringExample,
-        cardExample
+        cardExample,
+        settings
     }
 
     static var shared: NavigationRouter!
@@ -67,6 +68,8 @@ class NavigationRouter {
             pushFilteringExample()
         case .cardExample:
             presentCardExample()
+        case .settings:
+            presentSettings()
         }
     }
 
@@ -108,7 +111,13 @@ class NavigationRouter {
         let nav = UINavigationController(rootViewController: viewController)
         cardViewController.present(nav, options: [.darkBackground, .isFullscreen])
     }
+
+    private func presentSettings() {
+        let viewController = SettingsViewController()
+        currentNavigationController.pushViewController(viewController, animated: true)
+    }
 }
+
 
 
 extension NavigationRouter: CardViewContentDelegate {

@@ -9,11 +9,11 @@
 import Foundation
 import DesignSystem
 
-class MainMenuViewController: SectionCollectionViewController, SectionBuilder {
+class MainMenuViewController: SectionTableViewController, SectionBuilder {
 
     private var presenter: MainMenuPresenter!
 
-    var cardHeight: CGFloat = 500.0
+    var cardHeight: CGFloat = 400.0
 
     init() {
         super.init(useRefreshControl: true)
@@ -38,6 +38,10 @@ class MainMenuViewController: SectionCollectionViewController, SectionBuilder {
             group([
                 navigationOptions(presenter.exampleOptions, style: .default, selectionClosure: selection)
                 ]),
+            seperator(),
+            group([
+                navigationOptions(presenter.demoOptions, style: .default, selectionClosure: selection)
+                ]),
             spacing(10.0),
             headline(BrandingManager.brand.id),
         ]
@@ -57,7 +61,7 @@ class MainMenuViewController: SectionCollectionViewController, SectionBuilder {
 }
 
 extension MainMenuViewController: CardViewContentDelegate {
-    var contentScrollView: UIScrollView? { return collectionView }
+    var contentScrollView: UIScrollView? { return tableView }
     var isBackgroundDismissable: Bool { return true }
     func heightConstraint(for cardViewHeightAnchor: NSLayoutDimension) -> NSLayoutConstraint? {
         return cardViewHeightAnchor.constraint(equalToConstant: cardHeight)

@@ -13,6 +13,10 @@ public extension BrandingManager.Color.Key {
     static let check = BrandingManager.Color.Key("check")
 }
 
+public extension UIImage.Key {
+    static let logo = UIImage.Key("logo")
+}
+
 class FractalBrand: Brand {
 
     var id: String = "FractalBrand"
@@ -50,6 +54,15 @@ class FractalBrand: Brand {
                                                          for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: tabFont],
                                                          for: .selected)
+    }
+
+    func image(for key: UIImage.Key) -> UIImage? {
+        switch key {
+        case .logo:
+            return UIImage(named: "fractal_large_light")
+        default:
+            return nil
+        }
     }
 
     func value(for spacing: BrandingManager.Spacing) -> CGFloat {

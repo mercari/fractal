@@ -22,6 +22,10 @@ class DefaultBrand: Brand {
 
     }
 
+    func image(for key: UIImage.Key) -> UIImage? {
+        return nil
+    }
+
     func value(for spacing: BrandingManager.Spacing) -> CGFloat {
         switch spacing {
         case .xxsmall:
