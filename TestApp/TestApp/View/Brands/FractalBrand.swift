@@ -104,12 +104,10 @@ class FractalBrand: Brand {
                 return Palette.pink1.color
             case .sliderPositiveTint:
                 return Palette.blue.color
-            case .sliderNegativeTint:
+            case .sliderNegativeTint, .switchNegativeTint:
                 return Palette.mono3.color
             case .switchPositiveTint:
                 return Palette.blue.color
-            case .switchNegativeTint:
-                return Palette.mono6.color
             case .check:
                 return Palette.pink1.color
             default:
@@ -125,9 +123,9 @@ class FractalBrand: Brand {
                 return Palette.blue.color
             }
         case .background(_):
-            return Palette.mono5.color
+            return Palette.mono.color
         case .divider(_):
-            return Palette.mono4.color
+            return Palette.mono2.color
         case .text(let key):
             switch key {
             case .light:
@@ -135,7 +133,7 @@ class FractalBrand: Brand {
             case .information:
                 return .brand(.secondary)
             default:
-                return Palette.mono.color
+                return Palette.mono6.color
             }
         }
     }
@@ -272,7 +270,7 @@ extension FractalBrand: ButtonBrand {
 
     func configure(_ button: Button, with style: Button.Style) {
 
-        button.layer.cornerRadius = 8.0
+        button.layer.cornerRadius = 3.0
         button.setTypography(.large)
 
         switch style {

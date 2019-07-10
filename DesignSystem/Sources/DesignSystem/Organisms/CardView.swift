@@ -100,7 +100,6 @@ public class CardView: UIView {
         clipsToBounds = true
         layer.cornerRadius = CardView.cornerRadius
         isUserInteractionEnabled = true
-        
         addGestureRecognizer(panGestureRecognizer)
 
         if showHandle {
@@ -126,7 +125,7 @@ public class CardView: UIView {
         } else if let bgColor = contentScrollView?.backgroundColor, bgColor != .clear {
             backgroundColor = bgColor
         } else {
-            backgroundColor = .white
+            backgroundColor = .background()
         }
     }
     

@@ -206,6 +206,8 @@ public class BrandingManager {
         print("Setting Brand:", brand.id)
         if #available(iOS 11.0.0, *), UIApplication.shared.supportsAlternateIcons {
             UIApplication.shared.setAlternateIconName("\(brand.id)-AppIcon", completionHandler: nil)
+        } else {
+            UIApplication.shared.setAlternateIconName(nil, completionHandler: nil)
         }
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: BrandingManager.didChange), object: nil)
