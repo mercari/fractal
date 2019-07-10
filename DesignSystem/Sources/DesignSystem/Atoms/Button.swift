@@ -107,6 +107,10 @@ final public class Button: UIButton {
         buttonBrand.configure(self, with: style)
     }
 
+    public func setTypography(_ typography: BrandingManager.Typography) {
+        titleLabel?.font = typography.font
+    }
+
     public func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
         backgroundColors[state] = color
         updateBackground()
@@ -146,7 +150,7 @@ final public class Button: UIButton {
         case .disabled:
             return normal?.alpha()
         case [.selected, .disabled]:
-            return selected?.brighter()
+            return selected?.lighter()
         default:
             return normal
         }

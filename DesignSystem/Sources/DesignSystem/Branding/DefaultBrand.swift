@@ -18,6 +18,10 @@ class DefaultBrand: Brand {
 
     var defaultCellHeight: CGFloat = 44.0
 
+    func setAppearance() {
+
+    }
+
     func value(for spacing: BrandingManager.Spacing) -> CGFloat {
         switch spacing {
         case .xxsmall:
@@ -171,10 +175,6 @@ class DefaultBrand: Brand {
             }
         }
         return .regular
-    }
-
-    func defaultFontColor(for typography: BrandingManager.Typography) -> UIColor {
-        return Palette.mono6.color
     }
 
     internal enum Palette: String, CaseIterable {

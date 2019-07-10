@@ -20,11 +20,12 @@ public extension Button.Style {
     static let attention = Button.Style("attention")
     static let text = Button.Style("text")
     static let toggle = Button.Style("toggle")
-    static let facebook = Button.Style("facebook")
-    static let google = Button.Style("google")
 }
 
 public extension BrandingManager.Color.Key {
+    static let primary = BrandingManager.Color.Key("primary")
+    static let secondary = BrandingManager.Color.Key("secondary")
+    static let tertiary = BrandingManager.Color.Key("tertiary")
     static let cell = BrandingManager.Color.Key("cell")
     static let detail = BrandingManager.Color.Key("detail")
     static let information = BrandingManager.Color.Key("information")
@@ -32,6 +33,8 @@ public extension BrandingManager.Color.Key {
     static let shadow = BrandingManager.Color.Key("shadow")
     static let placeholder = BrandingManager.Color.Key("placeholder")
     static let refreshControl = BrandingManager.Color.Key("refreshControl")
+    static let switchPositiveTint = BrandingManager.Color.Key("switchPositiveTint")
+    static let switchNegativeTint = BrandingManager.Color.Key("switchNegativeTint")
     static let sliderPositiveTint = BrandingManager.Color.Key("sliderPositiveTint")
     static let sliderNegativeTint = BrandingManager.Color.Key("sliderNegativeTint")
     static let warning = BrandingManager.Color.Key("warning")

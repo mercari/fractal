@@ -31,12 +31,15 @@ class ButtonExampleViewController: UIViewController, SectionBuilder {
             headline("Single Buttons"),
             spacing(),
             singleButton("Primary", tappedClosure: presenter.primaryButtonTapped),
-            singleButton("Secondary", style: .secondary, tappedClosure: presenter.secondaryButtonTapped),
-            singleButton("Attention", style: .attention, tappedClosure: presenter.attentionButtonTapped),
-            singleButton("Toggle", style: .toggle, tappedClosure: presenter.toggleButtonTapped, selectedClosure: presenter.toggleButtonSelected),
             spacing(),
-            seperator(),
-            buttonOptions(["Main Option", "Option 2", "Alternative Option 3"], selectionClosure: presenter.optionsButtonTapped)
+            singleButton("Secondary", style: .secondary, tappedClosure: presenter.secondaryButtonTapped),
+            spacing(),
+            singleButton("Attention", style: .attention, tappedClosure: presenter.attentionButtonTapped),
+            spacing(),
+            singleButton("Toggle", style: .toggle, tappedClosure: presenter.toggleButtonTapped, selectedClosure: presenter.toggleButtonSelected),
+            //spacing(),
+            //seperator(),
+            //buttonOptions(["Main Option", "Option 2", "Alternative Option 3"], selectionClosure: presenter.optionsButtonTapped)
         ]
         sectionTableViewController.reload()
     }

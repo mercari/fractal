@@ -20,7 +20,7 @@ class MainMenuViewController: SectionCollectionViewController, SectionBuilder {
     }
 
     override func viewDidLoad() {
-        title = "Design System Sandbox"
+        title = "Fractal"
         super.viewDidLoad()
         view.backgroundColor = .background()
         DependencyRegistry.shared.prepare(viewController: self)
@@ -30,14 +30,16 @@ class MainMenuViewController: SectionCollectionViewController, SectionBuilder {
         }
 
         dataSource.sections = [
-            headline(BrandingManager.brand.id),
+            spacing(52.0),
             group([
                 navigationOptions(presenter.systemOptions, style: .default, selectionClosure: selection)
                 ]),
             seperator(),
             group([
                 navigationOptions(presenter.exampleOptions, style: .default, selectionClosure: selection)
-                ])
+                ]),
+            spacing(10.0),
+            headline(BrandingManager.brand.id),
         ]
         reload()
     }

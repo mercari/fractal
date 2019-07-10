@@ -42,7 +42,7 @@ extension UIColor {
         return String(format: "#%06x", rgb)
     }
 
-    public func brighter(_ brightness: CGFloat = 0.25) -> UIColor {
+    public func lighter(_ brightness: CGFloat = 0.25) -> UIColor {
         return colorWithAppendingBrightness(1 + brightness)
     }
 

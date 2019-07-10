@@ -11,7 +11,7 @@ import DesignSystem
 
 extension SectionBuilder {
     public func seperator() -> GapSection {
-        return GapSection(color: .background(.secondary), height: .medium)
+        return GapSection(color: .background(.secondary), height: .large)
     }
 
     // Workaround to avoid to be detected as a leak when using system static UIColors

@@ -44,7 +44,7 @@ public class HeadlineView: UIView {
         super.init(frame: .zero)
         addSubview(label)
         label.pin(to: self, [.leading(.keyline),
-                             .bottom(-.xsmall),
+                             .bottom(-.small),
                              .top(style.topPadding),
                              .width(-.keyline*2, options: [.relation(.lessThanOrEqual)])])
     }

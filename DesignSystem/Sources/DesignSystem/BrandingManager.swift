@@ -82,7 +82,7 @@ public class BrandingManager {
 
     public struct Typography: CaseIterable, Equatable {
 
-        private enum Style: String {
+        fileprivate enum Style: String {
             case xxsmall,
             xsmall,
             small,
@@ -143,7 +143,7 @@ public class BrandingManager {
         private let style: Style
         private var modifiers: [Modifier]
 
-        private init(_ style: Style, _ modifiers: [Modifier] = []) {
+        fileprivate init(_ style: Style, _ modifiers: [Modifier] = []) {
             self.style = style
             self.modifiers = modifiers
         }
@@ -186,7 +186,7 @@ public class BrandingManager {
         }
 
         public var defaultColor: UIColor {
-            return BrandingManager.brand.defaultFontColor(for: self)
+            return .text()
         }
     }
 
@@ -201,6 +201,8 @@ public class BrandingManager {
         }
         
         currentBrand = brand
+        brand.setAppearance()
+
         print("Setting Brand:", brand.id)
         if #available(iOS 11.0.0, *), UIApplication.shared.supportsAlternateIcons {
             UIApplication.shared.setAlternateIconName("\(brand.id)-AppIcon", completionHandler: nil)
@@ -236,13 +238,13 @@ public protocol Brand {
     var keyboardAppearance: UIKeyboardAppearance { get }
     var preferredStatusBarStyle: UIStatusBarStyle { get }
     var defaultCellHeight: CGFloat { get }
+    func setAppearance()
     func value(for spacing: BrandingManager.Spacing) -> CGFloat
     func value(for size: BrandingManager.IconSize) -> CGSize
     func value(for color: BrandingManager.Color) -> UIColor
     func fontName(for fontWeight: UIFont.Weight) -> String?
     func fontSize(for typography: BrandingManager.Typography) -> CGFloat
     func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight
-    func defaultFontColor(for typography: BrandingManager.Typography) -> UIColor
     var rawPalette: [BrandingManager.PaletteOption] { get }
 }
 

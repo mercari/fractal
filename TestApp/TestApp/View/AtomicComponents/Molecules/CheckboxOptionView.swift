@@ -90,7 +90,8 @@ public class CheckboxOptionView: UIView {
     }()
 
     private var imageView: ImageView = {
-        let imageView = ImageView(design: .check)
+        let imageView = ImageView(design: .check, renderingMode: .alwaysTemplate)
+        imageView.tintColor = .atom(.check)
         return imageView
     }()
 }

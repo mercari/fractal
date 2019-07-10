@@ -403,9 +403,9 @@
 		9228C617229CD80C00B8972B /* Brands */ = {
 			isa = PBXGroup;
 			children = (
+				9222D3CA22D4546F008C6A48 /* IOSBrand.swift */,
 				9228C615229CD80800B8972B /* FractalBrand.swift */,
 				9228C618229CD82C00B8972B /* FractalDarkBrand.swift */,
-				9222D3CA22D4546F008C6A48 /* IOSBrand.swift */,
 			);
 			path = Brands;
 			sourceTree = "<group>";

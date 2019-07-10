@@ -37,7 +37,7 @@ extension HeadlineSection: ViewSection {
 
     public func size(in view: UIView, at index: Int) -> SectionCellSize {
         let textHeight = title.height(typography: style.typography, width: view.bounds.size.width - .keyline*2)
-        return SectionCellSize(width: view.bounds.size.width, height: textHeight + .xsmall + style.topPadding)
+        return SectionCellSize(width: view.bounds.size.width, height: textHeight + .small + style.topPadding)
     }
     
     public func configure(_ view: UIView, at index: Int) {
