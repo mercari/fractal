@@ -115,7 +115,7 @@ public class NavigationOptionView: UIView {
     private lazy var informationLabel: Label = {
         let label = Label()
         label.textAlignment = .right
-        label.apply(typography: .mediumStrong)
+        label.apply(typography: .medium(.strong))
         return label
     }()
 }

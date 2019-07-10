@@ -16,7 +16,7 @@ public class InformationView: UIView {
         addSubview(titleLabel)
         addSubview(detailLabel)
         titleLabel.pin(to: [self: [.leading(.keyline), .top(.small), .bottom(-.small)],
-                            detailLabel: [.leftOf(-.default, options: [.relation(.lessThanOrEqual)])]])
+                            detailLabel: [.leftOf(-.medium, options: [.relation(.lessThanOrEqual)])]])
         detailLabel.pin(to: self, [.trailing(-.keyline), .centerY, .width(options: [.multiplier(0.3)])])
         pin([.height(BrandingManager.brand.defaultCellHeight, options: [.relation(.greaterThanOrEqual)])])
     }

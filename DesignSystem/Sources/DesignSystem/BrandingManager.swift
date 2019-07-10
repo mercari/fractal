@@ -15,6 +15,8 @@ import UIKit
 private var currentBrand: Brand?
 private var globalDateManager = DateManager()
 
+infix operator ====
+
 public class BrandingManager {
 
     public static let didChange = "DesignSystem_DidChange"
@@ -60,7 +62,6 @@ public class BrandingManager {
         case xxsmall,
         xsmall,
         small,
-        `default`,
         medium,
         large,
         xlarge,
@@ -79,42 +80,95 @@ public class BrandingManager {
         xxlarge
     }
 
-    public enum Typography: String, CaseIterable {
+    public struct Typography: CaseIterable, Equatable {
 
-        case xxlarge,
-        xlarge,
-        large,
-        medium,
-        small,
-        xsmall,
-        xxsmall,
-        xxlargeStrong,
-        xlargeStrong,
-        largeStrong,
-        mediumStrong,
-        smallStrong,
-        xsmallStrong,
-        xxsmallStrong,
-
-        xxlargeNoAccessibility,
-        xlargeNoAccessibility,
-        largeNoAccessibility,
-        mediumNoAccessibility,
-        smallNoAccessibility,
-        xsmallNoAccessibility,
-        xxsmallNoAccessibility,
-        xxlargeStrongNoAccessibility,
-        xlargeStrongNoAccessibility,
-        largeStrongNoAccessibility,
-        mediumStrongNoAccessibility,
-        smallStrongNoAccessibility,
-        xsmallStrongNoAccessibility,
-        xxsmallStrongNoAccessibility
-
-        public var fontSize: CGFloat {
-            return BrandingManager.brand.fontSize(for: self, overrideAdjustment: rawValue.contains("NoAccessibility"))
+        private enum Style: String {
+            case xxsmall,
+            xsmall,
+            small,
+            medium,
+            large,
+            xlarge,
+            xxlarge
         }
 
+        public enum Modifier: String {
+            case strong,
+            noAccessibility
+        }
+
+        public static func == (lhs: Typography, rhs: Typography) -> Bool {
+            return lhs.style == rhs.style
+        }
+
+        public static func ==== (lhs: Typography, rhs: Typography) -> Bool {
+            guard lhs == rhs else { return false }
+            guard lhs.modifiers.count == rhs.modifiers.count else { return false }
+            for mod in lhs.modifiers { guard rhs.modifiers.contains(mod) else { return false } }
+            return true
+        }
+
+        public static let xxsmall = Typography(.xxsmall)
+        public static let xsmall = Typography(.xsmall)
+        public static let small = Typography(.small)
+        public static let medium = Typography(.medium)
+        public static let large = Typography(.large)
+        public static let xlarge = Typography(.xlarge)
+        public static let xxlarge = Typography(.xxlarge)
+
+        public static func xxsmall(_ modifier: Modifier) -> Typography { return Typography(.xxsmall, [modifier]) }
+        public static func xsmall(_ modifier: Modifier) -> Typography { return Typography(.xsmall, [modifier]) }
+        public static func small(_ modifier: Modifier) -> Typography { return Typography(.small, [modifier]) }
+        public static func medium(_ modifier: Modifier) -> Typography { return Typography(.medium, [modifier]) }
+        public static func large(_ modifier: Modifier) -> Typography { return Typography(.large, [modifier]) }
+        public static func xlarge(_ modifier: Modifier) -> Typography { return Typography(.xlarge, [modifier]) }
+        public static func xxlarge(_ modifier: Modifier) -> Typography { return Typography(.xxlarge, [modifier]) }
+
+        public static func xxsmall(_ modifiers: [Modifier]) -> Typography { return Typography(.xxsmall, modifiers) }
+        public static func xsmall(_ modifiers: [Modifier]) -> Typography { return Typography(.xsmall, modifiers) }
+        public static func small(_ modifiers: [Modifier]) -> Typography { return Typography(.small, modifiers) }
+        public static func medium(_ modifiers: [Modifier]) -> Typography { return Typography(.medium, modifiers) }
+        public static func large(_ modifiers: [Modifier]) -> Typography { return Typography(.large, modifiers) }
+        public static func xlarge(_ modifiers: [Modifier]) -> Typography { return Typography(.xlarge, modifiers) }
+        public static func xxlarge(_ modifiers: [Modifier]) -> Typography { return Typography(.xxlarge, modifiers) }
+
+        public static var allCases: [Typography] {
+            let basic = [.xxsmall, .xsmall, .small, .medium, large, xlarge, xxlarge]
+            let str = basic.map { Typography($0.style, [.strong]) }
+            let noAcc = basic.map { Typography($0.style, [.noAccessibility]) }
+            let strNoAcc = basic.map { Typography($0.style, [.strong, .noAccessibility]) }
+            return basic + str + noAcc + strNoAcc
+        }
+
+        private let style: Style
+        private var modifiers: [Modifier]
+
+        private init(_ style: Style, _ modifiers: [Modifier] = []) {
+            self.style = style
+            self.modifiers = modifiers
+        }
+
+        public var name: String {
+            var string = style.rawValue
+            if modifiers.contains(.strong) { string += " \(Modifier.strong.rawValue)" }
+            if modifiers.contains(.noAccessibility) { string += " \(Modifier.noAccessibility.rawValue)" }
+            return string
+        }
+
+        public var useAccessibility: Bool {
+            return !modifiers.contains(.noAccessibility)
+        }
+
+        public var isStrong: Bool {
+            return modifiers.contains(.strong)
+        }
+
+        public var fontSize: CGFloat {
+            return BrandingManager.brand.fontSize(for: self)
+        }
+
+        // Apple font weights
+        // ultraLight, thin, light, regular, medium, semibold, bold, heavy, strong, black
         public var fontWeight: UIFont.Weight {
             return BrandingManager.brand.fontWeight(for: self)
         }
@@ -186,7 +240,7 @@ public protocol Brand {
     func value(for size: BrandingManager.IconSize) -> CGSize
     func value(for color: BrandingManager.Color) -> UIColor
     func fontName(for fontWeight: UIFont.Weight) -> String?
-    func fontSize(for typography: BrandingManager.Typography, overrideAdjustment: Bool) -> CGFloat
+    func fontSize(for typography: BrandingManager.Typography) -> CGFloat
     func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight
     func defaultFontColor(for typography: BrandingManager.Typography) -> UIColor
     var rawPalette: [BrandingManager.PaletteOption] { get }
@@ -197,7 +251,6 @@ public extension CGFloat { // Spacing and size
     static var xxsmall: CGFloat     { return BrandingManager.brand.value(for: .xxsmall) }
     static var xsmall: CGFloat      { return BrandingManager.brand.value(for: .xsmall) }
     static var small: CGFloat       { return BrandingManager.brand.value(for: .small) }
-    static var `default`: CGFloat   { return BrandingManager.brand.value(for: .default) }
     static var medium: CGFloat      { return BrandingManager.brand.value(for: .medium) }
     static var large: CGFloat       { return BrandingManager.brand.value(for: .large) }
     static var xlarge: CGFloat      { return BrandingManager.brand.value(for: .xlarge) }

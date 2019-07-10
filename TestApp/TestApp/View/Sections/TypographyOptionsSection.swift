@@ -36,7 +36,7 @@ extension TypographyOptionSection: ViewSection {
     public func size(in view: UIView, at index: Int) -> SectionCellSize {
         let option = self.optionsClosure()[index]
         let height = self.name(for: option).height(typography: option, width: view.bounds.size.width - .keyline*2)
-        let height2 = option.rawValue.height(typography: .small, width: view.bounds.size.width - .keyline*2)
+        let height2 = option.name.height(typography: .small, width: view.bounds.size.width - .keyline*2)
         return SectionCellSize(width: view.bounds.size.width, height: height + height2 + .small*2)
     }
 

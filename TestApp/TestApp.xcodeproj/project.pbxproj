@@ -33,6 +33,7 @@
 		920962B0226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096294226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift */; };
 		920962B3226EFB4700FC8E6F /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962B1226EFB4700FC8E6F /* NavigationRouter.swift */; };
 		920962B4226EFB4700FC8E6F /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962B2226EFB4700FC8E6F /* DependencyRegistry.swift */; };
+		9222D3CB22D4546F008C6A48 /* IOSBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9222D3CA22D4546F008C6A48 /* IOSBrand.swift */; };
 		9228C5DE229CCE2200B8972B /* SingleButtonSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5CC229CCE2100B8972B /* SingleButtonSection.swift */; };
 		9228C5DF229CCE2200B8972B /* CheckboxOptionsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5CD229CCE2100B8972B /* CheckboxOptionsSection.swift */; };
 		9228C5E0229CCE2200B8972B /* NavigationGroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5CE229CCE2100B8972B /* NavigationGroupSection.swift */; };
@@ -66,8 +67,8 @@
 		9228C60D229CCEE300B8972B /* SwitchOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C600229CCEE200B8972B /* SwitchOptionView.swift */; };
 		9228C60E229CCEE300B8972B /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C601229CCEE200B8972B /* TextFieldView.swift */; };
 		9228C60F229CCEE300B8972B /* SingleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C602229CCEE300B8972B /* SingleButtonView.swift */; };
-		9228C616229CD80800B8972B /* ExampleBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C615229CD80800B8972B /* ExampleBrand.swift */; };
-		9228C619229CD82C00B8972B /* ExampleDarkModeBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C618229CD82C00B8972B /* ExampleDarkModeBrand.swift */; };
+		9228C616229CD80800B8972B /* FractalBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C615229CD80800B8972B /* FractalBrand.swift */; };
+		9228C619229CD82C00B8972B /* FractalDarkBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C618229CD82C00B8972B /* FractalDarkBrand.swift */; };
 		9228C61C229E1DFA00B8972B /* ImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C61B229E1DFA00B8972B /* ImageView+Extensions.swift */; };
 		9228C620229F934200B8972B /* BrandingManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C61F229F934200B8972B /* BrandingManager+Extensions.swift */; };
 		922F556622BC9DC3005ABF39 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922F555922BA8F45005ABF39 /* DesignSystem.framework */; };
@@ -138,6 +139,7 @@
 		92096294226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPaletteOptionsSection.swift; sourceTree = "<group>"; };
 		920962B1226EFB4700FC8E6F /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		920962B2226EFB4700FC8E6F /* DependencyRegistry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
+		9222D3CA22D4546F008C6A48 /* IOSBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSBrand.swift; sourceTree = "<group>"; };
 		9228C5CC229CCE2100B8972B /* SingleButtonSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleButtonSection.swift; sourceTree = "<group>"; };
 		9228C5CD229CCE2100B8972B /* CheckboxOptionsSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxOptionsSection.swift; sourceTree = "<group>"; };
 		9228C5CE229CCE2100B8972B /* NavigationGroupSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationGroupSection.swift; sourceTree = "<group>"; };
@@ -171,8 +173,8 @@
 		9228C600229CCEE200B8972B /* SwitchOptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchOptionView.swift; sourceTree = "<group>"; };
 		9228C601229CCEE200B8972B /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		9228C602229CCEE300B8972B /* SingleButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleButtonView.swift; sourceTree = "<group>"; };
-		9228C615229CD80800B8972B /* ExampleBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleBrand.swift; sourceTree = "<group>"; };
-		9228C618229CD82C00B8972B /* ExampleDarkModeBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleDarkModeBrand.swift; sourceTree = "<group>"; };
+		9228C615229CD80800B8972B /* FractalBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalBrand.swift; sourceTree = "<group>"; };
+		9228C618229CD82C00B8972B /* FractalDarkBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalDarkBrand.swift; sourceTree = "<group>"; };
 		9228C61B229E1DFA00B8972B /* ImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extensions.swift"; sourceTree = "<group>"; };
 		9228C61F229F934200B8972B /* BrandingManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrandingManager+Extensions.swift"; sourceTree = "<group>"; };
 		922F555922BA8F45005ABF39 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -401,8 +403,9 @@
 		9228C617229CD80C00B8972B /* Brands */ = {
 			isa = PBXGroup;
 			children = (
-				9228C615229CD80800B8972B /* ExampleBrand.swift */,
-				9228C618229CD82C00B8972B /* ExampleDarkModeBrand.swift */,
+				9228C615229CD80800B8972B /* FractalBrand.swift */,
+				9228C618229CD82C00B8972B /* FractalDarkBrand.swift */,
+				9222D3CA22D4546F008C6A48 /* IOSBrand.swift */,
 			);
 			path = Brands;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				9228C60C229CCEE300B8972B /* LoadingView.swift in Sources */,
 				9228C605229CCEE300B8972B /* HeadlineView.swift in Sources */,
 				9228C606229CCEE300B8972B /* NavigationOptionView.swift in Sources */,
+				9222D3CB22D4546F008C6A48 /* IOSBrand.swift in Sources */,
 				9228C60B229CCEE300B8972B /* BounceScaleImageView.swift in Sources */,
 				92096187226EE6FD00FC8E6F /* ViewController.swift in Sources */,
 				920962B3226EFB4700FC8E6F /* NavigationRouter.swift in Sources */,
@@ -604,7 +608,7 @@
 				9228C5E1229CCE2200B8972B /* SliderSection.swift in Sources */,
 				9228C5DF229CCE2200B8972B /* CheckboxOptionsSection.swift in Sources */,
 				9209629E226EFB2D00FC8E6F /* MainMenuPresenter.swift in Sources */,
-				9228C616229CD80800B8972B /* ExampleBrand.swift in Sources */,
+				9228C616229CD80800B8972B /* FractalBrand.swift in Sources */,
 				9228C603229CCEE300B8972B /* CheckboxOptionView.swift in Sources */,
 				9228C5E2229CCE2200B8972B /* CarouselSection.swift in Sources */,
 				9228C5E7229CCE2200B8972B /* TextViewSection.swift in Sources */,
@@ -614,7 +618,7 @@
 				9228C5E5229CCE2200B8972B /* DividerSection.swift in Sources */,
 				920962A4226EFB2D00FC8E6F /* ColorPaletteViewController.swift in Sources */,
 				9228C5F5229CCE8100B8972B /* FilterViewController.swift in Sources */,
-				9228C619229CD82C00B8972B /* ExampleDarkModeBrand.swift in Sources */,
+				9228C619229CD82C00B8972B /* FractalDarkBrand.swift in Sources */,
 				920962B0226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift in Sources */,
 				9228C608229CCEE300B8972B /* SliderView.swift in Sources */,
 				9228C607229CCEE300B8972B /* InformationView.swift in Sources */,

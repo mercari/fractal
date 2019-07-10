@@ -26,7 +26,7 @@ class DefaultBrand: Brand {
             return 2.0
         case .small:
             return 4.0
-        case .default, .medium:
+        case .medium:
             return 8.0
         case .large:
             return 16.0
@@ -104,27 +104,29 @@ class DefaultBrand: Brand {
         return nil
     }
 
-    public func fontSize(for typography: BrandingManager.Typography, overrideAdjustment: Bool) -> CGFloat {
+    public func fontSize(for typography: BrandingManager.Typography) -> CGFloat {
         var size: CGFloat
 
         switch typography {
-        case .xxlarge, .xxlargeStrong, .xxlargeNoAccessibility, .xxlargeStrongNoAccessibility:
+        case .xxlarge:
             size = 32.0
-        case .xlarge, .xlargeStrong, .xlargeNoAccessibility, .xlargeStrongNoAccessibility:
+        case .xlarge:
             size = 28.0
-        case .large, .largeStrong, .largeNoAccessibility, .largeStrongNoAccessibility:
+        case .large:
             size = 20.0
-        case .medium, .mediumStrong, .mediumNoAccessibility, .mediumStrongNoAccessibility:
+        case .medium:
             size = 16.0
-        case .small, .smallStrong, .smallNoAccessibility, .smallStrongNoAccessibility:
+        case .small:
             size = 14.0
-        case .xsmall, .xsmallStrong, .xsmallNoAccessibility, .xsmallStrongNoAccessibility:
+        case .xsmall:
             size = 12.0
-        case .xxsmall, .xxsmallStrong, .xxsmallNoAccessibility, .xxsmallStrongNoAccessibility:
+        case .xxsmall:
             size = 10.0
+        default:
+            size = 16.0
         }
 
-        if !overrideAdjustment {
+        if typography.useAccessibility {
             size += fontSizeAdjustment(for: typography)
         }
 
@@ -133,8 +135,8 @@ class DefaultBrand: Brand {
 
     private func fontSizeAdjustment(for typography: BrandingManager.Typography) -> CGFloat {
         switch (typography, BrandingManager.contentSizeCategory) {
-        case (.xxsmall, .extraSmall), (.xxsmallStrong, .extraSmall),
-             (.xxsmall, .small), (.xxsmallStrong, .small):
+        case (.xxsmall, .extraSmall),
+             (.xxsmall, .small):
             return 0.0
         case (_, .extraSmall):
             return -2.0
@@ -160,19 +162,15 @@ class DefaultBrand: Brand {
     }
 
     public func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight {
-        switch typography {
-        case .xxlargeStrong, .xlargeStrong, .largeStrong,
-             .xxlargeStrongNoAccessibility, .xlargeStrongNoAccessibility, .largeStrongNoAccessibility:
-            return .bold
-        case .mediumStrong, .smallStrong, .xsmallStrong, .xxsmallStrong,
-             .mediumStrongNoAccessibility,
-             .smallStrongNoAccessibility, .xsmallStrongNoAccessibility, .xxsmallStrongNoAccessibility:
-            return .semibold
-        case .xxlarge, .xlarge, .large, .medium, .small, .xsmall, .xxsmall,
-             .xxlargeNoAccessibility, .xlargeNoAccessibility, .largeNoAccessibility, .mediumNoAccessibility,
-             .smallNoAccessibility, .xsmallNoAccessibility, .xxsmallNoAccessibility:
-            return .regular
+        if typography.isStrong {
+            switch typography {
+            case .xxlarge, .xlarge, .large:
+                return .bold
+            default:
+                return .semibold
+            }
         }
+        return .regular
     }
 
     func defaultFontColor(for typography: BrandingManager.Typography) -> UIColor {

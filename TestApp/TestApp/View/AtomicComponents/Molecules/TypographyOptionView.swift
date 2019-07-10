@@ -26,7 +26,7 @@ class TypographyOptionView: UIView {
     }
 
     public func set(name: String, typography: BrandingManager.Typography) {
-        typeLabel.text = typography.rawValue
+        typeLabel.text = typography.name
         label.text = name
         label.apply(typography: typography) // Normally I'd say this probably isn't ideal... but for this purpose as it's not customer facing it's ok
     }

@@ -123,7 +123,7 @@
 			children = (
 				723609152282AD2100300065 /* Images.xcassets */,
 				920962E32271518D00FC8E6F /* Extensions */,
-				920962D22271518D00FC8E6F /* Brands */,
+				920962D22271518D00FC8E6F /* Branding */,
 				920962C92271518D00FC8E6F /* Atoms */,
 				922F554922BA1650005ABF39 /* Organisms */,
 				920962E12271518D00FC8E6F /* Helpers.swift */,
@@ -150,7 +150,7 @@
 			path = Atoms;
 			sourceTree = "<group>";
 		};
-		920962D22271518D00FC8E6F /* Brands */ = {
+		920962D22271518D00FC8E6F /* Branding */ = {
 			isa = PBXGroup;
 			children = (
 				9228C61D229E2AE000B8972B /* DefaultBrand.swift */,
@@ -160,7 +160,7 @@
 				728D05762282996000B44543 /* BrandingManager+UIView.swift */,
 				728D05772282996000B44543 /* DateManager.swift */,
 			);
-			path = Brands;
+			path = Branding;
 			sourceTree = "<group>";
 		};
 		920962E32271518D00FC8E6F /* Extensions */ = {

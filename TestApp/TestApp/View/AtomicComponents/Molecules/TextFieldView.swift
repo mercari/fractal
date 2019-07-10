@@ -42,10 +42,11 @@ public class TextFieldView: UIView {
                                      .width(-.keyline*2, options: [.relation(.lessThanOrEqual)])])
         case .titled:
             addSubview(titleLabel)
-            titleLabel.pin(to: [self: [.leading(.keyline),
-                                       .top(.small),
-                                       .bottom(-.small)],
-                                textField: [.leftOf(-.default, options: [.relation(.lessThanOrEqual)])]])
+
+            titleLabel.pin(to: self, [.leading(.keyline), .top(.small), .bottom(-.small)])
+            titleLabel.pin(to: textField, [.leftOf(-.medium, options: [.relation(.lessThanOrEqual)])])
+
+
             textField.pin(to: self, [.trailing(-.keyline),
                                      .centerY,
                                      .width(options: [.multiplier(0.6), .relation(.equal)])])
