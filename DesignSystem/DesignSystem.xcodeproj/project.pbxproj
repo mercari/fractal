@@ -146,7 +146,6 @@
 				9228C55B229CB21600B8972B /* Switch.swift */,
 				9228C558229CB21600B8972B /* TextField.swift */,
 				9228C55D229CB21600B8972B /* TextView.swift */,
-				92BA39042179829900266383 /* DesignSystemTests */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -231,6 +230,7 @@
 			children = (
 				920962B52271518D00FC8E6F /* DesignSystem */,
 				920962EE2271518D00FC8E6F /* SectionSystem */,
+				92BA39042179829900266383 /* DesignSystemTests */,
 				92BA38F82179829800266383 /* Products */,
 				9242BDD621E7312000756B72 /* Frameworks */,
 			);
