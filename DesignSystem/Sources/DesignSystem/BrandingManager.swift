@@ -12,6 +12,7 @@ import UIKit
 // Brand, Spacing, Typography, Colour
 // Convienience for accessing the raw style level of the DesignSystem
 
+private var notificationObject: NSObjectProtocol?
 private var currentBrand: Brand?
 private var globalDateManager = DateManager()
 
@@ -92,7 +93,7 @@ public class BrandingManager {
             xxlarge
         }
 
-        public enum Modifier: String {
+        public enum Modifier: String, CaseIterable {
             case strong,
             noAccessibility
         }
@@ -117,19 +118,19 @@ public class BrandingManager {
         public static let xxlarge = Typography(.xxlarge)
 
         public static func xxsmall(_ modifier: Modifier) -> Typography { return Typography(.xxsmall, [modifier]) }
-        public static func xsmall(_ modifier: Modifier) -> Typography { return Typography(.xsmall, [modifier]) }
-        public static func small(_ modifier: Modifier) -> Typography { return Typography(.small, [modifier]) }
-        public static func medium(_ modifier: Modifier) -> Typography { return Typography(.medium, [modifier]) }
-        public static func large(_ modifier: Modifier) -> Typography { return Typography(.large, [modifier]) }
-        public static func xlarge(_ modifier: Modifier) -> Typography { return Typography(.xlarge, [modifier]) }
+        public static func xsmall(_ modifier: Modifier) -> Typography  { return Typography(.xsmall, [modifier]) }
+        public static func small(_ modifier: Modifier) -> Typography   { return Typography(.small, [modifier]) }
+        public static func medium(_ modifier: Modifier) -> Typography  { return Typography(.medium, [modifier]) }
+        public static func large(_ modifier: Modifier) -> Typography   { return Typography(.large, [modifier]) }
+        public static func xlarge(_ modifier: Modifier) -> Typography  { return Typography(.xlarge, [modifier]) }
         public static func xxlarge(_ modifier: Modifier) -> Typography { return Typography(.xxlarge, [modifier]) }
 
         public static func xxsmall(_ modifiers: [Modifier]) -> Typography { return Typography(.xxsmall, modifiers) }
-        public static func xsmall(_ modifiers: [Modifier]) -> Typography { return Typography(.xsmall, modifiers) }
-        public static func small(_ modifiers: [Modifier]) -> Typography { return Typography(.small, modifiers) }
-        public static func medium(_ modifiers: [Modifier]) -> Typography { return Typography(.medium, modifiers) }
-        public static func large(_ modifiers: [Modifier]) -> Typography { return Typography(.large, modifiers) }
-        public static func xlarge(_ modifiers: [Modifier]) -> Typography { return Typography(.xlarge, modifiers) }
+        public static func xsmall(_ modifiers: [Modifier]) -> Typography  { return Typography(.xsmall, modifiers) }
+        public static func small(_ modifiers: [Modifier]) -> Typography   { return Typography(.small, modifiers) }
+        public static func medium(_ modifiers: [Modifier]) -> Typography  { return Typography(.medium, modifiers) }
+        public static func large(_ modifiers: [Modifier]) -> Typography   { return Typography(.large, modifiers) }
+        public static func xlarge(_ modifiers: [Modifier]) -> Typography  { return Typography(.xlarge, modifiers) }
         public static func xxlarge(_ modifiers: [Modifier]) -> Typography { return Typography(.xxlarge, modifiers) }
 
         public static var allCases: [Typography] {
@@ -222,7 +223,7 @@ public class BrandingManager {
     }
 
     public static func subscribeToNotifications() {
-        _ = NotificationCenter.default.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: nil, queue: nil) { (_) in
+        notificationObject = NotificationCenter.default.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: nil, queue: nil) { (_) in
             NotificationCenter.default.post(name: Notification.Name(rawValue: BrandingManager.didChange), object: nil)
         }
     }
@@ -289,14 +290,29 @@ public extension UIImage {
     }
 }
 
+public extension UIImageView {
+
+    convenience init(_ key: UIImage.Key, in locality: AnyClass? = nil, renderingMode: UIImage.RenderingMode = .alwaysOriginal) {
+        self.init(image: UIImageView.localImage(named: key.rawValue, in: locality))
+    }
+
+    fileprivate static func localImage(named name: String, in locality: AnyClass?) -> UIImage? {
+        guard let image = UIImage(named: name, in: Bundle(for: locality ?? self), compatibleWith: nil) else {
+            assertionFailure("failed to find image \(name)")
+            return nil
+        }
+        return image
+    }
+}
+
 public extension CGSize { // IconSize
 
-    static var xsmallIcon: CGSize      { return BrandingManager.brand.value(for: .xsmall) }
-    static var smallIcon: CGSize       { return BrandingManager.brand.value(for: .small) }
-    static var mediumIcon: CGSize      { return BrandingManager.brand.value(for: .medium) }
-    static var largeIcon: CGSize       { return BrandingManager.brand.value(for: .large) }
-    static var xlargeIcon: CGSize      { return BrandingManager.brand.value(for: .xlarge) }
-    static var xxlargeIcon: CGSize     { return BrandingManager.brand.value(for: .xxlarge) }
+    static var xsmallIcon: CGSize  { return BrandingManager.brand.value(for: .xsmall) }
+    static var smallIcon: CGSize   { return BrandingManager.brand.value(for: .small) }
+    static var mediumIcon: CGSize  { return BrandingManager.brand.value(for: .medium) }
+    static var largeIcon: CGSize   { return BrandingManager.brand.value(for: .large) }
+    static var xlargeIcon: CGSize  { return BrandingManager.brand.value(for: .xlarge) }
+    static var xxlargeIcon: CGSize { return BrandingManager.brand.value(for: .xxlarge) }
 }
 
 public extension UIColor {

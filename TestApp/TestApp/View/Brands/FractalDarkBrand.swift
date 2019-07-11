@@ -32,7 +32,7 @@ class FractalDarkBrand: Brand {
         UINavigationBar.appearance().titleTextAttributes = attributes
         UINavigationBar.appearance().largeTitleTextAttributes = largeAttributes
         UINavigationBar.appearance().shadowImage = UIImage(color: .brand())
-        UINavigationBar.appearance().isTranslucent = false
+       // UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = .background()
         UINavigationBar.appearance().tintColor = .brand()
 
@@ -115,6 +115,8 @@ class FractalDarkBrand: Brand {
                 return Palette.blue.color
             case .switchNegativeTint:
                 return Palette.mono6.color
+            case .detailDisclosure:
+                return Palette.pink1.color
             case .check:
                 return Palette.pink1.color
             default:

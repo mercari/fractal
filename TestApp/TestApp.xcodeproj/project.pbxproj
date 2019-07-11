@@ -68,11 +68,13 @@
 		9228C60F229CCEE300B8972B /* SingleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C602229CCEE300B8972B /* SingleButtonView.swift */; };
 		9228C616229CD80800B8972B /* FractalBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C615229CD80800B8972B /* FractalBrand.swift */; };
 		9228C619229CD82C00B8972B /* FractalDarkBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C618229CD82C00B8972B /* FractalDarkBrand.swift */; };
-		9228C61C229E1DFA00B8972B /* ImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C61B229E1DFA00B8972B /* ImageView+Extensions.swift */; };
 		9228C620229F934200B8972B /* BrandingManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C61F229F934200B8972B /* BrandingManager+Extensions.swift */; };
 		922F556622BC9DC3005ABF39 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922F555922BA8F45005ABF39 /* DesignSystem.framework */; };
 		922F556722BC9DC3005ABF39 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 922F555922BA8F45005ABF39 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92810CAD22D5E8C500F8F0DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */; };
+		92810CB122D70A5200F8F0DE /* IconSelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */; };
+		92810CB322D70AAB00F8F0DE /* IconSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB222D70AAB00F8F0DE /* IconSelectView.swift */; };
+		92810CB522D7309C00F8F0DE /* IconSelectionCarouselSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB422D7309C00F8F0DE /* IconSelectionCarouselSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,10 +176,12 @@
 		9228C602229CCEE300B8972B /* SingleButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleButtonView.swift; sourceTree = "<group>"; };
 		9228C615229CD80800B8972B /* FractalBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalBrand.swift; sourceTree = "<group>"; };
 		9228C618229CD82C00B8972B /* FractalDarkBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalDarkBrand.swift; sourceTree = "<group>"; };
-		9228C61B229E1DFA00B8972B /* ImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Extensions.swift"; sourceTree = "<group>"; };
 		9228C61F229F934200B8972B /* BrandingManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrandingManager+Extensions.swift"; sourceTree = "<group>"; };
 		922F555922BA8F45005ABF39 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionSection.swift; sourceTree = "<group>"; };
+		92810CB222D70AAB00F8F0DE /* IconSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectView.swift; sourceTree = "<group>"; };
+		92810CB422D7309C00F8F0DE /* IconSelectionCarouselSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionCarouselSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +352,8 @@
 				92096292226EFB2D00FC8E6F /* SizeOptionsSection.swift */,
 				92096293226EFB2D00FC8E6F /* TypographyOptionsSection.swift */,
 				92096294226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift */,
+				92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */,
+				92810CB422D7309C00F8F0DE /* IconSelectionCarouselSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 				92096290226EFB2D00FC8E6F /* ColorPaletteOptionView.swift */,
 				9228C601229CCEE200B8972B /* TextFieldView.swift */,
 				9228C5FD229CCEE200B8972B /* TextViewView.swift */,
+				92810CB222D70AAB00F8F0DE /* IconSelectView.swift */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -413,7 +420,6 @@
 		9228C61A229E1DEC00B8972B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9228C61B229E1DFA00B8972B /* ImageView+Extensions.swift */,
 				9228C61F229F934200B8972B /* BrandingManager+Extensions.swift */,
 			);
 			path = Extensions;
@@ -576,9 +582,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9228C5F4229CCE8100B8972B /* CarouselViewController.swift in Sources */,
-				9228C61C229E1DFA00B8972B /* ImageView+Extensions.swift in Sources */,
 				9228C609229CCEE300B8972B /* SegmentedControlView.swift in Sources */,
 				9228C5EF229CCE2200B8972B /* ReloadableSection.swift in Sources */,
+				92810CB322D70AAB00F8F0DE /* IconSelectView.swift in Sources */,
 				9228C60C229CCEE300B8972B /* LoadingView.swift in Sources */,
 				9228C605229CCEE300B8972B /* HeadlineView.swift in Sources */,
 				9228C606229CCEE300B8972B /* NavigationOptionView.swift in Sources */,
@@ -604,6 +610,7 @@
 				9228C5EB229CCE2200B8972B /* GapSection.swift in Sources */,
 				9209629C226EFB2D00FC8E6F /* FilteringTableViewController.swift in Sources */,
 				9209626B226EFB2400FC8E6F /* Helpers.swift in Sources */,
+				92810CB122D70A5200F8F0DE /* IconSelectionSection.swift in Sources */,
 				920962AF226EFB2D00FC8E6F /* TypographyOptionsSection.swift in Sources */,
 				9209629D226EFB2D00FC8E6F /* SelectionAndInfoViewController.swift in Sources */,
 				9228C5E3229CCE2200B8972B /* GroupSection.swift in Sources */,
@@ -626,6 +633,7 @@
 				9228C5E5229CCE2200B8972B /* DividerSection.swift in Sources */,
 				920962A4226EFB2D00FC8E6F /* ColorPaletteViewController.swift in Sources */,
 				9228C5F5229CCE8100B8972B /* FilterViewController.swift in Sources */,
+				92810CB522D7309C00F8F0DE /* IconSelectionCarouselSection.swift in Sources */,
 				9228C619229CD82C00B8972B /* FractalDarkBrand.swift in Sources */,
 				920962B0226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift in Sources */,
 				9228C608229CCEE300B8972B /* SliderView.swift in Sources */,

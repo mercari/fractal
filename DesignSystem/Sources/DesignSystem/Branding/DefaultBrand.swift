@@ -80,6 +80,8 @@ class DefaultBrand: Brand {
                 return Palette.blue.color
             case .sliderNegativeTint, .switchNegativeTint:
                 return Palette.mono2.color
+            case .detailDisclosure:
+                return Palette.mono2.color
             default:
                 return Palette.blue.color
             }

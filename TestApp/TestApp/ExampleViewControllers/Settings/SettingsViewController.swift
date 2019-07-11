@@ -11,6 +11,8 @@ import DesignSystem
 
 class SettingsViewController: SectionTableViewController, SectionBuilder {
 
+    private let darkModeObserved = Observed<Bool>(false)
+
     override func viewDidLoad() {
         title = "Settings"
         super.viewDidLoad()
@@ -18,18 +20,23 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
         view.addSubview(bounceImageView)
         view.sendSubviewToBack(bounceImageView)
         bounceImageView.pin(to: view, [.top, .centerX, .width, .height(asConstant: 400.0)])
+        setSections()
+        reload()
+    }
+
+    private func setSections() {
         dataSource.sections = [
             spacing(400.0),
             group([
+                switchOption("Dark Mode", observedBool: darkModeObserved),
                 information("Version", detailClosure: { "0.2" })
                 ]),
             spacing(32.0),
             singleButton("Remove All Branding", tappedClosure: { [weak self] in self?.removeBranding() })
         ]
-        reload()
     }
 
-    func removeBranding() {
+    private func removeBranding() {
 
     }
 

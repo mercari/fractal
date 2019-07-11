@@ -22,6 +22,12 @@ public extension Button.Style {
     static let toggle = Button.Style("toggle")
 }
 
+public extension UIImage.Key {
+    static let detailDisclosure = UIImage.Key("icn_disclosure_indicator")
+    static let check = UIImage.Key("check")
+    static let smallArrow = UIImage.Key("smallArrow")
+}
+
 public extension BrandingManager.Color.Key {
     static let primary = BrandingManager.Color.Key("primary")
     static let secondary = BrandingManager.Color.Key("secondary")
@@ -33,6 +39,7 @@ public extension BrandingManager.Color.Key {
     static let shadow = BrandingManager.Color.Key("shadow")
     static let placeholder = BrandingManager.Color.Key("placeholder")
     static let refreshControl = BrandingManager.Color.Key("refreshControl")
+    static let detailDisclosure = BrandingManager.Color.Key("detailDisclosure")
     static let switchPositiveTint = BrandingManager.Color.Key("switchPositiveTint")
     static let switchNegativeTint = BrandingManager.Color.Key("switchNegativeTint")
     static let sliderPositiveTint = BrandingManager.Color.Key("sliderPositiveTint")
