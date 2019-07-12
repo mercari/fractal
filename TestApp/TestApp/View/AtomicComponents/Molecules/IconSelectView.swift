@@ -15,12 +15,17 @@ class IconSelectView: UIView {
         super.init(frame: .zero)
         addSubview(iconImageView)
         addSubview(selectedImageView)
-        iconImageView.pin(to: self)
-        selectedImageView.pin(to: self)
+        iconImageView.pin(to: self, [.top(.small), .leading(.small), .trailing(-.small), .bottom(-.small - 20.0)])
+        selectedImageView.pin(to: self, [.top, .leading, .trailing(-5.0), .bottom(-10.0)])
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func set(_ key: UIImage.Key, isSelected: Bool) {
+        iconImageView.image = UIImage.with(key)
+        selectedImageView.isHidden = !isSelected
     }
 
     // MARK: - Properties
@@ -28,6 +33,9 @@ class IconSelectView: UIView {
     var iconImageView: ImageView = {
         let imageView = ImageView()
         imageView.layer.cornerRadius = 8.0
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 0.5
+        imageView.layer.borderColor = UIColor.divider.cgColor
         return imageView
     }()
 

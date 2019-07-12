@@ -15,6 +15,15 @@ public extension BrandingManager.Color.Key {
 
 public extension UIImage.Key {
     static let logo = UIImage.Key("logo")
+    static let icon0 = UIImage.Key("icon0")
+    static let icon1 = UIImage.Key("icon1")
+    static let icon2 = UIImage.Key("icon2")
+    static let icon3 = UIImage.Key("icon3")
+    static let icon4 = UIImage.Key("icon4")
+    static let icon5 = UIImage.Key("icon5")
+    static let icon6 = UIImage.Key("icon6")
+    static let icon7 = UIImage.Key("icon7")
+    static let icon8 = UIImage.Key("icon8")
 }
 
 class FractalBrand: Brand {
@@ -26,8 +35,6 @@ class FractalBrand: Brand {
     var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 
     var defaultCellHeight: CGFloat = 52.0
-
-    var resourceBundle: Bundle? = .main
 
     public func setAppearance() {
 
@@ -63,7 +70,7 @@ class FractalBrand: Brand {
         case .logo:
             return "fractal_large_light"
         default:
-            return nil
+            return key.rawValue
         }
     }
 
@@ -122,7 +129,7 @@ class FractalBrand: Brand {
             case .sliderNegativeTint, .switchNegativeTint:
                 return Palette.mono3.color
             case .detailDisclosure:
-                return Palette.mono.color
+                return Palette.pink1.color
             case .switchPositiveTint:
                 return Palette.blue.color
             case .check:
@@ -139,8 +146,13 @@ class FractalBrand: Brand {
             default:
                 return Palette.blue.color
             }
-        case .background(_):
-            return Palette.mono.color
+        case .background(let key):
+            switch key {
+            case .cellSelected:
+                return Palette.pink3.color
+            default:
+                return Palette.mono.color
+            }
         case .divider(_):
             return Palette.mono2.color
         case .text(let key):

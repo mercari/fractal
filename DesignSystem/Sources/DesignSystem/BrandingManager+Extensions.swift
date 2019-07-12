@@ -28,6 +28,10 @@ public extension UIImage.Key {
     static let smallArrow = UIImage.Key("smallArrow")
 }
 
+public extension Brand {
+    var resourceBundle: Bundle? { return nil }
+}
+
 public extension BrandingManager.Color.Key {
     static let primary = BrandingManager.Color.Key("primary")
     static let secondary = BrandingManager.Color.Key("secondary")

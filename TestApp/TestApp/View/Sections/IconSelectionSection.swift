@@ -10,7 +10,7 @@ import Foundation
 import DesignSystem
 
 protocol IconOptions {
-    var imageName: UIImage.Key { get }
+    var imageKey: UIImage.Key { get }
     var isSelected: Bool { get set }
 }
 
@@ -48,7 +48,7 @@ extension IconSelectionSection: ViewSection {
     }
 
     public func size(in view: UIView, at index: Int) -> SectionCellSize {
-        return SectionCellSize(width: 100.0, height: 100.0)
+        return SectionCellSize(width: 100.0, height: 120.0)
     }
 
     public var itemCount: Int {
@@ -56,6 +56,7 @@ extension IconSelectionSection: ViewSection {
     }
 
     public func configure(_ view: UIView, at index: Int) {
-        //(view as? IconSelectView).set(staticOptions[index].imageName)
+        let option = staticOptions[index]
+        (view as? IconSelectView)?.set(option.imageKey, isSelected: option.isSelected)
     }
 }

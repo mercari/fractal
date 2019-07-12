@@ -18,14 +18,14 @@ class DefaultBrand: NSObject, Brand {
 
     var defaultCellHeight: CGFloat = 44.0
 
-    var resourceBundle: Bundle? { return nil }
+    var resourceBundle: Bundle? = Bundle(for: BrandingManager.self)
 
     func setAppearance() {
 
     }
 
     func imageName(for key: UIImage.Key) -> String? {
-        return nil
+        return key.rawValue
     }
 
     func value(for spacing: BrandingManager.Spacing) -> CGFloat {

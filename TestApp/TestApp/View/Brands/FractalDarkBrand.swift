@@ -19,8 +19,6 @@ class FractalDarkBrand: Brand {
 
     var defaultCellHeight: CGFloat = 52.0
 
-    var resourceBundle: Bundle? = .main
-
     public func setAppearance() {
 
         let attributes: [NSAttributedString.Key: AnyObject] = [
@@ -55,7 +53,7 @@ class FractalDarkBrand: Brand {
         case .logo:
             return "fractal_large_dark"
         default:
-            return nil
+            return key.rawValue
         }
     }
 
@@ -133,8 +131,13 @@ class FractalDarkBrand: Brand {
             default:
                 return Palette.blue.color
             }
-        case .background(_):
-            return Palette.mono5.color
+        case .background(let key):
+            switch key {
+            case .cellSelected:
+                return UIColor(white: 0.0, alpha: 0.1)
+            default:
+                return Palette.mono5.color
+            }
         case .divider(_):
             return Palette.mono4.color
         case .text(let key):

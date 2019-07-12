@@ -17,21 +17,20 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
         title = "Settings"
         super.viewDidLoad()
         view.backgroundColor = .background
-        view.addSubview(bounceImageView)
-        view.sendSubviewToBack(bounceImageView)
-        bounceImageView.pin(to: view, [.top, .centerX, .width, .height(asConstant: 400.0)])
         setSections()
         reload()
     }
 
     private func setSections() {
         dataSource.sections = [
-            spacing(400.0),
+            image(.logo, heightType: .custom(200.0)),
+            headline("Alternate Icons"),
+            iconSelectionCarousel(),
             group([
                 switchOption("Dark Mode", observedBool: darkModeObserved),
                 information("Version", detailClosure: { "0.2" })
                 ]),
-            spacing(32.0),
+            spacing(),
             singleButton("Remove All Branding", tappedClosure: { [weak self] in self?.removeBranding() })
         ]
     }
@@ -39,12 +38,4 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
     private func removeBranding() {
 
     }
-
-    // MARK: - Properties
-
-    private var bounceImageView: BounceScaleImageView = {
-        let imageView = BounceScaleImageView(imageHeight: 400.0, withBlur: false)
-        imageView.image = .with(.logo)
-        return imageView
-    }()
 }

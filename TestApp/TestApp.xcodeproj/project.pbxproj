@@ -75,6 +75,7 @@
 		92810CB122D70A5200F8F0DE /* IconSelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */; };
 		92810CB322D70AAB00F8F0DE /* IconSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB222D70AAB00F8F0DE /* IconSelectView.swift */; };
 		92810CB522D7309C00F8F0DE /* IconSelectionCarouselSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB422D7309C00F8F0DE /* IconSelectionCarouselSection.swift */; };
+		92810CB722D86B0700F8F0DE /* ImageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB622D86B0700F8F0DE /* ImageSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionSection.swift; sourceTree = "<group>"; };
 		92810CB222D70AAB00F8F0DE /* IconSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectView.swift; sourceTree = "<group>"; };
 		92810CB422D7309C00F8F0DE /* IconSelectionCarouselSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionCarouselSection.swift; sourceTree = "<group>"; };
+		92810CB622D86B0700F8F0DE /* ImageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 				92096294226EFB2D00FC8E6F /* ColorPaletteOptionsSection.swift */,
 				92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */,
 				92810CB422D7309C00F8F0DE /* IconSelectionCarouselSection.swift */,
+				92810CB622D86B0700F8F0DE /* ImageSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				920962A5226EFB2D00FC8E6F /* MainMenuViewController.swift in Sources */,
 				9228C5ED229CCE2200B8972B /* InformationSection.swift in Sources */,
 				9228C5EA229CCE2200B8972B /* HeadlineSection.swift in Sources */,
+				92810CB722D86B0700F8F0DE /* ImageSection.swift in Sources */,
 				9228C5E9229CCE2200B8972B /* SwitchOptionSection.swift in Sources */,
 				92096185226EE6FD00FC8E6F /* AppDelegate.swift in Sources */,
 				9228C5E6229CCE2200B8972B /* LoadingSection.swift in Sources */,
