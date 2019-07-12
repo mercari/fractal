@@ -262,6 +262,50 @@ public extension UIImageView {
     convenience init(_ key: UIImage.Key, file: String = #file, in bundle: Bundle? = nil, renderingMode: UIImage.RenderingMode = .alwaysOriginal) {
         self.init(image: UIImage.with(key, file: file, in: bundle)?.withRenderingMode(renderingMode))
     }
+
+    fileprivate static func thingImage(_ key: UIImage.Key, file: String = #file, in bundle: Bundle? = nil) -> UIImage? {
+
+        func localImage(named name: String, in bundle: Bundle?) -> UIImage? {
+            return UIImage(named: name, in: bundle, compatibleWith: nil)
+        }
+
+        var image: UIImage? = nil
+
+        if let bundle = bundle {
+            image = localImage(named: key.rawValue, in: bundle)
+        }
+
+        if image == nil, let bundle = BrandingManager.brand.resourceBundle {
+            image = localImage(named: key.rawValue, in: bundle)
+        }
+
+        if image == nil {
+            print("3", file)
+
+            if let fileURL = URL(string: "file:\(file)") {
+                print("3.1")
+
+                if let bundle = Bundle(url: fileURL) {
+                    print("3.2")
+                    image = localImage(named: key.rawValue, in: bundle)
+                }
+            }
+        }
+
+        if image == nil {
+            image = localImage(named: key.rawValue, in: .main)
+        }
+
+        if image == nil {
+            image = localImage(named: key.rawValue, in: Bundle(for: BrandingManager.self))
+        }
+
+        if image == nil {
+            print("Failed to find \(key.rawValue) in any bundle")
+        }
+
+        return image
+    }
 }
 
 public extension UIImage {
@@ -283,43 +327,7 @@ public extension UIImage {
     }
 
     static func with(_ key: Key, file: String = #file, in bundle: Bundle? = nil) -> UIImage? {
-
-        func localImage(named name: String, in bundle: Bundle?) -> UIImage? {
-            return UIImage(named: name, in: bundle, compatibleWith: nil)
-        }
-
-        var image: UIImage? = nil
-
-        if let bundle = bundle {
-            image = localImage(named: key.rawValue, in: bundle)
-        }
-
-        if image == nil, let bundle = BrandingManager.brand.resourceBundle {
-            image = localImage(named: key.rawValue, in: bundle)
-        }
-
-        if image == nil {
-            print("3", file)
-
-            if let fileURL = URL(string: "file:\(file)") {
-                print("3.1")
-                image = localImage(named: key.rawValue, in: Bundle(url: fileURL))
-            }
-        }
-
-        if image == nil {
-            image = localImage(named: key.rawValue, in: .main)
-        }
-
-        if image == nil {
-            image = localImage(named: key.rawValue, in: Bundle(for: BrandingManager.self))
-        }
-
-        if image == nil {
-            print("Failed to find \(key.rawValue) in any bundle")
-        }
-
-        return image
+        return UIImageView.thingImage(key, file: file, in: bundle)
     }
 }
 
