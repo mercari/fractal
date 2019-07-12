@@ -30,7 +30,7 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
                 switchOption("Dark Mode", observedBool: darkModeObserved),
                 information("Version", detailClosure: { "0.2" })
                 ]),
-            spacing(),
+            spacing(32.0),
             singleButton("Remove All Branding", tappedClosure: { [weak self] in self?.removeBranding() })
         ]
     }
