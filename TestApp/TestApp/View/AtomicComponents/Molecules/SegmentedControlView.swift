@@ -26,8 +26,8 @@ public class SegmentedControlView: UIView {
     }
 
     private func setupForDesign() {
-        backgroundColor = .background()
-        segmentedControl.tintColor = .brand()
+        backgroundColor = .background
+        segmentedControl.tintColor = .brand
         addSubview(segmentedControl)
         segmentedControl.pin(to: self, [.leading(.keyline), .trailing(-.keyline), .centerY])
         pin([.height(asConstant: BrandingManager.brand.defaultCellHeight)])

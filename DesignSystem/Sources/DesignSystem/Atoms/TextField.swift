@@ -35,8 +35,8 @@ final public class TextField: UITextField {
 
     private func setup() {
         font = typography.font
-        textColor = .text()
-        tintColor = .brand()
+        textColor = .text
+        tintColor = .brand
         backgroundColor = .clear
         keyboardAppearance = BrandingManager.brand.keyboardAppearance
     }

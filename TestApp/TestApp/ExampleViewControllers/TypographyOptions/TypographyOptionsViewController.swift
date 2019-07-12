@@ -17,7 +17,7 @@ class TypographyViewController: UIViewController, SectionBuilder {
     override func viewDidLoad() {
         title = "TypographyVC"
         super.viewDidLoad()
-        view.backgroundColor = .background()
+        view.backgroundColor = .background
         DependencyRegistry.shared.prepare(viewController: self)
 
         let sliderSection = slider(steps: Float(viewModel.accessibilityOptions.count - 1),

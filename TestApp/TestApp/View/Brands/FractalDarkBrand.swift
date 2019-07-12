@@ -19,27 +19,29 @@ class FractalDarkBrand: Brand {
 
     var defaultCellHeight: CGFloat = 52.0
 
+    var resourceBundle: Bundle? = .main
+
     public func setAppearance() {
 
         let attributes: [NSAttributedString.Key: AnyObject] = [
             NSAttributedString.Key.font: BrandingManager.Typography.large.font,
-            NSAttributedString.Key.foregroundColor: UIColor.brand()]
+            NSAttributedString.Key.foregroundColor: UIColor.brand]
 
         let largeAttributes: [NSAttributedString.Key: AnyObject] = [
             NSAttributedString.Key.font: BrandingManager.Typography.xxlarge.font,
-            NSAttributedString.Key.foregroundColor: UIColor.brand()]
+            NSAttributedString.Key.foregroundColor: UIColor.brand]
 
         UINavigationBar.appearance().titleTextAttributes = attributes
         UINavigationBar.appearance().largeTitleTextAttributes = largeAttributes
-        UINavigationBar.appearance().shadowImage = UIImage(color: .brand())
+        UINavigationBar.appearance().shadowImage = UIImage(color: .brand)
        // UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .background()
-        UINavigationBar.appearance().tintColor = .brand()
+        UINavigationBar.appearance().barTintColor = .background
+        UINavigationBar.appearance().tintColor = .brand
 
-        UITabBar.appearance().shadowImage = UIImage(color: .divider())
+        UITabBar.appearance().shadowImage = UIImage(color: .divider)
         UITabBar.appearance().isOpaque = true
-        UITabBar.appearance().barTintColor = .background()
-        UITabBar.appearance().tintColor = .brand()
+        UITabBar.appearance().barTintColor = .background
+        UITabBar.appearance().tintColor = .brand
 
         let tabFont = BrandingManager.Typography.xsmall.font
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: tabFont],
@@ -48,10 +50,10 @@ class FractalDarkBrand: Brand {
                                                          for: .selected)
     }
 
-    func image(for key: UIImage.Key) -> UIImage? {
+    func imageName(for key: UIImage.Key) -> String? {
         switch key {
         case .logo:
-            return UIImage(named: "fractal_large_dark")
+            return "fractal_large_dark"
         default:
             return nil
         }
@@ -285,8 +287,8 @@ extension FractalDarkBrand: ButtonBrand {
         switch style {
         case .primary:
             button.setTitleColor(.text(.light), for: .normal)
-            button.setBackgroundColor(.brand(), for: .normal)
-            button.setBackgroundColor(UIColor.brand().lighter(0.1), for: .highlighted)
+            button.setBackgroundColor(.brand, for: .normal)
+            button.setBackgroundColor(UIColor.brand.lighter(0.1), for: .highlighted)
             button.layer.borderWidth = 0.0
         case .secondary:
             button.setTitleColor(.atom(.warning), for: .normal)
@@ -302,14 +304,14 @@ extension FractalDarkBrand: ButtonBrand {
             button.layer.borderWidth = 0.0
         case .toggle:
             button.setTitleColor(.text(.light), for: .normal)
-            button.setBackgroundColor(.brand(), for: .normal)
-            button.setBackgroundColor(UIColor.brand().lighter(0.1), for: .highlighted)
-            button.setBackgroundColor(UIColor.brand().lighter(0.1), for: .selected)
+            button.setBackgroundColor(.brand, for: .normal)
+            button.setBackgroundColor(UIColor.brand.lighter(0.1), for: .highlighted)
+            button.setBackgroundColor(UIColor.brand.lighter(0.1), for: .selected)
             button.layer.borderWidth = 0.0
         default:
             button.setTitleColor(.text(.light), for: .normal)
-            button.setBackgroundColor(.text(), for: .normal)
-            button.setBackgroundColor(UIColor.text().lighter(0.1), for: .highlighted)
+            button.setBackgroundColor(.text, for: .normal)
+            button.setBackgroundColor(UIColor.text.lighter(0.1), for: .highlighted)
             button.layer.borderWidth = 0.0
         }
     }

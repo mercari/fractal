@@ -29,6 +29,6 @@ public final class Switch: UISwitch {
     }
 
     private func updateForDark() {
-        thumbTintColor = dark ? .text() : nil
+        thumbTintColor = dark ? .text : nil
     }
 }

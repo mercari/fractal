@@ -32,7 +32,8 @@ class IconSelectView: UIView {
     }()
 
     var selectedImageView: ImageView = {
-        let imageView = ImageView(.check, in: BrandingManager.self)
+        let imageView = ImageView(.check, renderingMode: .alwaysTemplate)
+        imageView.tintColor = .atom(.check)
         imageView.contentMode = UIView.ContentMode.bottomRight
         return imageView
     }()

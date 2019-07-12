@@ -16,7 +16,7 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
     override func viewDidLoad() {
         title = "Settings"
         super.viewDidLoad()
-        view.backgroundColor = .background()
+        view.backgroundColor = .background
         view.addSubview(bounceImageView)
         view.sendSubviewToBack(bounceImageView)
         bounceImageView.pin(to: view, [.top, .centerX, .width, .height(asConstant: 400.0)])
@@ -44,7 +44,7 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
 
     private var bounceImageView: BounceScaleImageView = {
         let imageView = BounceScaleImageView(imageHeight: 400.0, withBlur: false)
-        imageView.image = .image(.logo)
+        imageView.image = .with(.logo)
         return imageView
     }()
 }

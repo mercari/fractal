@@ -18,6 +18,23 @@ private var globalDateManager = DateManager()
 
 infix operator ====
 
+public protocol Brand {
+    var id: String { get }
+    var keyboardAppearance: UIKeyboardAppearance { get }
+    var preferredStatusBarStyle: UIStatusBarStyle { get }
+    var defaultCellHeight: CGFloat { get }
+    var resourceBundle: Bundle? { get }
+    func setAppearance()
+    func imageName(for key: UIImage.Key) -> String?
+    func value(for spacing: BrandingManager.Spacing) -> CGFloat
+    func value(for size: BrandingManager.IconSize) -> CGSize
+    func value(for color: BrandingManager.Color) -> UIColor
+    func fontName(for fontWeight: UIFont.Weight) -> String?
+    func fontSize(for typography: BrandingManager.Typography) -> CGFloat
+    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight
+    var rawPalette: [BrandingManager.PaletteOption] { get }
+}
+
 public class BrandingManager {
 
     public static let didChange = "DesignSystem_DidChange"
@@ -93,6 +110,9 @@ public class BrandingManager {
             xxlarge
         }
 
+        private let style: Style
+        private var modifiers: [Modifier]
+
         public enum Modifier: String, CaseIterable {
             case strong,
             noAccessibility
@@ -109,30 +129,6 @@ public class BrandingManager {
             return true
         }
 
-        public static let xxsmall = Typography(.xxsmall)
-        public static let xsmall = Typography(.xsmall)
-        public static let small = Typography(.small)
-        public static let medium = Typography(.medium)
-        public static let large = Typography(.large)
-        public static let xlarge = Typography(.xlarge)
-        public static let xxlarge = Typography(.xxlarge)
-
-        public static func xxsmall(_ modifier: Modifier) -> Typography { return Typography(.xxsmall, [modifier]) }
-        public static func xsmall(_ modifier: Modifier) -> Typography  { return Typography(.xsmall, [modifier]) }
-        public static func small(_ modifier: Modifier) -> Typography   { return Typography(.small, [modifier]) }
-        public static func medium(_ modifier: Modifier) -> Typography  { return Typography(.medium, [modifier]) }
-        public static func large(_ modifier: Modifier) -> Typography   { return Typography(.large, [modifier]) }
-        public static func xlarge(_ modifier: Modifier) -> Typography  { return Typography(.xlarge, [modifier]) }
-        public static func xxlarge(_ modifier: Modifier) -> Typography { return Typography(.xxlarge, [modifier]) }
-
-        public static func xxsmall(_ modifiers: [Modifier]) -> Typography { return Typography(.xxsmall, modifiers) }
-        public static func xsmall(_ modifiers: [Modifier]) -> Typography  { return Typography(.xsmall, modifiers) }
-        public static func small(_ modifiers: [Modifier]) -> Typography   { return Typography(.small, modifiers) }
-        public static func medium(_ modifiers: [Modifier]) -> Typography  { return Typography(.medium, modifiers) }
-        public static func large(_ modifiers: [Modifier]) -> Typography   { return Typography(.large, modifiers) }
-        public static func xlarge(_ modifiers: [Modifier]) -> Typography  { return Typography(.xlarge, modifiers) }
-        public static func xxlarge(_ modifiers: [Modifier]) -> Typography { return Typography(.xxlarge, modifiers) }
-
         public static var allCases: [Typography] {
             let basic = [.xxsmall, .xsmall, .small, .medium, large, xlarge, xxlarge]
             let str = basic.map { Typography($0.style, [.strong]) }
@@ -140,9 +136,6 @@ public class BrandingManager {
             let strNoAcc = basic.map { Typography($0.style, [.strong, .noAccessibility]) }
             return basic + str + noAcc + strNoAcc
         }
-
-        private let style: Style
-        private var modifiers: [Modifier]
 
         fileprivate init(_ style: Style, _ modifiers: [Modifier] = []) {
             self.style = style
@@ -156,43 +149,26 @@ public class BrandingManager {
             return string
         }
 
-        public var useAccessibility: Bool {
-            return !modifiers.contains(.noAccessibility)
-        }
-
-        public var isStrong: Bool {
-            return modifiers.contains(.strong)
-        }
-
-        public var fontSize: CGFloat {
-            return BrandingManager.brand.fontSize(for: self)
-        }
-
-        // Apple font weights
-        // ultraLight, thin, light, regular, medium, semibold, bold, heavy, strong, black
-        public var fontWeight: UIFont.Weight {
-            return BrandingManager.brand.fontWeight(for: self)
-        }
-
-        public var lineHeight: CGFloat {
-            return font.lineHeight
-        }
-
         public var font: UIFont {
             let name = BrandingManager.brand.fontName(for: fontWeight)
             let defaultFont: UIFont = .systemFont(ofSize: fontSize, weight: fontWeight)
-
             guard let fontName = name else { return defaultFont }
             return UIFont(name: fontName, size: fontSize) ?? defaultFont
         }
 
-        public var defaultColor: UIColor {
-            return .text()
-        }
-    }
+        // Apple font weights
+        // ultraLight, thin, light, regular, medium, semibold, bold, heavy, strong, black
+        public var fontWeight: UIFont.Weight { return BrandingManager.brand.fontWeight(for: self) }
 
-    public static var dateManager: DateManager {
-        return globalDateManager
+        public var useAccessibility: Bool { return !modifiers.contains(.noAccessibility) }
+
+        public var isStrong: Bool { return modifiers.contains(.strong) }
+
+        public var fontSize: CGFloat { return BrandingManager.brand.fontSize(for: self) }
+
+        public var lineHeight: CGFloat { return font.lineHeight }
+
+        public var defaultColor: UIColor { return .text } // TODO: put inside brand
     }
 
     public static func set(brand: Brand) {
@@ -222,6 +198,10 @@ public class BrandingManager {
         return defaultBrand
     }
 
+    public static var dateManager: DateManager {
+        return globalDateManager
+    }
+
     public static func subscribeToNotifications() {
         notificationObject = NotificationCenter.default.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: nil, queue: nil) { (_) in
             NotificationCenter.default.post(name: Notification.Name(rawValue: BrandingManager.didChange), object: nil)
@@ -236,42 +216,55 @@ public class BrandingManager {
     }
 }
 
-public protocol Brand {
-    var id: String { get }
-    var keyboardAppearance: UIKeyboardAppearance { get }
-    var preferredStatusBarStyle: UIStatusBarStyle { get }
-    var defaultCellHeight: CGFloat { get }
-    func setAppearance()
-    func image(for key: UIImage.Key) -> UIImage?
-    func value(for spacing: BrandingManager.Spacing) -> CGFloat
-    func value(for size: BrandingManager.IconSize) -> CGSize
-    func value(for color: BrandingManager.Color) -> UIColor
-    func fontName(for fontWeight: UIFont.Weight) -> String?
-    func fontSize(for typography: BrandingManager.Typography) -> CGFloat
-    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight
-    var rawPalette: [BrandingManager.PaletteOption] { get }
+public extension BrandingManager.Typography {
+
+    static let xxsmall = BrandingManager.Typography(.xxsmall)
+    static let xsmall = BrandingManager.Typography(.xsmall)
+    static let small = BrandingManager.Typography(.small)
+    static let medium = BrandingManager.Typography(.medium)
+    static let large = BrandingManager.Typography(.large)
+    static let xlarge = BrandingManager.Typography(.xlarge)
+    static let xxlarge = BrandingManager.Typography(.xxlarge)
+
+    static func xxsmall(_ modifier: Modifier) -> BrandingManager.Typography { return BrandingManager.Typography(.xxsmall, [modifier]) }
+    static func xsmall(_ modifier: Modifier)  -> BrandingManager.Typography { return BrandingManager.Typography(.xsmall, [modifier]) }
+    static func small(_ modifier: Modifier)   -> BrandingManager.Typography { return BrandingManager.Typography(.small, [modifier]) }
+    static func medium(_ modifier: Modifier)  -> BrandingManager.Typography { return BrandingManager.Typography(.medium, [modifier]) }
+    static func large(_ modifier: Modifier)   -> BrandingManager.Typography { return BrandingManager.Typography(.large, [modifier]) }
+    static func xlarge(_ modifier: Modifier)  -> BrandingManager.Typography { return BrandingManager.Typography(.xlarge, [modifier]) }
+    static func xxlarge(_ modifier: Modifier) -> BrandingManager.Typography { return BrandingManager.Typography(.xxlarge, [modifier]) }
+
+    static func xxsmall(_ modifiers: [Modifier]) -> BrandingManager.Typography { return BrandingManager.Typography(.xxsmall, modifiers) }
+    static func xsmall(_ modifiers: [Modifier])  -> BrandingManager.Typography { return BrandingManager.Typography(.xsmall, modifiers) }
+    static func small(_ modifiers: [Modifier])   -> BrandingManager.Typography { return BrandingManager.Typography(.small, modifiers) }
+    static func medium(_ modifiers: [Modifier])  -> BrandingManager.Typography { return BrandingManager.Typography(.medium, modifiers) }
+    static func large(_ modifiers: [Modifier])   -> BrandingManager.Typography { return BrandingManager.Typography(.large, modifiers) }
+    static func xlarge(_ modifiers: [Modifier])  -> BrandingManager.Typography { return BrandingManager.Typography(.xlarge, modifiers) }
+    static func xxlarge(_ modifiers: [Modifier]) -> BrandingManager.Typography { return BrandingManager.Typography(.xxlarge, modifiers) }
 }
 
 public extension CGFloat { // Spacing and size
 
-    static var xxsmall: CGFloat     { return BrandingManager.brand.value(for: .xxsmall) }
-    static var xsmall: CGFloat      { return BrandingManager.brand.value(for: .xsmall) }
-    static var small: CGFloat       { return BrandingManager.brand.value(for: .small) }
-    static var medium: CGFloat      { return BrandingManager.brand.value(for: .medium) }
-    static var large: CGFloat       { return BrandingManager.brand.value(for: .large) }
-    static var xlarge: CGFloat      { return BrandingManager.brand.value(for: .xlarge) }
-    static var xxlarge: CGFloat     { return BrandingManager.brand.value(for: .xxlarge) }
-    static var xxxlarge: CGFloat    { return BrandingManager.brand.value(for: .xxxlarge) }
+    static var xxsmall:  CGFloat { return BrandingManager.brand.value(for: .xxsmall) }
+    static var xsmall:   CGFloat { return BrandingManager.brand.value(for: .xsmall) }
+    static var small:    CGFloat { return BrandingManager.brand.value(for: .small) }
+    static var medium:   CGFloat { return BrandingManager.brand.value(for: .medium) }
+    static var large:    CGFloat { return BrandingManager.brand.value(for: .large) }
+    static var xlarge:   CGFloat { return BrandingManager.brand.value(for: .xlarge) }
+    static var xxlarge:  CGFloat { return BrandingManager.brand.value(for: .xxlarge) }
+    static var xxxlarge: CGFloat { return BrandingManager.brand.value(for: .xxxlarge) }
 
-    static var keyline: CGFloat     { return BrandingManager.brand.value(for: .keyline) }
-    static var divider: CGFloat     { return BrandingManager.brand.value(for: .divider) }
+    static var keyline:  CGFloat { return BrandingManager.brand.value(for: .keyline) }
+    static var divider:  CGFloat { return BrandingManager.brand.value(for: .divider) }
+}
+
+public extension UIImageView {
+    convenience init(_ key: UIImage.Key, file: String = #file, in bundle: Bundle? = nil, renderingMode: UIImage.RenderingMode = .alwaysOriginal) {
+        self.init(image: UIImage.with(key, file: file, in: bundle)?.withRenderingMode(renderingMode))
+    }
 }
 
 public extension UIImage {
-
-    static func image(_ key: Key) -> UIImage? {
-        return BrandingManager.brand.image(for: key)
-    }
 
     struct Key: Equatable, RawRepresentable {
         public let rawValue: String
@@ -288,56 +281,83 @@ public extension UIImage {
             return lhs.rawValue == rhs.rawValue
         }
     }
-}
 
-public extension UIImageView {
+    static func with(_ key: Key, file: String = #file, in bundle: Bundle? = nil) -> UIImage? {
 
-    convenience init(_ key: UIImage.Key, in locality: AnyClass? = nil, renderingMode: UIImage.RenderingMode = .alwaysOriginal) {
-        self.init(image: UIImageView.localImage(named: key.rawValue, in: locality))
-    }
-
-    fileprivate static func localImage(named name: String, in locality: AnyClass?) -> UIImage? {
-        guard let image = UIImage(named: name, in: Bundle(for: locality ?? self), compatibleWith: nil) else {
-            assertionFailure("failed to find image \(name)")
-            return nil
+        func localImage(named name: String, in bundle: Bundle?) -> UIImage? {
+            return UIImage(named: name, in: bundle, compatibleWith: nil)
         }
+
+        var image: UIImage? = nil
+
+        if let bundle = bundle {
+            image = localImage(named: key.rawValue, in: bundle)
+        }
+
+        if image == nil, let bundle = BrandingManager.brand.resourceBundle {
+            image = localImage(named: key.rawValue, in: bundle)
+        }
+
+        if image == nil {
+            print("3", file)
+
+            if let fileURL = URL(string: "file:\(file)") {
+                print("3.1")
+                image = localImage(named: key.rawValue, in: Bundle(url: fileURL))
+            }
+        }
+
+        if image == nil {
+            image = localImage(named: key.rawValue, in: .main)
+        }
+
+        if image == nil {
+            image = localImage(named: key.rawValue, in: Bundle(for: BrandingManager.self))
+        }
+
+        if image == nil {
+            print("Failed to find \(key.rawValue) in any bundle")
+        }
+
         return image
     }
 }
 
 public extension CGSize { // IconSize
 
-    static var xsmallIcon: CGSize  { return BrandingManager.brand.value(for: .xsmall) }
-    static var smallIcon: CGSize   { return BrandingManager.brand.value(for: .small) }
-    static var mediumIcon: CGSize  { return BrandingManager.brand.value(for: .medium) }
-    static var largeIcon: CGSize   { return BrandingManager.brand.value(for: .large) }
-    static var xlargeIcon: CGSize  { return BrandingManager.brand.value(for: .xlarge) }
+    static var xsmallIcon:  CGSize { return BrandingManager.brand.value(for: .xsmall) }
+    static var smallIcon:   CGSize { return BrandingManager.brand.value(for: .small) }
+    static var mediumIcon:  CGSize { return BrandingManager.brand.value(for: .medium) }
+    static var largeIcon:   CGSize { return BrandingManager.brand.value(for: .large) }
+    static var xlargeIcon:  CGSize { return BrandingManager.brand.value(for: .xlarge) }
     static var xxlargeIcon: CGSize { return BrandingManager.brand.value(for: .xxlarge) }
 }
 
 public extension UIColor {
 
-    static func atom(_ key: BrandingManager.Color.Key = BrandingManager.Color.Key("")) -> UIColor {
+    static var atom:       UIColor { return .atom(.primary) }
+    static var brand:      UIColor { return .brand(.primary) }
+    static var background: UIColor { return .background(.primary) }
+    static var text:       UIColor { return .text(.primary) }
+    static var divider:    UIColor { return .divider(.primary) }
+
+    static func atom(_ key: BrandingManager.Color.Key = .primary) -> UIColor {
         return BrandingManager.brand.value(for: .atom(key))
     }
 
-    static func brand(_ key: BrandingManager.Color.Key = BrandingManager.Color.Key("")) -> UIColor {
+    static func brand(_ key: BrandingManager.Color.Key = .primary) -> UIColor {
         return BrandingManager.brand.value(for: .brand(key))
     }
 
-    static func background(_ key: BrandingManager.Color.Key = BrandingManager.Color.Key("")) -> UIColor {
+    static func background(_ key: BrandingManager.Color.Key = .primary) -> UIColor {
         return BrandingManager.brand.value(for: .background(key))
     }
 
-    static func text(_ key: BrandingManager.Color.Key = BrandingManager.Color.Key("")) -> UIColor {
+    static func text(_ key: BrandingManager.Color.Key = .primary) -> UIColor {
         return BrandingManager.brand.value(for: .text(key))
     }
 
-    static func divider(_ key: BrandingManager.Color.Key = BrandingManager.Color.Key("")) -> UIColor {
+    static func divider(_ key: BrandingManager.Color.Key = .primary) -> UIColor {
         return BrandingManager.brand.value(for: .divider(key))
     }
-}
-
-public extension UIStatusBarStyle {
-    static var brand: UIStatusBarStyle { return BrandingManager.brand.preferredStatusBarStyle }
 }

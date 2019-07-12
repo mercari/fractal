@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DefaultBrand: Brand {
+class DefaultBrand: NSObject, Brand {
 
     var id: String = "DefaultBrand"
 
@@ -18,11 +18,13 @@ class DefaultBrand: Brand {
 
     var defaultCellHeight: CGFloat = 44.0
 
+    var resourceBundle: Bundle? { return nil }
+
     func setAppearance() {
 
     }
 
-    func image(for key: UIImage.Key) -> UIImage? {
+    func imageName(for key: UIImage.Key) -> String? {
         return nil
     }
 
@@ -234,16 +236,16 @@ extension DefaultBrand: ButtonBrand {
         switch style {
         case .primary:
             button.setTitleColor(.text(.light), for: .normal)
-            button.setBackgroundColor(.brand(), for: .normal)
-            button.setBackgroundColor(UIColor.brand().darker(), for: .highlighted)
+            button.setBackgroundColor(.brand, for: .normal)
+            button.setBackgroundColor(UIColor.brand.darker(), for: .highlighted)
             button.layer.borderWidth = 0.0
         case .secondary:
-            button.setTitleColor(.brand(), for: .normal)
-            button.setTitleColor(UIColor.brand().darker(), for: .highlighted)
+            button.setTitleColor(.brand, for: .normal)
+            button.setTitleColor(UIColor.brand.darker(), for: .highlighted)
             button.setBackgroundColor(.clear, for: .normal)
-            button.setBackgroundColor(UIColor.brand(), for: .highlighted)
+            button.setBackgroundColor(UIColor.brand, for: .highlighted)
             button.layer.borderWidth = 2.0
-            button.layer.borderColor = UIColor.brand().cgColor
+            button.layer.borderColor = UIColor.brand.cgColor
         case .attention:
             button.setTitleColor(.text(.light), for: .normal)
             button.setBackgroundColor(.atom(.warning), for: .normal)
@@ -251,14 +253,14 @@ extension DefaultBrand: ButtonBrand {
             button.layer.borderWidth = 0.0
         case .toggle:
             button.setTitleColor(.text(.light), for: .normal)
-            button.setBackgroundColor(.brand(), for: .normal)
-            button.setBackgroundColor(UIColor.brand().darker(), for: .highlighted)
-            button.setBackgroundColor(UIColor.brand().darker().darker(), for: .selected)
+            button.setBackgroundColor(.brand, for: .normal)
+            button.setBackgroundColor(UIColor.brand.darker(), for: .highlighted)
+            button.setBackgroundColor(UIColor.brand.darker().darker(), for: .selected)
             button.layer.borderWidth = 0.0
         default:
             button.setTitleColor(.text(.light), for: .normal)
-            button.setBackgroundColor(.text(), for: .normal)
-            button.setBackgroundColor(UIColor.text().darker(), for: .highlighted)
+            button.setBackgroundColor(.text, for: .normal)
+            button.setBackgroundColor(UIColor.text.darker(), for: .highlighted)
             button.layer.borderWidth = 0.0
         }
     }

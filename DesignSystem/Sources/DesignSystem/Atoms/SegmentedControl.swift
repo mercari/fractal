@@ -24,7 +24,7 @@ public class SegmentedControl: UISegmentedControl {
     }
 
     private func setup() {
-        tintColor = .brand()
+        tintColor = .brand
         backgroundColor = .clear
     }
 

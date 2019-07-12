@@ -125,7 +125,7 @@ public class CardView: UIView {
         } else if let bgColor = contentScrollView?.backgroundColor, bgColor != .clear {
             backgroundColor = bgColor
         } else {
-            backgroundColor = .background()
+            backgroundColor = .background
         }
     }
     

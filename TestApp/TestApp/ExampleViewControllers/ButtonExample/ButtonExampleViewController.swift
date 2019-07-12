@@ -24,7 +24,7 @@ class ButtonExampleViewController: UIViewController, SectionBuilder {
     override func viewDidLoad() {
         title = "ButtonExampleVC"
         super.viewDidLoad()
-        view.backgroundColor = .background()
+        view.backgroundColor = .background
         DependencyRegistry.shared.prepare(viewController: self)
 
         sectionTableViewController.dataSource.sections = [

@@ -25,7 +25,7 @@ class FilteringTableViewController: UIViewController, SectionBuilder {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .background()
+        self.view.backgroundColor = .background
         self.title = "Filter"
 
         guard #available(iOS 11.0, *) else { fatalError("This sample app only works on iOS 11+") }

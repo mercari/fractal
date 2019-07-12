@@ -22,7 +22,7 @@ class MainMenuViewController: SectionTableViewController, SectionBuilder {
     override func viewDidLoad() {
         title = "Fractal"
         super.viewDidLoad()
-        view.backgroundColor = .background()
+        view.backgroundColor = .background
         DependencyRegistry.shared.prepare(viewController: self)
 
         didPullDownToRefreshClosure = { [weak self] in

@@ -37,7 +37,7 @@ public class SizeOptionView: UIView {
 
         if size.width == 0.0 {
             wConstraint?.constant = .xsmall
-            sizeView.backgroundColor = UIColor.brand().alpha(0.5)
+            sizeView.backgroundColor = UIColor.brand.alpha(0.5)
             sizeView.layer.borderWidth = 1.0
         } else {
             wConstraint?.constant = size.width
@@ -51,7 +51,7 @@ public class SizeOptionView: UIView {
     private lazy var sizeView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.borderColor = UIColor.brand().cgColor
+        view.layer.borderColor = UIColor.brand.cgColor
 
         return view
     }()

@@ -28,7 +28,7 @@ public class NavigationOptionView: UIView {
     }
 
     public static let typography: BrandingManager.Typography = .medium
-    public static let detailDisclosureWidth: CGFloat = ImageView(.detailDisclosure, in: BrandingManager.self).frame.size.width
+    public static let detailDisclosureWidth: CGFloat = ImageView(.detailDisclosure).frame.size.width
 
     private let style: Style
 
@@ -101,7 +101,7 @@ public class NavigationOptionView: UIView {
     }()
 
     private var disclosureImageView: ImageView = {
-        let imageView = ImageView(.detailDisclosure, in: BrandingManager.self, renderingMode: .alwaysTemplate)
+        let imageView = ImageView(.detailDisclosure, renderingMode: .alwaysTemplate)
         imageView.contentMode = .center
         imageView.tintColor = .atom(.detailDisclosure)
         return imageView
