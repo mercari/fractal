@@ -10,6 +10,7 @@ import Foundation
 
 extension Section {
     public func willReload() { }
+    public func pullData() { }
     public var itemCount: Int { return 0 }
     public var hasInputs: Bool { return false }
 

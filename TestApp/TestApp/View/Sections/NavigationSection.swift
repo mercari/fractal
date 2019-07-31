@@ -17,19 +17,20 @@ public protocol NavigationOption {
 
 extension SectionBuilder {
     public func navigationOptions(_ optionsClosure: @escaping () -> [NavigationOption], style: NavigationOptionView.Style = .default, selectionClosure:  @escaping (Int, NavigationOption) -> Void) -> NavigationSection {
-        return NavigationSection(optionsClosure, style: style, selectionClosure: selectionClosure)
+        return NavigationSection(style, selectionClosure: selectionClosure).enumerate(optionsClosure) as! NavigationSection
     }
 }
 
+extension NavigationSection: EnumeratableSection {
+    public typealias DataType = NavigationOption
+}
+
 public class NavigationSection {
-    fileprivate let optionsClosure: () -> [NavigationOption]
-    fileprivate var staticOptions: [NavigationOption]
+
     fileprivate let style: NavigationOptionView.Style
     fileprivate let selectionClosure: (Int, NavigationOption) -> Void
 
-    public init(_ optionsClosure: @escaping () -> [NavigationOption], style: NavigationOptionView.Style = .default, selectionClosure: @escaping (Int, NavigationOption) -> Void) {
-        self.optionsClosure = optionsClosure
-        self.staticOptions = optionsClosure()
+    public init(_ style: NavigationOptionView.Style = .default, selectionClosure: @escaping (Int, NavigationOption) -> Void) {
         self.style = style
         self.selectionClosure = selectionClosure
     }
@@ -48,10 +49,6 @@ extension NavigationSection: ViewSection {
         }
     }
 
-    public func willReload() {
-        staticOptions = optionsClosure()
-    }
-
     public func createView() -> UIView {
         return NavigationOptionView(style: style)
     }
@@ -61,7 +58,7 @@ extension NavigationSection: ViewSection {
         switch style {
         case .detail:
 
-            let option = staticOptions[index]
+            let option = data[index]
             let textWidth = view.bounds.size.width - (.keyline*2 + .small + NavigationOptionView.detailDisclosureWidth)
             var textHeight = option.title.height(typography: NavigationOptionView.typography, width: textWidth, maxLines: 3)
 
@@ -78,17 +75,13 @@ extension NavigationSection: ViewSection {
         return SectionCellSize(width: view.bounds.size.width, height: nil)
     }
 
-    public var itemCount: Int {
-        return staticOptions.count
-    }
-
     public func configure(_ view: UIView, at index: Int) {
-        let option = staticOptions[index]
+        let option = data[index]
         (view as? NavigationOptionView)?.set(title: option.title, detail: option.detail)
     }
 
     public func didSelect(_ view: UIView, at index: Int) {
-        let option = staticOptions[index]
+        let option = data[index]
         selectionClosure(index, option)
     }
 }

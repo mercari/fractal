@@ -11,16 +11,23 @@ import DesignSystem
 
 extension SectionBuilder {
     public func headline(_ title: String, style: HeadlineView.Style = .default) -> HeadlineSection {
-        return HeadlineSection(title, style: style)
+        return HeadlineSection(style).enumerate({ [title] }) as! HeadlineSection
+    }
+
+    public func headline(_ style: HeadlineView.Style = .default) -> HeadlineSection {
+        return HeadlineSection(style)
+    }
+
+    public func headline(_ style: HeadlineView.Style = .default, _ data: @escaping () -> [String]) -> HeadlineSection {
+        return HeadlineSection(style).enumerate(data) as! HeadlineSection
     }
 }
 
 public class HeadlineSection {
-    fileprivate let title: String
+
     fileprivate let style: HeadlineView.Style
 
-    public init(_ title: String, style: HeadlineView.Style = .default) {
-        self.title = title
+    public init(_ style: HeadlineView.Style = .default) {
         self.style = style
     }
 }
@@ -36,11 +43,15 @@ extension HeadlineSection: ViewSection {
     }
 
     public func size(in view: UIView, at index: Int) -> SectionCellSize {
-        let textHeight = title.height(typography: style.typography, width: view.bounds.size.width - .keyline*2)
+        let textHeight = data[index].height(typography: style.typography, width: view.bounds.size.width - .keyline*2)
         return SectionCellSize(width: view.bounds.size.width, height: textHeight + .small + style.topPadding)
     }
     
     public func configure(_ view: UIView, at index: Int) {
-        (view as? HeadlineView)?.set(text: self.title)
+        (view as? HeadlineView)?.set(text: data[index])
     }
+}
+
+extension HeadlineSection: EnumeratableSection {
+    public typealias DataType = String
 }

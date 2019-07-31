@@ -24,18 +24,7 @@ extension SectionCollectionViewController: SectionController {
             data.registerCells(in: collectionView, with: &registeredReuseIdentifiers)
         }
 
-        if indexes.count > 0 {
-            for index in indexes {
-                let section = data.sections[index]
-                if let n = section as? NestedSection { notifyNestOfReload(n) }
-                section.willReload()
-            }
-        } else {
-            for section in data.sections {
-                if let n = section as? NestedSection { notifyNestOfReload(n) }
-                section.willReload()
-            }
-        }
+        data.notifySectionsOfReload(in: indexes)
 
         DispatchQueue.main.async {
 
@@ -69,13 +58,6 @@ extension SectionCollectionViewController: SectionController {
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
         collectionView.refreshControl?.perform(#selector(collectionView.refreshControl?.endRefreshing), with: nil, afterDelay: 0.2, inModes: [RunLoop.Mode.common])
-    }
-
-    private func notifyNestOfReload(_ nestedSection: NestedSection) {
-        for section in nestedSection.allSections {
-            section.willReload()
-            if let n = section as? NestedSection { notifyNestOfReload(n) }
-        }
     }
 }
 

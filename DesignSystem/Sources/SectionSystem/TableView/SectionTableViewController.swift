@@ -20,23 +20,11 @@ extension SectionTableViewController: SectionController {
 
     open func reloadSections(at indexes: [Int]) {
 
-        if self.data.newSections {
-            self.data.registerCells(in: self.tableView, with: &self.registeredReuseIdentifiers)
+        if data.newSections {
+            data.registerCells(in: self.tableView, with: &self.registeredReuseIdentifiers)
         }
 
-        if indexes.count > 0 {
-            for index in indexes {
-                guard index < data.sections.count else { continue }
-                let section = data.sections[index]
-                if let n = section as? NestedSection { notifyNestOfReload(n) }
-                section.willReload()
-            }
-        } else {
-            for section in data.sections {
-                if let n = section as? NestedSection { notifyNestOfReload(n) }
-                section.willReload()
-            }
-        }
+        data.notifySectionsOfReload(in: indexes)
 
         DispatchQueue.main.async {
 
@@ -67,13 +55,6 @@ extension SectionTableViewController: SectionController {
     @objc private func reloadRefresh() {
         tableView.reloadData()
         refreshControl?.perform(#selector(refreshControl?.endRefreshing), with: nil, afterDelay: 0.1, inModes: [RunLoop.Mode.common])
-    }
-
-    private func notifyNestOfReload(_ nestedSection: NestedSection) {
-        for section in nestedSection.allSections {
-            section.willReload()
-            if let n = section as? NestedSection { notifyNestOfReload(n) }
-        }
     }
 }
 

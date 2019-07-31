@@ -42,6 +42,32 @@ open class SectionControllerDataSource: NSObject {
         return bedrock(in: sections[indexPath.section], index: indexPath.item)
     }
 
+    func notifySectionsOfReload(in indexes: [Int]) {
+
+        func notifyNestOfReload(_ nestedSection: NestedSection) {
+            for section in nestedSection.allSections {
+                section.pullData()
+                section.willReload()
+                if let n = section as? NestedSection { notifyNestOfReload(n) }
+            }
+        }
+
+        if indexes.count > 0 {
+            for index in indexes {
+                let section = sections[index]
+                if let n = section as? NestedSection { notifyNestOfReload(n) }
+                section.pullData()
+                section.willReload()
+            }
+        } else {
+            for section in sections {
+                if let n = section as? NestedSection { notifyNestOfReload(n) }
+                section.pullData()
+                section.willReload()
+            }
+        }
+    }
+
     public func registerCells(in collectionView: UICollectionView, with registeredReuseIdentifiers: inout Set<String>) {
 
         if registeredReuseIdentifiers.isEmpty {

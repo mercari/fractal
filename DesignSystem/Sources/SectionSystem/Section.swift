@@ -20,6 +20,7 @@ public protocol SectionBuilder {
 public protocol Section: class { // Base for NestedSection and BedrockSection
 
     func willReload()
+    func pullData()
 
     var itemCount: Int { get }
     var hasInputs: Bool { get }
@@ -51,15 +52,6 @@ public protocol BedrockSection: Section { // Base for ViewSection and ViewContro
     func height(in view: UIView, at index: Int) -> CGFloat?
 
     func didSelect(_ view: UIView, at index: Int)
-}
-
-extension BedrockSection {
-    
-    func enumerate<V>(_ closure: (V) -> Void) -> BedrockSection {
-        
-        return self
-    }
-
 }
 
 public protocol ViewSection: BedrockSection {
@@ -113,3 +105,6 @@ public struct SectionCellSize {
         return SectionCellSize(width: nil, height: nil)
     }
 }
+
+
+
