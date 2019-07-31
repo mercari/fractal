@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import DesignSystem
 
 extension SectionBuilder {
     public func group(_ sections: [Section], middleDivider: BedrockSection? = nil) -> GroupSection {

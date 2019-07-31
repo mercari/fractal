@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import DesignSystem
 
 extension SectionBuilder {
     public func divider(_ style: DividerView.Style = .full, backgroundColor: UIColor = .background(.cell), height: CGFloat? = nil) -> DividerSection {

@@ -48,6 +48,8 @@ class DefaultBrand: NSObject, Brand {
             return 128.0
         case .keyline:
             return 16.0
+        case .padding:
+            return 8.0
         case .divider:
             return 1.0
         }

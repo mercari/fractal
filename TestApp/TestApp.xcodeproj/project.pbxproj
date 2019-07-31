@@ -38,9 +38,7 @@
 		9228C5E0229CCE2200B8972B /* NavigationGroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5CE229CCE2100B8972B /* NavigationGroupSection.swift */; };
 		9228C5E1229CCE2200B8972B /* SliderSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5CF229CCE2100B8972B /* SliderSection.swift */; };
 		9228C5E2229CCE2200B8972B /* CarouselSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5D0229CCE2100B8972B /* CarouselSection.swift */; };
-		9228C5E3229CCE2200B8972B /* GroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5D1229CCE2100B8972B /* GroupSection.swift */; };
 		9228C5E4229CCE2200B8972B /* ButtonGroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5D2229CCE2100B8972B /* ButtonGroupSection.swift */; };
-		9228C5E5229CCE2200B8972B /* DividerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5D3229CCE2100B8972B /* DividerSection.swift */; };
 		9228C5E6229CCE2200B8972B /* LoadingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5D4229CCE2100B8972B /* LoadingSection.swift */; };
 		9228C5E7229CCE2200B8972B /* TextViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5D5229CCE2100B8972B /* TextViewSection.swift */; };
 		9228C5E8229CCE2200B8972B /* TextFieldSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C5D6229CCE2100B8972B /* TextFieldSection.swift */; };
@@ -147,9 +145,7 @@
 		9228C5CE229CCE2100B8972B /* NavigationGroupSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationGroupSection.swift; sourceTree = "<group>"; };
 		9228C5CF229CCE2100B8972B /* SliderSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderSection.swift; sourceTree = "<group>"; };
 		9228C5D0229CCE2100B8972B /* CarouselSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselSection.swift; sourceTree = "<group>"; };
-		9228C5D1229CCE2100B8972B /* GroupSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSection.swift; sourceTree = "<group>"; };
 		9228C5D2229CCE2100B8972B /* ButtonGroupSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonGroupSection.swift; sourceTree = "<group>"; };
-		9228C5D3229CCE2100B8972B /* DividerSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerSection.swift; sourceTree = "<group>"; };
 		9228C5D4229CCE2100B8972B /* LoadingSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingSection.swift; sourceTree = "<group>"; };
 		9228C5D5229CCE2100B8972B /* TextViewSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewSection.swift; sourceTree = "<group>"; };
 		9228C5D6229CCE2100B8972B /* TextFieldSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldSection.swift; sourceTree = "<group>"; };
@@ -336,9 +332,7 @@
 				9228C5D2229CCE2100B8972B /* ButtonGroupSection.swift */,
 				9228C5D0229CCE2100B8972B /* CarouselSection.swift */,
 				9228C5CD229CCE2100B8972B /* CheckboxOptionsSection.swift */,
-				9228C5D3229CCE2100B8972B /* DividerSection.swift */,
 				9228C5D9229CCE2200B8972B /* GapSection.swift */,
-				9228C5D1229CCE2100B8972B /* GroupSection.swift */,
 				9228C5D8229CCE2200B8972B /* HeadlineSection.swift */,
 				9228C5DB229CCE2200B8972B /* InformationSection.swift */,
 				9228C5D4229CCE2100B8972B /* LoadingSection.swift */,
@@ -617,7 +611,6 @@
 				92810CB122D70A5200F8F0DE /* IconSelectionSection.swift in Sources */,
 				920962AF226EFB2D00FC8E6F /* TypographyOptionsSection.swift in Sources */,
 				9209629D226EFB2D00FC8E6F /* SelectionAndInfoViewController.swift in Sources */,
-				9228C5E3229CCE2200B8972B /* GroupSection.swift in Sources */,
 				9228C5E4229CCE2200B8972B /* ButtonGroupSection.swift in Sources */,
 				9228C60F229CCEE300B8972B /* SingleButtonView.swift in Sources */,
 				9228C604229CCEE300B8972B /* DividerView.swift in Sources */,
@@ -634,7 +627,6 @@
 				9228C5EE229CCE2200B8972B /* SegmentedOptionsSection.swift in Sources */,
 				920962AE226EFB2D00FC8E6F /* SizeOptionsSection.swift in Sources */,
 				9228C620229F934200B8972B /* BrandingManager+Extensions.swift in Sources */,
-				9228C5E5229CCE2200B8972B /* DividerSection.swift in Sources */,
 				920962A4226EFB2D00FC8E6F /* ColorPaletteViewController.swift in Sources */,
 				9228C5F5229CCE8100B8972B /* FilterViewController.swift in Sources */,
 				92810CB522D7309C00F8F0DE /* IconSelectionCarouselSection.swift in Sources */,

@@ -53,6 +53,15 @@ public protocol BedrockSection: Section { // Base for ViewSection and ViewContro
     func didSelect(_ view: UIView, at index: Int)
 }
 
+extension BedrockSection {
+    
+    func enumerate<V>(_ closure: (V) -> Void) -> BedrockSection {
+        
+        return self
+    }
+
+}
+
 public protocol ViewSection: BedrockSection {
     func createView() -> UIView
     func configure(_ view: UIView, at index: Int)

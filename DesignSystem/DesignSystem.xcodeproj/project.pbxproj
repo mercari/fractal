@@ -41,6 +41,10 @@
 		922F555522BA39C1005ABF39 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922F555222BA39C0005ABF39 /* CardView.swift */; };
 		922F555622BA39C1005ABF39 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922F555322BA39C0005ABF39 /* CardViewController.swift */; };
 		922F555722BA39C1005ABF39 /* DrawerHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922F555422BA39C0005ABF39 /* DrawerHandleView.swift */; };
+		92AC188222E9F69B0002376E /* GroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC188122E9F69B0002376E /* GroupSection.swift */; };
+		92AC188422E9F6BA0002376E /* EnumerationSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC188322E9F6BA0002376E /* EnumerationSection.swift */; };
+		92AC188622E9F6E00002376E /* DividerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC188522E9F6E00002376E /* DividerSection.swift */; };
+		92AC188D22EDB3570002376E /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AC188C22EDB3570002376E /* DividerView.swift */; };
 		92BA39012179829900266383 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BA38F72179829800266383 /* DesignSystem.framework */; };
 		92BA39062179829900266383 /* DesignSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA39052179829900266383 /* DesignSystemTests.swift */; };
 		92EAA29922A01F5F000EB39F /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EAA29822A01F5F000EB39F /* CGFloat+Extensions.swift */; };
@@ -92,6 +96,10 @@
 		922F555222BA39C0005ABF39 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		922F555322BA39C0005ABF39 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		922F555422BA39C0005ABF39 /* DrawerHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerHandleView.swift; sourceTree = "<group>"; };
+		92AC188122E9F69B0002376E /* GroupSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSection.swift; sourceTree = "<group>"; };
+		92AC188322E9F6BA0002376E /* EnumerationSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumerationSection.swift; sourceTree = "<group>"; };
+		92AC188522E9F6E00002376E /* DividerSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerSection.swift; sourceTree = "<group>"; };
+		92AC188C22EDB3570002376E /* DividerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		92BA38F72179829800266383 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BA39002179829900266383 /* DesignSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BA39052179829900266383 /* DesignSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemTests.swift; sourceTree = "<group>"; };
@@ -125,6 +133,7 @@
 				920962E32271518D00FC8E6F /* Extensions */,
 				920962D22271518D00FC8E6F /* Branding */,
 				920962C92271518D00FC8E6F /* Atoms */,
+				92AC188E22EDB35E0002376E /* Molecules */,
 				922F554922BA1650005ABF39 /* Organisms */,
 				920962E12271518D00FC8E6F /* Helpers.swift */,
 				920963602271527E00FC8E6F /* Info.plist */,
@@ -178,6 +187,7 @@
 		920962EE2271518D00FC8E6F /* SectionSystem */ = {
 			isa = PBXGroup;
 			children = (
+				92AC188022E9F68E0002376E /* Sections */,
 				920963062271518E00FC8E6F /* Section.swift */,
 				9228C596229CC31200B8972B /* Section+InputChain.swift */,
 				920963072271518E00FC8E6F /* Section+DefaultValues.swift */,
@@ -223,6 +233,24 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92AC188022E9F68E0002376E /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				92AC188522E9F6E00002376E /* DividerSection.swift */,
+				92AC188122E9F69B0002376E /* GroupSection.swift */,
+				92AC188322E9F6BA0002376E /* EnumerationSection.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		92AC188E22EDB35E0002376E /* Molecules */ = {
+			isa = PBXGroup;
+			children = (
+				92AC188C22EDB3570002376E /* DividerView.swift */,
+			);
+			path = Molecules;
 			sourceTree = "<group>";
 		};
 		92BA38ED2179829800266383 = {
@@ -376,6 +404,7 @@
 				920963372271518E00FC8E6F /* Helpers.swift in Sources */,
 				922F555522BA39C1005ABF39 /* CardView.swift in Sources */,
 				922F555722BA39C1005ABF39 /* DrawerHandleView.swift in Sources */,
+				92AC188622E9F6E00002376E /* DividerSection.swift in Sources */,
 				9228C598229CC31200B8972B /* Section+InputChain.swift in Sources */,
 				920963392271518E00FC8E6F /* UIColor+Extensions.swift in Sources */,
 				922F555622BA39C1005ABF39 /* CardViewController.swift in Sources */,
@@ -386,11 +415,14 @@
 				9228C560229CB21600B8972B /* Slider.swift in Sources */,
 				92EAA29922A01F5F000EB39F /* CGFloat+Extensions.swift in Sources */,
 				920963592271518E00FC8E6F /* Section+DefaultValues.swift in Sources */,
+				92AC188222E9F69B0002376E /* GroupSection.swift in Sources */,
 				9228C565229CB21600B8972B /* SegmentedControl.swift in Sources */,
 				9228C562229CB21600B8972B /* ImageView.swift in Sources */,
 				728D057E2282996000B44543 /* BrandingManager+String.swift in Sources */,
 				9228C561229CB21600B8972B /* TextField.swift in Sources */,
 				728D057B2282996000B44543 /* BrandingManager+UIView.swift in Sources */,
+				92AC188422E9F6BA0002376E /* EnumerationSection.swift in Sources */,
+				92AC188D22EDB3570002376E /* DividerView.swift in Sources */,
 				9209633A2271518E00FC8E6F /* UIView+Pin.swift in Sources */,
 				728D057A2282996000B44543 /* BrandingManager.swift in Sources */,
 				9228C564229CB21600B8972B /* Switch.swift in Sources */,

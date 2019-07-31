@@ -37,6 +37,7 @@ public extension BrandingManager.Color.Key {
     static let secondary = BrandingManager.Color.Key("secondary")
     static let tertiary = BrandingManager.Color.Key("tertiary")
     static let cell = BrandingManager.Color.Key("cell")
+    static let cellSelected = BrandingManager.Color.Key("cellSelected")
     static let detail = BrandingManager.Color.Key("detail")
     static let information = BrandingManager.Color.Key("information")
     static let light = BrandingManager.Color.Key("light")

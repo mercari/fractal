@@ -233,7 +233,7 @@ public class CardView: UIView {
                 hasDraggedCard = true
                 cardDragStart = offset.y
             }
-
+            
             if isTouchingScrollView {
                 contentScrollView?.bounces = false
                 contentScrollView?.showsVerticalScrollIndicator = false

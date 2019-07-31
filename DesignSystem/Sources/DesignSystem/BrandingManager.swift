@@ -86,6 +86,7 @@ public class BrandingManager {
         xxlarge,
         xxxlarge,
         keyline,
+        padding,
         divider
     }
 
@@ -254,6 +255,7 @@ public extension CGFloat { // Spacing and size
     static var xxlarge:  CGFloat { return BrandingManager.brand.value(for: .xxlarge) }
     static var xxxlarge: CGFloat { return BrandingManager.brand.value(for: .xxxlarge) }
 
+    static var padding:  CGFloat { return BrandingManager.brand.value(for: .padding) }
     static var keyline:  CGFloat { return BrandingManager.brand.value(for: .keyline) }
     static var divider:  CGFloat { return BrandingManager.brand.value(for: .divider) }
 }
