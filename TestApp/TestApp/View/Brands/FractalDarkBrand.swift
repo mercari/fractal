@@ -19,35 +19,6 @@ class FractalDarkBrand: Brand {
 
     var defaultCellHeight: CGFloat = 52.0
 
-    public func setAppearance() {
-
-        let attributes: [NSAttributedString.Key: AnyObject] = [
-            NSAttributedString.Key.font: BrandingManager.Typography.large.font,
-            NSAttributedString.Key.foregroundColor: UIColor.brand]
-
-        let largeAttributes: [NSAttributedString.Key: AnyObject] = [
-            NSAttributedString.Key.font: BrandingManager.Typography.xxlarge.font,
-            NSAttributedString.Key.foregroundColor: UIColor.brand]
-
-        UINavigationBar.appearance().titleTextAttributes = attributes
-        UINavigationBar.appearance().largeTitleTextAttributes = largeAttributes
-        UINavigationBar.appearance().shadowImage = UIImage(color: .brand)
-       // UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .background
-        UINavigationBar.appearance().tintColor = .brand
-
-        UITabBar.appearance().shadowImage = UIImage(color: .divider)
-        UITabBar.appearance().isOpaque = true
-        UITabBar.appearance().barTintColor = .background
-        UITabBar.appearance().tintColor = .brand
-
-        let tabFont = BrandingManager.Typography.xsmall.font
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: tabFont],
-                                                         for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: tabFont],
-                                                         for: .selected)
-    }
-
     func imageName(for key: UIImage.Key) -> String? {
         switch key {
         case .logo:
@@ -319,5 +290,33 @@ extension FractalDarkBrand: ButtonBrand {
             button.setBackgroundColor(UIColor.text.lighter(0.1), for: .highlighted)
             button.layer.borderWidth = 0.0
         }
+    }
+}
+
+extension FractalDarkBrand: NavigationControllerBrand {
+    func applyBrand(to navigationBar: UINavigationBar) {
+
+        let attributes: [NSAttributedString.Key: AnyObject] = [
+            NSAttributedString.Key.font: BrandingManager.Typography.large.font,
+            NSAttributedString.Key.foregroundColor: UIColor.brand]
+
+        let largeAttributes: [NSAttributedString.Key: AnyObject] = [
+            NSAttributedString.Key.font: BrandingManager.Typography.xxlarge.font,
+            NSAttributedString.Key.foregroundColor: UIColor.brand]
+
+        navigationBar.titleTextAttributes = attributes
+        navigationBar.largeTitleTextAttributes = largeAttributes
+        navigationBar.shadowImage = UIImage(color: .divider)
+        navigationBar.barTintColor = .background
+        navigationBar.tintColor = .brand
+        navigationBar.isOpaque = true
+    }
+}
+
+extension FractalDarkBrand: TabBarControllerBrand {
+    func applyBrand(to tabBar: UITabBar) {
+        tabBar.shadowImage = UIImage(color: .divider)
+        tabBar.barTintColor = .background
+        tabBar.tintColor = .brand
     }
 }

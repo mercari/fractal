@@ -24,7 +24,6 @@ public protocol Brand {
     var preferredStatusBarStyle: UIStatusBarStyle { get }
     var defaultCellHeight: CGFloat { get }
     var resourceBundle: Bundle? { get }
-    func setAppearance()
     func imageName(for key: UIImage.Key) -> String?
     func value(for spacing: BrandingManager.Spacing) -> CGFloat
     func value(for size: BrandingManager.IconSize) -> CGSize
@@ -179,7 +178,6 @@ public class BrandingManager {
         }
         
         currentBrand = brand
-        brand.setAppearance()
 
         print("Setting Brand:", brand.id)
         if #available(iOS 11.0.0, *), UIApplication.shared.supportsAlternateIcons {
@@ -261,8 +259,8 @@ public extension CGFloat { // Spacing and size
 }
 
 public extension UIImageView {
-    convenience init(_ key: UIImage.Key, file: String = #file, in bundle: Bundle? = nil, renderingMode: UIImage.RenderingMode = .alwaysOriginal) {
-        self.init(image: UIImage.with(key, file: file, in: bundle)?.withRenderingMode(renderingMode))
+    convenience init(_ key: UIImage.Key, in bundle: Bundle? = nil, renderingMode: UIImage.RenderingMode = .alwaysOriginal) {
+        self.init(image: UIImage.with(key, in: bundle)?.withRenderingMode(renderingMode))
     }
 }
 
@@ -284,33 +282,27 @@ public extension UIImage {
         }
     }
 
-    static func with(_ key: Key, file: String = #file, in bundle: Bundle? = nil) -> UIImage? {
+    static func with(_ key: Key, in bundle: Bundle? = nil) -> UIImage? {
         guard let name = BrandingManager.brand.imageName(for: key) else { return nil }
-        var image: UIImage? = nil
 
-        if let bundle = bundle {
-            image = UIImage(named: name, in: bundle, compatibleWith: nil)
+        if let bundle = bundle, let image = UIImage(named: name, in: bundle, compatibleWith: nil) {
+            return image
         }
 
-        if image == nil, let bundle = BrandingManager.brand.resourceBundle {
-            image = UIImage(named: name, in: bundle, compatibleWith: nil)
+        if let bundle = BrandingManager.brand.resourceBundle, let image = UIImage(named: name, in: bundle, compatibleWith: nil) {
+            return image
         }
 
-        if image == nil {
-            image = UIImage(named: name, in: .main, compatibleWith: nil)
+        if let image = UIImage(named: name, in: .main, compatibleWith: nil) {
+            return image
         }
 
-        if image == nil {
-            image = UIImage(named: name, in: Bundle(for: BrandingManager.self), compatibleWith: nil)
+        if let image = UIImage(named: name, in: Bundle(for: BrandingManager.self), compatibleWith: nil) {
+            return image
         }
 
-        if image == nil {
-            print("Failed to find \(key.rawValue) in any bundle")
-            return UIImage(named: name, in: Bundle.main, compatibleWith: nil)
-        }
-
-
-        return image
+        print("Failed to find \(key.rawValue) in any bundle")
+        return nil
     }
 }
 

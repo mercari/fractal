@@ -20,10 +20,6 @@ class DefaultBrand: NSObject, Brand {
 
     var resourceBundle: Bundle? = Bundle(for: BrandingManager.self)
 
-    func setAppearance() {
-
-    }
-
     func imageName(for key: UIImage.Key) -> String? {
         return key.rawValue
     }

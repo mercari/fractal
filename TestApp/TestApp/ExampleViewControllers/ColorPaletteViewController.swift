@@ -18,7 +18,6 @@ class ColorPaletteViewController: UIViewController, SectionBuilder {
         super.viewDidLoad()
         view.backgroundColor = .background
         DependencyRegistry.shared.prepare(viewController: self)
-
         sectionController.dataSource.sections = paletteSections
         sectionController.reload()
     }

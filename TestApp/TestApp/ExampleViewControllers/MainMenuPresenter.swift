@@ -29,7 +29,7 @@ class MainMenuPresenter  {
     var selection: (Int, NavigationOption, UIViewController) -> Void {
         return { (_, option, viewController) in
             guard let rawIntent = option.intent else { return }
-            NavigationRouter.shared.perform(rawIntent)
+            NavigationRouter.shared.navigationOptionSelected(rawIntent)
         }
     }
 
