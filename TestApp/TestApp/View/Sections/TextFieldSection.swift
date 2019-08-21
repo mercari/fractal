@@ -14,7 +14,7 @@ extension SectionBuilder {
                           title: String? = nil,
                           icon: UIImage? = nil,
                           placeholder: String? = nil,
-                          observedText: Observed<String?>,
+                          observedText: Observable<String?>,
                           delegate: TextFieldSectionDelegate? = nil,
                           options: [TextFieldView.Option] = []) -> TextFieldSection {
         return TextFieldSection(key: key,
@@ -38,7 +38,7 @@ public class TextFieldSection: NSObject {
     fileprivate let title: String?
     fileprivate let icon: UIImage?
     fileprivate let placeholder: String?
-    fileprivate weak var observedText: Observed<String?>?
+    fileprivate weak var observedText: Observable<String?>?
     fileprivate weak var delegate: TextFieldSectionDelegate?
     fileprivate let style: TextFieldView.Style
     fileprivate let options: [TextFieldView.Option]
@@ -47,7 +47,7 @@ public class TextFieldSection: NSObject {
         title: String?,
         icon: UIImage?,
         placeholder: String?,
-        observedText: Observed<String?>,
+        observedText: Observable<String?>,
         delegate: TextFieldSectionDelegate?,
         options: [TextFieldView.Option]
     ) {

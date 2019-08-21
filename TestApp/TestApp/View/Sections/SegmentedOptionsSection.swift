@@ -10,17 +10,17 @@ import Foundation
 import DesignSystem
 
 extension SectionBuilder {
-    public func segmentedControl(_ items: [Any], observedIndex: Observed<Int?>, backgroundColor: UIColor = .background) -> SegmentedOptionsSection {
+    public func segmentedControl(_ items: [Any], observedIndex: Observable<Int?>, backgroundColor: UIColor = .background) -> SegmentedOptionsSection {
         return SegmentedOptionsSection(items: items, observedIndex: observedIndex, backgroundColor: backgroundColor)
     }
 }
 
 public class SegmentedOptionsSection {
     fileprivate let items: [Any]
-    fileprivate let observedIndex: Observed<Int?>?
+    fileprivate let observedIndex: Observable<Int?>?
     fileprivate var suppressUpdate: Bool = false
     fileprivate let backgroundColor: UIColor
-    init(items: [Any], observedIndex: Observed<Int?>, backgroundColor: UIColor) {
+    init(items: [Any], observedIndex: Observable<Int?>, backgroundColor: UIColor) {
         self.items = items
         self.observedIndex = observedIndex
         self.backgroundColor = backgroundColor

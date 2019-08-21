@@ -10,7 +10,7 @@ import Foundation
 import DesignSystem
 
 extension SectionBuilder {
-    public func switchOption(_ title: String, detail: String? = nil, observedBool: Observed<Bool>) -> SwitchOptionSection {
+    public func switchOption(_ title: String, detail: String? = nil, observedBool: Observable<Bool>) -> SwitchOptionSection {
         return SwitchOptionSection(title, detail: detail, observedBool: observedBool)
     }
 }
@@ -19,10 +19,10 @@ public class SwitchOptionSection {
     fileprivate let title: String
     fileprivate let detail: String?
     fileprivate let style: SwitchOptionView.Style
-    fileprivate weak var observedBool: Observed<Bool>?
+    fileprivate weak var observedBool: Observable<Bool>?
     fileprivate var suppressUpdate: Bool = false
 
-    init(_ title: String, detail: String? = nil, observedBool: Observed<Bool>) {
+    init(_ title: String, detail: String? = nil, observedBool: Observable<Bool>) {
         self.title = title
         self.detail = detail
         self.style = detail == nil ? .default : .detail

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		723609162282AD2100300065 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 723609152282AD2100300065 /* Images.xcassets */; };
+		7244A0AA230D234F00C7EC28 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7244A0A9230D234F00C7EC28 /* Observable.swift */; };
 		728D057A2282996000B44543 /* BrandingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05752282996000B44543 /* BrandingManager.swift */; };
 		728D057B2282996000B44543 /* BrandingManager+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05762282996000B44543 /* BrandingManager+UIView.swift */; };
 		728D057C2282996000B44543 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05772282996000B44543 /* DateManager.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		723609152282AD2100300065 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		7244A0A9230D234F00C7EC28 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		728D05752282996000B44543 /* BrandingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrandingManager.swift; path = Sources/DesignSystem/BrandingManager.swift; sourceTree = SOURCE_ROOT; };
 		728D05762282996000B44543 /* BrandingManager+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BrandingManager+UIView.swift"; path = "Sources/DesignSystem/BrandingManager+UIView.swift"; sourceTree = SOURCE_ROOT; };
 		728D05772282996000B44543 /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateManager.swift; path = Sources/DesignSystem/DateManager.swift; sourceTree = SOURCE_ROOT; };
@@ -126,9 +128,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7244A0A8230D233D00C7EC28 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7244A0A9230D234F00C7EC28 /* Observable.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		920962B52271518D00FC8E6F /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				7244A0A8230D233D00C7EC28 /* Utilities */,
 				723609152282AD2100300065 /* Images.xcassets */,
 				920962E32271518D00FC8E6F /* Extensions */,
 				920962D22271518D00FC8E6F /* Branding */,
@@ -402,6 +413,7 @@
 				920963582271518E00FC8E6F /* Section.swift in Sources */,
 				9209633C2271518E00FC8E6F /* NSObject+Extensions.swift in Sources */,
 				920963372271518E00FC8E6F /* Helpers.swift in Sources */,
+				7244A0AA230D234F00C7EC28 /* Observable.swift in Sources */,
 				922F555522BA39C1005ABF39 /* CardView.swift in Sources */,
 				922F555722BA39C1005ABF39 /* DrawerHandleView.swift in Sources */,
 				92AC188622E9F6E00002376E /* DividerSection.swift in Sources */,
