@@ -13,10 +13,10 @@ class SelectionAndInfoViewController: UIViewController, SectionBuilder {
 
     private var sectionViewController: SectionController!
     private let viewModel = ViewModel()
-    private var switch1Value = Observed<Bool>(true)
-    private var switch2Value = Observed<Bool>(true)
-    private var switch3Value = Observed<Bool>(true)
-    private var switch4Value = Observed<Bool>(true)
+    private var switch1Value = Observable<Bool>(true)
+    private var switch2Value = Observable<Bool>(true)
+    private var switch3Value = Observable<Bool>(true)
+    private var switch4Value = Observable<Bool>(true)
 
     private var didChange: () -> Void {
         return { [weak self] in
