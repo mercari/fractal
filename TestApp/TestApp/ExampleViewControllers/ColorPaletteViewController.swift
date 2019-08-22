@@ -32,8 +32,8 @@ class ColorPaletteViewController: UIViewController, SectionBuilder {
     private var paletteSections: [Section] {
 
         var sections: [Section] = []
-        var rawPalette = BrandingManager.brand.rawPalette
-        let sectionNames = ["blue", "red", "green", "orange", "yellow", "mono"]
+        guard var rawPalette = (BrandingManager.brand as? BrandTest)?.rawPalette else { return [] }
+        let sectionNames = ["blue", "red", "green", "orange", "yellow", "pink", "mono"]
 
         for name in sectionNames {
             let options = rawPalette.filter { $0.name.contains(name) }

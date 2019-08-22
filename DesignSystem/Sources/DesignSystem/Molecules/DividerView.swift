@@ -14,7 +14,7 @@ public class DividerView: UIView {
         case full, indented(CGFloat), indentedBoth(CGFloat)
 
         public var color: UIColor {
-            return .divider()
+            return .atom(.divider)
         }
 
         public var leadPadding: CGFloat {

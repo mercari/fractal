@@ -53,9 +53,10 @@ class SelectionAndInfoViewController: UIViewController, SectionBuilder {
                 switchOption("Detail Switch", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua", observedBool: switch4Value)
                 ]),
             seperator(),
-            group([checkboxOptions(viewModel.checkboxDataClosure, selectionClosure: checkboxSelectedClosure),
-                   checkboxOptions(viewModel.detailCheckboxDataClosure, style: .detail, selectionClosure: checkboxSelectedClosure)]),
-            seperator()
+            group([checkboxOptions(viewModel.checkboxDataClosure, selectionClosure: checkboxSelectedClosure)]),
+            seperator(),
+            group([checkboxOptions(viewModel.detailCheckboxDataClosure, style: .detail, selectionClosure: checkboxSelectedClosure)]),
+            spacing()
         ]
     }
 
@@ -105,7 +106,7 @@ extension SelectionAndInfoViewController {
         fileprivate var checkboxDataClosure: () -> (Int, [CheckboxOption]) {
             let closure: () -> (Int, [CheckboxOption]) = {
                 var array = [CheckboxOption]()
-                for i in 0..<20 {
+                for i in 0..<4 {
                     array.append(DemoOption(value1: "Option \(i+1)", detailValue: nil))
                 }
                 return (self.selectedIndex, array)

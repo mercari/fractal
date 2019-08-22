@@ -8,23 +8,25 @@
 
 import Foundation
 
-class DefaultBrand: NSObject, Brand {
+public class DefaultBrand: NSObject, Brand {
 
-    var id: String = "DefaultBrand"
+    public var id: String = "DefaultBrand"
 
-    var keyboardAppearance: UIKeyboardAppearance = .default
+    public var keyboardAppearance: UIKeyboardAppearance = .default
 
-    var preferredStatusBarStyle: UIStatusBarStyle { return .default }
+    public var preferredStatusBarStyle: UIStatusBarStyle { return .default }
 
-    var defaultCellHeight: CGFloat = 44.0
+    public var defaultCellHeight: CGFloat = 44.0
 
-    var resourceBundle: Bundle? = Bundle(for: BrandingManager.self)
+    public var resourceBundle: Bundle? = Bundle(for: BrandingManager.self)
 
-    func imageName(for key: UIImage.Key) -> String? {
+    public func imageName(for key: UIImage.Key) -> String? {
         return key.rawValue
     }
 
-    func value(for spacing: BrandingManager.Spacing) -> CGFloat {
+    // MARK: - Size / Spacing
+
+    public func value(for spacing: BrandingManager.Spacing) -> CGFloat {
         switch spacing {
         case .xxsmall:
             return 1.0
@@ -51,7 +53,7 @@ class DefaultBrand: NSObject, Brand {
         }
     }
 
-    func value(for size: BrandingManager.IconSize) -> CGSize {
+    public func value(for size: BrandingManager.IconSize) -> CGSize {
         switch size {
         case .xsmall:
             return CGSize(width: 20.0, height: 20.0)
@@ -68,50 +70,22 @@ class DefaultBrand: NSObject, Brand {
         }
     }
 
-    func value(for color: BrandingManager.Color) -> UIColor {
-        switch color {
-        case .atom(let key):
-            switch key {
-            case .shadow:
-                return Palette.shadow.color
-            case .warning:
-                return Palette.red.color
-            case .sliderPositiveTint:
-                return Palette.blue.color
-            case .sliderNegativeTint, .switchNegativeTint:
-                return Palette.mono2.color
-            case .detailDisclosure:
-                return Palette.mono2.color
-            default:
-                return Palette.blue.color
-            }
-        case .brand(_):
-            return Palette.blue.color
-        case .background(let key):
-            switch key {
-            case .cell:
-                return Palette.mono.color
-            default:
-                return Palette.mono2.color
-            }
-        case .divider(_):
-            return Palette.mono3.color
-        case .text(let key):
-            switch key {
-            case .detail:
-                return Palette.mono4.color
-            case .information:
-                return Palette.blue.color
-            case .light:
-                return Palette.mono.color
-            default:
-                return Palette.mono6.color
-            }
-        }
+    // MARK: - Typography
+
+    public func fontName(for typography: BrandingManager.Typography) -> String? {
+        return nil
     }
 
-    func fontName(for fontWeight: UIFont.Weight) -> String? {
-        return nil
+    public func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight? {
+        if typography.isStrong {
+            switch typography {
+            case .xxlarge, .xlarge, .large:
+                return .bold
+            default:
+                return .semibold
+            }
+        }
+        return .regular
     }
 
     public func fontSize(for typography: BrandingManager.Typography) -> CGFloat {
@@ -119,19 +93,19 @@ class DefaultBrand: NSObject, Brand {
 
         switch typography {
         case .xxlarge:
-            size = 32.0
-        case .xlarge:
-            size = 28.0
-        case .large:
             size = 20.0
-        case .medium:
+        case .xlarge:
+            size = 18.0
+        case .large:
             size = 16.0
-        case .small:
+        case .medium:
             size = 14.0
-        case .xsmall:
+        case .small:
             size = 12.0
-        case .xxsmall:
+        case .xsmall:
             size = 10.0
+        case .xxsmall:
+            size = 8.0
         default:
             size = 16.0
         }
@@ -171,25 +145,62 @@ class DefaultBrand: NSObject, Brand {
         }
     }
 
-    public func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight {
-        if typography.isStrong {
-            switch typography {
-            case .xxlarge, .xlarge, .large:
-                return .bold
-            default:
-                return .semibold
-            }
+    // MARK: - Colors
+
+    public func atomColor(for key: UIColor.Key) -> UIColor {
+        switch key {
+        case .shadow:
+            return Palette.shadow.color
+        case .warning:
+            return Palette.red.color
+        case .sliderPositiveTint:
+            return Palette.blue.color
+        case .sliderNegativeTint, .switchNegativeTint:
+            return Palette.mono2.color
+        case .detailDisclosure:
+            return Palette.mono2.color
+        case .divider:
+            return Palette.mono2.color
+        default:
+            return Palette.blue.color
         }
-        return .regular
     }
 
-    internal enum Palette: String, CaseIterable {
+    public func brandColor(for key: UIColor.Key) -> UIColor {
+        return Palette.blue.color
+    }
+
+    public func backgroundColor(for key: UIColor.Key) -> UIColor {
+        switch key {
+        case .cell:
+            return Palette.mono.color
+        default:
+            return Palette.mono2.color
+        }
+    }
+
+    public func textColor(for key: UIColor.Key) -> UIColor {
+        switch key {
+        case .detail:
+            return Palette.mono4.color
+        case .information:
+            return Palette.blue.color
+        case .light:
+            return Palette.mono.color
+        default:
+            return Palette.mono6.color
+        }
+    }
+
+    // Colors for your brand should be internal to this class, this is only public to allow you to get at the DefaultBrand outside the framework
+    // Nobody should be accessing Brand colours directly, use the flex points such as UIColor.background(.primary) as it allows for brand pivots without a refactor of components.
+    public enum Palette: String, CaseIterable {
 
         case blue, red,
         mono6, mono5, mono4, mono3, mono2, mono,
-        shadow, facebook
+        shadow
 
-        var color: UIColor {
+        public var color: UIColor {
             switch self {
             case .blue:
                 return #colorLiteral(red: 0.208, green: 0.486, blue: 0.965, alpha: 1)
@@ -209,28 +220,22 @@ class DefaultBrand: NSObject, Brand {
                 return #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
             case .shadow:
                 return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.18)
-            case .facebook:
-                return #colorLiteral(red: 0.26, green: 0.40, blue: 0.70, alpha: 1.0)
             }
         }
-    }
-
-    var rawPalette: [BrandingManager.PaletteOption] {
-        return Palette.allCases.map { BrandingManager.PaletteOption(name: $0.rawValue, color: $0.color) }
     }
 }
 
 extension DefaultBrand: ButtonBrand {
 
-    func widthPin(for size: Button.Size) -> Pin {
+    public func widthPin(for size: Button.Size) -> Pin {
         return .width(-.keyline*2)
     }
 
-    func heightPin(for size: Button.Size) -> Pin {
+    public func heightPin(for size: Button.Size) -> Pin {
         return .height(asConstant: 52.0)
     }
 
-    func configure(_ button: Button, with style: Button.Style) {
+    public func configure(_ button: Button, with style: Button.Style) {
         switch style {
         case .primary:
             button.setTitleColor(.text(.light), for: .normal)
@@ -263,3 +268,4 @@ extension DefaultBrand: ButtonBrand {
         }
     }
 }
+

@@ -9,7 +9,28 @@
 import Foundation
 import DesignSystem
 
-extension BrandingManager.Color.Key {
-    static let cellSelected = BrandingManager.Color.Key("cellSelected")
-    static let secondary = BrandingManager.Color.Key("secondary")
+extension UIColor.Key {
+    static let cellSelected = UIColor.Key("cellSelected")
+    static let secondary =    UIColor.Key("secondary")
 }
+
+public protocol BrandTest {
+    var rawPalette: [BrandingManager.PaletteOption] { get }
+    var allTypographyCases: [BrandingManager.Typography] { get }
+}
+
+extension DefaultBrand: BrandTest {
+    public var allTypographyCases: [BrandingManager.Typography] {
+
+        let basicCases = BrandingManager.Typography.allCases
+        let str = basicCases.map { BrandingManager.Typography($0.style, [.strong]) }
+        let noAcc = basicCases.map { BrandingManager.Typography($0.style, [.noAccessibility]) }
+        let strNoAcc = basicCases.map { BrandingManager.Typography($0.style, [.strong, .noAccessibility]) }
+        return basicCases + str + noAcc + strNoAcc
+    }
+
+    public var rawPalette: [BrandingManager.PaletteOption] {
+        return Palette.allCases.map { BrandingManager.PaletteOption(name: $0.rawValue, color: $0.color) }
+    }
+}
+

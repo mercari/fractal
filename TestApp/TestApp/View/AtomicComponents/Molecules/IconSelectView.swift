@@ -35,7 +35,7 @@ class IconSelectView: UIView {
         imageView.layer.cornerRadius = 8.0
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 0.5
-        imageView.layer.borderColor = UIColor.divider.cgColor
+        imageView.layer.borderColor = UIColor.atom(.divider).cgColor
         return imageView
     }()
 

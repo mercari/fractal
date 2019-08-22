@@ -30,7 +30,7 @@ class TypographyViewModel {
     }
 
     private func fetchTypographyOptions() {
-        self.options = BrandingManager.Typography.allCases
+        self.options = (BrandingManager.brand as? BrandTest)?.allTypographyCases ?? []
     }
 
     // MARK: - Properties
