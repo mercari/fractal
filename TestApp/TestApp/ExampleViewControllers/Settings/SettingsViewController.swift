@@ -11,7 +11,7 @@ import DesignSystem
 
 class SettingsViewController: SectionTableViewController, SectionBuilder {
 
-    private let darkModeObserved = Observed<Bool>(false)
+    private let darkModeObserved = Observable<Bool>(false)
 
     override func viewDidLoad() {
         title = "Settings"

@@ -10,7 +10,7 @@ import Foundation
 import DesignSystem
 
 extension SectionBuilder {
-    public func textView(key: String, placeholder: String? = nil, observedText: Observed<String?>, delegate: TextFieldSectionDelegate? = nil, options: [TextViewView.Option] = []) -> TextViewSection {
+    public func textView(key: String, placeholder: String? = nil, observedText: Observable<String?>, delegate: TextFieldSectionDelegate? = nil, options: [TextViewView.Option] = []) -> TextViewSection {
         return TextViewSection(key: key, placeholder: placeholder, observedText: observedText, delegate: delegate, options: options)
     }
 }
@@ -20,10 +20,10 @@ public class TextViewSection: NSObject {
     fileprivate let key: String
     fileprivate let placeholder: String?
     fileprivate let options: [TextViewView.Option]
-    fileprivate weak var observedText: Observed<String?>?
+    fileprivate weak var observedText: Observable<String?>?
     fileprivate weak var delegate: TextFieldSectionDelegate?
 
-    init(key: String, placeholder: String?, observedText: Observed<String?>, delegate: TextFieldSectionDelegate?, options: [TextViewView.Option]) {
+    init(key: String, placeholder: String?, observedText: Observable<String?>, delegate: TextFieldSectionDelegate?, options: [TextViewView.Option]) {
         self.key = key
         self.placeholder = placeholder
         self.observedText = observedText
