@@ -64,7 +64,9 @@ open class SectionTableViewController: UITableViewController {
     private var registeredReuseIdentifiers: Set<String> = []
     private var data: SectionControllerDataSource!
     private var configureTableView: ((UITableView) -> Void)?
+    private var notificationObject: NSObjectProtocol?
     public var refresh: (() -> Void)?
+    public var tearDownOnBrandChange: Bool = true
 
     public init(useRefreshControl: Bool = false, configureTableView: ((UITableView) -> Void)? = nil) {
         self.useRefreshControl = useRefreshControl
@@ -72,22 +74,17 @@ open class SectionTableViewController: UITableViewController {
         super.init(style: .plain)
         data = SectionControllerDataSource(viewController: self)
     }
-    public var didScrollClosure: ((UIScrollView) -> Void)? {
-        get { return data.didScroll }
-        set { data.didScroll = newValue }
+
+    @available (*, unavailable)
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
+
         view.backgroundColor = .clear
-        if useRefreshControl {
-            let control = UIRefreshControl()
-            control.addTarget(self, action: #selector(refreshTriggered), for: .valueChanged)
-            control.tintColor = refreshControlTintColor
-            refreshControl = control
-        } else {
-            tableView.alwaysBounceVertical = false
-        }
+
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.dataSource = data
@@ -97,21 +94,48 @@ open class SectionTableViewController: UITableViewController {
         tableView.alwaysBounceVertical = true
         tableView.keyboardDismissMode = .interactive
 
+        if useRefreshControl {
+            let control = UIRefreshControl()
+            control.addTarget(self, action: #selector(refreshTriggered), for: .valueChanged)
+            control.tintColor = refreshControlTintColor
+            refreshControl = control
+        }
+
         configureTableView?(tableView)
+
+        notificationObject = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: BrandingManager.didChange), object: nil, queue: nil) { [weak self] (_) in
+            guard let `self` = self else { return }
+            guard self.tearDownOnBrandChange else { return }
+            self.tearDownSections()
+        }
     }
 
-    @available (*, unavailable)
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    deinit {
+        if let observer = notificationObject {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 
     @objc open func refreshTriggered() {
         didPullDownToRefreshClosure?()
     }
-    
+
+    private func tearDownSections() {
+        let indexPath = tableView.indexPathForRow(at: CGPoint(x: tableView.bounds.size.width/2, y: tableView.bounds.size.height/2))
+        dataSource.tearDownCellSubviews()
+        reload()
+        guard let ip = indexPath else { return }
+        tableView.scrollToRow(at: ip, at: .middle, animated: false)
+    }
+
     // MARK: - Accessors
 
     open var refreshControlTintColor: UIColor {
         return .atom(.refreshControl)
+    }
+
+    public var didScrollClosure: ((UIScrollView) -> Void)? {
+        get { return data.didScroll }
+        set { data.didScroll = newValue }
     }
 }

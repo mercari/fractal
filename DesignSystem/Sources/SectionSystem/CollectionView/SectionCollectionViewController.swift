@@ -66,9 +66,10 @@ open class SectionCollectionViewController: UICollectionViewController {
     private let useRefreshControl: Bool
     private var data: SectionControllerDataSource!
     private var registeredReuseIdentifiers: Set<String> = []
+    private var notificationObject: NSObjectProtocol?
     fileprivate var refresh: (() -> Void)?
-    
-    
+    public var tearDownOnBrandChange: Bool = true
+
     public init(useRefreshControl: Bool = false, layout: UICollectionViewLayout? = nil, direction: UICollectionView.ScrollDirection = .vertical) {
         self.useRefreshControl = useRefreshControl
         super.init(collectionViewLayout: layout ?? SectionCollectionViewController.defaultFlowLayout(direction))
@@ -83,6 +84,12 @@ open class SectionCollectionViewController: UICollectionViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
+
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = data
+        collectionView.delegate = data
+        collectionView.keyboardDismissMode = .interactive
+
         if useRefreshControl {
             testLargeTitleSanity()
             collectionView.alwaysBounceVertical = true
@@ -92,10 +99,18 @@ open class SectionCollectionViewController: UICollectionViewController {
                 collectionView.addSubview(refreshControl)
             }
         }
-        collectionView.backgroundColor = .clear
-        collectionView.dataSource = data
-        collectionView.delegate = data
-        collectionView.keyboardDismissMode = .interactive
+        
+        notificationObject = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: BrandingManager.didChange), object: nil, queue: nil) { [weak self] (_) in
+            guard let `self` = self else { return }
+            guard self.tearDownOnBrandChange else { return }
+            self.tearDownSections()
+        }
+    }
+
+    deinit {
+        if let observer = notificationObject {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 
     @available (*, unavailable)
@@ -105,6 +120,14 @@ open class SectionCollectionViewController: UICollectionViewController {
 
     @objc open func refreshTriggered() {
         refresh?()
+    }
+
+    private func tearDownSections() {
+        let indexPath = collectionView.indexPathForItem(at: CGPoint(x: collectionView.bounds.size.width/2, y: collectionView.bounds.size.height/2))
+        dataSource.tearDownCellSubviews()
+        reload()
+        guard let ip = indexPath else { return }
+        collectionView.scrollToItem(at: ip, at: .centeredHorizontally, animated: false)
     }
 
     private func testLargeTitleSanity() {

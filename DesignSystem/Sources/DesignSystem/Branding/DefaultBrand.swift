@@ -161,6 +161,8 @@ public class DefaultBrand: NSObject, Brand {
             return Palette.mono2.color
         case .divider:
             return Palette.mono2.color
+        case .clear:
+            return .clear
         default:
             return Palette.blue.color
         }
@@ -172,6 +174,8 @@ public class DefaultBrand: NSObject, Brand {
 
     public func backgroundColor(for key: UIColor.Key) -> UIColor {
         switch key {
+        case .clear:
+            return .clear
         case .cell:
             return Palette.mono.color
         default:
@@ -269,3 +273,8 @@ extension DefaultBrand: ButtonBrand {
     }
 }
 
+extension DefaultBrand: NavigationControllerBrand {
+    public func applyBrand(to navigationBar: UINavigationBar) {
+        
+    }
+}

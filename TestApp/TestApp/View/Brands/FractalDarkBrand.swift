@@ -9,9 +9,17 @@
 import Foundation
 import DesignSystem
 
+extension BrandingManager {
+    static var isDarkModeBrand: Bool {
+        return brand.id == FractalDarkBrand.staticId
+    }
+}
+
 class FractalDarkBrand: Brand {
 
-    var id: String = "FractalDarkBrand"
+    fileprivate static let staticId = "FractalDarkBrand"
+
+    var id: String = FractalDarkBrand.staticId
 
     var keyboardAppearance: UIKeyboardAppearance = .light
 
@@ -179,6 +187,8 @@ class FractalDarkBrand: Brand {
             return Palette.pink1.color
         case .divider:
             return Palette.mono4.color
+        case .clear:
+            return .clear
         default:
             return Palette.blue.color
         }
@@ -199,6 +209,8 @@ class FractalDarkBrand: Brand {
         switch key {
         case .cellSelected:
             return UIColor(white: 0.0, alpha: 0.1)
+        case .clear:
+            return .clear
         default:
             return Palette.mono5.color
         }

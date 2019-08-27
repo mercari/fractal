@@ -11,8 +11,8 @@ import UIKit
 
 class SectionTableViewCell: UITableViewCell {
 
-    var sectionViewController: UIViewController?
-    var sectionView: UIView?
+    weak var sectionViewController: UIViewController?
+    weak var sectionView: UIView?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

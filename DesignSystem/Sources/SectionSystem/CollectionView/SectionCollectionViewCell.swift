@@ -12,8 +12,8 @@ import UIKit
 class SectionCollectionViewCell: UICollectionViewCell {
 
     weak var section: BedrockSection?
-    var sectionView: UIView?
-    var sectionViewController: UIViewController?
+    weak var sectionView: UIView?
+    weak var sectionViewController: UIViewController?
     var indexPath: IndexPath?
 
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {

@@ -9,19 +9,19 @@
 import Foundation
 
 extension SectionBuilder {
-    public func divider(_ style: DividerView.Style = .full, backgroundColor: UIColor = .background(.cell), height: CGFloat? = nil) -> DividerSection {
-        return DividerSection(style, backgroundColor: backgroundColor, height: height)
+    public func divider(_ style: DividerView.Style = .full, backgroundColorKey: UIColor.Key = .cell, height: CGFloat? = nil) -> DividerSection {
+        return DividerSection(style, backgroundColorKey: backgroundColorKey, height: height)
     }
 }
 
 public class DividerSection {
     fileprivate let style: DividerView.Style
-    fileprivate let backgroundColor: UIColor
+    fileprivate let key: UIColor.Key
     fileprivate let height: CGFloat?
 
-    public init(_ style: DividerView.Style = .full, backgroundColor: UIColor = .background(.cell), height: CGFloat? = nil) {
+    public init(_ style: DividerView.Style = .full, backgroundColorKey: UIColor.Key = .cell, height: CGFloat? = nil) {
         self.style = style
-        self.backgroundColor = backgroundColor
+        self.key = backgroundColorKey
         self.height = height
     }
 }
@@ -40,6 +40,6 @@ extension DividerSection: ViewSection {
     }
 
     public func configure(_ view: UIView, at index: Int) {
-        view.backgroundColor = backgroundColor
+        view.backgroundColor = .background(key)
     }
 }

@@ -18,7 +18,7 @@ extension SectionBuilder {
         return HeadlineSection(style)
     }
 
-    public func headline(_ style: HeadlineView.Style = .default, _ data: @escaping () -> [String]) -> HeadlineSection {
+    public func headline(_ data: @escaping () -> [String], _ style: HeadlineView.Style = .default) -> HeadlineSection {
         return HeadlineSection(style).enumerate(data) as! HeadlineSection
     }
 }

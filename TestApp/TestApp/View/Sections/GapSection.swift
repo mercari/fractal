@@ -11,21 +11,21 @@ import DesignSystem
 
 extension SectionBuilder {
     public func seperator() -> GapSection {
-        return GapSection(color: .background(.secondary), height: .large)
+        return GapSection(colorKey: .secondary, height: .large)
     }
 
     // Workaround to avoid to be detected as a leak when using system static UIColors
-    public func spacing(_ height: CGFloat = .medium, color: UIColor = .init(red: 0, green: 0, blue: 0, alpha: 0)) -> GapSection {
-        return GapSection(color: color, height: height)
+    public func spacing(_ height: CGFloat = .medium, backgroundColorKey: UIColor.Key = .clear) -> GapSection {
+        return GapSection(colorKey: backgroundColorKey, height: height)
     }
 }
 
 public class GapSection {
-    fileprivate let color: UIColor?
+    fileprivate let colorKey: UIColor.Key
     fileprivate let height: CGFloat
 
-    init(color: UIColor, height: CGFloat) {
-        self.color = color
+    init(colorKey: UIColor.Key, height: CGFloat) {
+        self.colorKey = colorKey
         self.height = height
     }
 }
@@ -41,6 +41,6 @@ extension GapSection: ViewSection {
     }
 
     public func configure(_ view: UIView, at index: Int) {
-        view.backgroundColor = self.color
+        view.backgroundColor = .background(colorKey)
     }
 }

@@ -73,9 +73,9 @@ extension BrandingManager.Typography.Modifier {
 
 public class BrandingManager {
 
-    public static let didChange = "DesignSystem_DidChange"
-    public static let contentSizeOverrideKey = "DesignSystem_contentSizeCategory_override"
-    public static let contentSizeOverrideValueKey = "DesignSystem_contentSizeCategory_value"
+    public static let didChange = "BrandingManager_BrandDidChange"
+    public static let contentSizeOverrideKey = "BrandingManager_contentSizeCategory_override"
+    public static let contentSizeOverrideValueKey = "BrandingManager_contentSizeCategory_value"
 
     public struct PaletteOption {
         public let name: String
@@ -208,14 +208,7 @@ public class BrandingManager {
         }
         
         currentBrand = brand
-
         print("Setting Brand:", brand.id)
-        if #available(iOS 11.0.0, *), UIApplication.shared.supportsAlternateIcons {
-            UIApplication.shared.setAlternateIconName("\(brand.id)-AppIcon", completionHandler: nil)
-        } else {
-            UIApplication.shared.setAlternateIconName(nil, completionHandler: nil)
-        }
-        
         NotificationCenter.default.post(name: Notification.Name(rawValue: BrandingManager.didChange), object: nil)
     }
 

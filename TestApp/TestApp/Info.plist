@@ -8,29 +8,27 @@
 	<string>Fractal</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
 			<key>AppIcon</key>
 			<dict>
-				<key>UIPrerenderedIcon</key>
-				<false/>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>AppIcon</string>
 				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
 			</dict>
 			<key>FractalDarkBrand-AppIcon</key>
 			<dict>
-				<key>UIPrerenderedIcon</key>
-				<false/>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>FractalDarkBrand-AppIcon</string>
 				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
 			</dict>
 		</dict>
 		<key>CFBundlePrimaryIcon</key>
@@ -48,12 +46,14 @@
 			<array>
 				<string></string>
 			</array>
-			<key>UINewsstandBindingType</key>
-			<string>UINewsstandBindingTypeMagazine</string>
 			<key>UINewsstandBindingEdge</key>
 			<string>UINewsstandBindingEdgeLeft</string>
+			<key>UINewsstandBindingType</key>
+			<string>UINewsstandBindingTypeMagazine</string>
 		</dict>
 	</dict>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -61,7 +61,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>0.2</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

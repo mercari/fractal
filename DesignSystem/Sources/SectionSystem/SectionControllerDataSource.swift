@@ -132,6 +132,21 @@ open class SectionControllerDataSource: NSObject {
 
         for section in sections { decouple(in: section) }
     }
+
+    func tearDownCellSubviews() {
+
+        func tearDown(in section: Section) {
+            if let section = section as? NestedSection {
+                for s in section.allSections { tearDown(in: s) }
+            } else if let section = section as? ViewSection {
+                section.deleteVisibleViews()
+            } else if let section = section as? ViewControllerSection {
+                section.deleteVisibleViewControllers()
+            }
+        }
+
+        for section in sections { tearDown(in: section) }
+    }
 }
 
 extension SectionControllerDataSource: UIScrollViewDelegate {

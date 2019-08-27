@@ -70,7 +70,9 @@ extension ViewSection {
         }
     }
 
-    public func decoupleVisibleViews() { mapTable.removeAllObjects() }
+    func decoupleVisibleViews() { mapTable.removeAllObjects() }
+
+    func deleteVisibleViews() { for view in visibleViews { view.removeFromSuperview() } }
 }
 
 extension ViewControllerSection {
@@ -107,6 +109,15 @@ extension ViewControllerSection {
     }
 
     func decoupleVisibleViewControllers() { mapTable.removeAllObjects() }
+
+    func deleteVisibleViewControllers() {
+        for vc in visibleViewControllers {
+            vc.willMove(toParent:nil)
+            vc.view.superview?.removeFromSuperview()
+            vc.view.removeFromSuperview()
+            vc.removeFromParent()
+        }
+    }
 }
 
 extension NestedSection {

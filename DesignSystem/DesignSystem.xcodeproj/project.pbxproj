@@ -14,6 +14,7 @@
 		728D057C2282996000B44543 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05772282996000B44543 /* DateManager.swift */; };
 		728D057D2282996000B44543 /* BrandingManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05782282996000B44543 /* BrandingManager+Extensions.swift */; };
 		728D057E2282996000B44543 /* BrandingManager+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728D05792282996000B44543 /* BrandingManager+String.swift */; };
+		9202FFCB2313C850006A8E92 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202FFCA2313C850006A8E92 /* NavigationController.swift */; };
 		920963372271518E00FC8E6F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962E12271518D00FC8E6F /* Helpers.swift */; };
 		920963382271518E00FC8E6F /* DesignSystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 920962E22271518D00FC8E6F /* DesignSystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		920963392271518E00FC8E6F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920962E42271518D00FC8E6F /* UIColor+Extensions.swift */; };
@@ -69,6 +70,7 @@
 		728D05772282996000B44543 /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateManager.swift; path = Sources/DesignSystem/DateManager.swift; sourceTree = SOURCE_ROOT; };
 		728D05782282996000B44543 /* BrandingManager+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BrandingManager+Extensions.swift"; path = "Sources/DesignSystem/BrandingManager+Extensions.swift"; sourceTree = SOURCE_ROOT; };
 		728D05792282996000B44543 /* BrandingManager+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "BrandingManager+String.swift"; path = "Sources/DesignSystem/BrandingManager+String.swift"; sourceTree = SOURCE_ROOT; };
+		9202FFCA2313C850006A8E92 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		920962E12271518D00FC8E6F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		920962E22271518D00FC8E6F /* DesignSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignSystem.h; sourceTree = "<group>"; };
 		920962E42271518D00FC8E6F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		922F554922BA1650005ABF39 /* Organisms */ = {
 			isa = PBXGroup;
 			children = (
+				9202FFCA2313C850006A8E92 /* NavigationController.swift */,
 				922F555222BA39C0005ABF39 /* CardView.swift */,
 				922F555322BA39C0005ABF39 /* CardViewController.swift */,
 				922F555422BA39C0005ABF39 /* DrawerHandleView.swift */,
@@ -438,6 +441,7 @@
 				728D057A2282996000B44543 /* BrandingManager.swift in Sources */,
 				9228C564229CB21600B8972B /* Switch.swift in Sources */,
 				92C5D92522F1727000E1A68D /* Section+Enumeration.swift in Sources */,
+				9202FFCB2313C850006A8E92 /* NavigationController.swift in Sources */,
 				9209635C2271518E00FC8E6F /* SectionControllerDataSource.swift in Sources */,
 				728D057C2282996000B44543 /* DateManager.swift in Sources */,
 				9209635B2271518E00FC8E6F /* SectionTableViewCell.swift in Sources */,

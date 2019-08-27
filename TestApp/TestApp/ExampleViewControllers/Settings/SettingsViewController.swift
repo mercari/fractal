@@ -11,14 +11,25 @@ import DesignSystem
 
 class SettingsViewController: SectionTableViewController, SectionBuilder {
 
-    private let darkModeObserved = Observable<Bool>(false)
+    private let darkMode = Observable<Bool>(BrandingManager.isDarkModeBrand)
+    private var blockObservation: Bool = false
 
     override func viewDidLoad() {
         title = "Settings"
         super.viewDidLoad()
-        view.backgroundColor = .background
+        setStyle()
         setSections()
         reload()
+
+        darkMode.addObserver(self) { [weak self] (isOn) in
+            guard let `self` = self else { return }
+            guard !self.blockObservation else { return }
+            BrandingManager.set(brand: isOn ? FractalDarkBrand() : FractalBrand())
+        }
+    }
+
+    private func setStyle() {
+        view.backgroundColor = .background
     }
 
     private func setSections() {
@@ -27,8 +38,8 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
             headline("Alternate Icons"),
             iconSelectionCarousel(),
             group([
-                switchOption("Dark Mode", observedBool: darkModeObserved),
-                information("Version", detailClosure: { "0.2" })
+                switchOption("Dark Mode", observedBool: darkMode),
+                information("Version", detailClosure: { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "-1.0" })
                 ]),
             spacing(32.0),
             singleButton("Remove All Branding", tappedClosure: { [weak self] in self?.removeBranding() })
@@ -36,6 +47,17 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
     }
 
     private func removeBranding() {
-
+        blockObservation = true
+        darkMode.value = false
+        blockObservation = false
+        BrandingManager.set(brand: DefaultBrand())
     }
 }
+
+extension SettingsViewController: BrandUpdateable {
+    func brandWasUpdated() {
+        // add wipe
+        setStyle()
+    }
+}
+

@@ -22,13 +22,26 @@ class MainMenuViewController: SectionTableViewController, SectionBuilder {
     override func viewDidLoad() {
         title = "Fractal"
         super.viewDidLoad()
-        view.backgroundColor = .background
         DependencyRegistry.shared.prepare(viewController: self)
 
         didPullDownToRefreshClosure = { [weak self] in
             self?.reload()
         }
 
+        setStyle()
+        setSections()
+        reload()
+    }
+
+    func inject(presenter: MainMenuPresenter) {
+        self.presenter = presenter
+    }
+
+    private func setStyle() {
+        view.backgroundColor = .background
+    }
+
+    private func setSections() {
         dataSource.sections = [
             spacing(52.0),
             group([
@@ -43,13 +56,8 @@ class MainMenuViewController: SectionTableViewController, SectionBuilder {
                 navigationOptions(presenter.demoOptions, style: .default, selectionClosure: selection)
                 ]),
             spacing(10.0),
-            headline(BrandingManager.brand.id),
+            headline({ [BrandingManager.brand.id] })
         ]
-        reload()
-    }
-
-    func inject(presenter: MainMenuPresenter) {
-        self.presenter = presenter
     }
 
     var selection: (Int, NavigationOption) -> Void {
@@ -65,5 +73,11 @@ extension MainMenuViewController: CardViewContentDelegate {
     var isBackgroundDismissable: Bool { return true }
     func heightConstraint(for cardViewHeightAnchor: NSLayoutDimension) -> NSLayoutConstraint? {
         return cardViewHeightAnchor.constraint(equalToConstant: cardHeight)
+    }
+}
+
+extension MainMenuViewController: BrandUpdateable {
+    func brandWasUpdated() {
+        setStyle()
     }
 }

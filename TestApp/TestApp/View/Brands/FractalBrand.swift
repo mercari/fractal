@@ -9,23 +9,6 @@
 import Foundation
 import DesignSystem
 
-public extension UIColor.Key {
-    static let check = UIColor.Key("check")
-}
-
-public extension UIImage.Key {
-    static let logo = UIImage.Key("logo")
-    static let icon0 = UIImage.Key("icon0")
-    static let icon1 = UIImage.Key("icon1")
-    static let icon2 = UIImage.Key("icon2")
-    static let icon3 = UIImage.Key("icon3")
-    static let icon4 = UIImage.Key("icon4")
-    static let icon5 = UIImage.Key("icon5")
-    static let icon6 = UIImage.Key("icon6")
-    static let icon7 = UIImage.Key("icon7")
-    static let icon8 = UIImage.Key("icon8")
-}
-
 class FractalBrand: Brand {
 
     var id: String = "FractalBrand"
@@ -197,6 +180,8 @@ class FractalBrand: Brand {
             return .pink1
         case .divider:
             return .mono2
+        case .clear:
+            return .clear
         default:
             return .blue
         }
@@ -217,6 +202,8 @@ class FractalBrand: Brand {
         switch key {
         case .cellSelected:
             return .pink3
+        case .clear:
+            return .clear
         default:
             return .mono
         }

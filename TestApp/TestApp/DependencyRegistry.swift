@@ -30,6 +30,7 @@ class DependencyRegistry {
 
     func prepare(viewController: TypographyViewController) {
         let vc = SectionCollectionViewController()
+        vc.tearDownOnBrandChange = false
         let viewModel = TypographyViewModel()
         viewController.inject(viewModel, sectionController: vc)
     }

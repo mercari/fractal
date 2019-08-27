@@ -12,6 +12,7 @@ import DesignSystem
 extension UIColor.Key {
     static let cellSelected = UIColor.Key("cellSelected")
     static let secondary =    UIColor.Key("secondary")
+    static let check = UIColor.Key("check")
 }
 
 public protocol BrandTest {
@@ -34,3 +35,15 @@ extension DefaultBrand: BrandTest {
     }
 }
 
+public extension UIImage.Key {
+    static let logo = UIImage.Key("logo")
+    static let icon0 = UIImage.Key("icon0")
+    static let icon1 = UIImage.Key("icon1")
+    static let icon2 = UIImage.Key("icon2")
+    static let icon3 = UIImage.Key("icon3")
+    static let icon4 = UIImage.Key("icon4")
+    static let icon5 = UIImage.Key("icon5")
+    static let icon6 = UIImage.Key("icon6")
+    static let icon7 = UIImage.Key("icon7")
+    static let icon8 = UIImage.Key("icon8")
+}

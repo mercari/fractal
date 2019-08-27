@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9202FFC32313C56E006A8E92 /* YogaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202FFC22313C56E006A8E92 /* YogaViewController.swift */; };
+		9202FFC52313C578006A8E92 /* YogaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202FFC42313C578006A8E92 /* YogaDetailViewController.swift */; };
+		9202FFC72313C72E006A8E92 /* YogaBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202FFC62313C72E006A8E92 /* YogaBrand.swift */; };
 		92096185226EE6FD00FC8E6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096184226EE6FD00FC8E6F /* AppDelegate.swift */; };
 		92096187226EE6FD00FC8E6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92096186226EE6FD00FC8E6F /* ViewController.swift */; };
 		9209618A226EE6FD00FC8E6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92096188226EE6FD00FC8E6F /* Main.storyboard */; };
@@ -69,7 +72,6 @@
 		9228C620229F934200B8972B /* BrandingManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228C61F229F934200B8972B /* BrandingManager+Extensions.swift */; };
 		922F556622BC9DC3005ABF39 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922F555922BA8F45005ABF39 /* DesignSystem.framework */; };
 		922F556722BC9DC3005ABF39 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 922F555922BA8F45005ABF39 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		923545B4230BCA1000775912 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923545B3230BCA1000775912 /* NavigationController.swift */; };
 		923545B6230BCBDF00775912 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923545B5230BCBDF00775912 /* TabBarController.swift */; };
 		92810CAD22D5E8C500F8F0DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */; };
 		92810CB122D70A5200F8F0DE /* IconSelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */; };
@@ -110,6 +112,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9202FFC22313C56E006A8E92 /* YogaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaViewController.swift; sourceTree = "<group>"; };
+		9202FFC42313C578006A8E92 /* YogaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaDetailViewController.swift; sourceTree = "<group>"; };
+		9202FFC62313C72E006A8E92 /* YogaBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaBrand.swift; sourceTree = "<group>"; };
 		92096181226EE6FD00FC8E6F /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92096184226EE6FD00FC8E6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92096186226EE6FD00FC8E6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +182,6 @@
 		9228C618229CD82C00B8972B /* FractalDarkBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractalDarkBrand.swift; sourceTree = "<group>"; };
 		9228C61F229F934200B8972B /* BrandingManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrandingManager+Extensions.swift"; sourceTree = "<group>"; };
 		922F555922BA8F45005ABF39 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		923545B3230BCA1000775912 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		923545B5230BCBDF00775912 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionSection.swift; sourceTree = "<group>"; };
@@ -212,6 +216,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9202FFC12313C55A006A8E92 /* Yoga */ = {
+			isa = PBXGroup;
+			children = (
+				9202FFC22313C56E006A8E92 /* YogaViewController.swift */,
+				9202FFC42313C578006A8E92 /* YogaDetailViewController.swift */,
+			);
+			path = Yoga;
+			sourceTree = "<group>";
+		};
 		92096178226EE6FD00FC8E6F = {
 			isa = PBXGroup;
 			children = (
@@ -307,15 +320,15 @@
 		92096284226EFB2D00FC8E6F /* ExampleViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				923545B3230BCA1000775912 /* NavigationController.swift */,
 				923545B5230BCBDF00775912 /* TabBarController.swift */,
-				92810CAB22D5E8B100F8F0DE /* Settings */,
 				92096287226EFB2D00FC8E6F /* MainMenuViewController.swift */,
 				9209627E226EFB2D00FC8E6F /* MainMenuPresenter.swift */,
 				92096270226EFB2D00FC8E6F /* ButtonExample */,
 				9209627A226EFB2D00FC8E6F /* FilteringExample */,
 				9209627C226EFB2D00FC8E6F /* SelectionAndInfo */,
 				9209627F226EFB2D00FC8E6F /* TypographyOptions */,
+				92810CAB22D5E8B100F8F0DE /* Settings */,
+				9202FFC12313C55A006A8E92 /* Yoga */,
 				92096285226EFB2D00FC8E6F /* SizeOptionsViewController.swift */,
 				92096286226EFB2D00FC8E6F /* ColorPaletteViewController.swift */,
 			);
@@ -416,6 +429,7 @@
 			children = (
 				9228C615229CD80800B8972B /* FractalBrand.swift */,
 				9228C618229CD82C00B8972B /* FractalDarkBrand.swift */,
+				9202FFC62313C72E006A8E92 /* YogaBrand.swift */,
 			);
 			path = Brands;
 			sourceTree = "<group>";
@@ -581,16 +595,17 @@
 				9228C5EF229CCE2200B8972B /* ReloadableSection.swift in Sources */,
 				92810CB322D70AAB00F8F0DE /* IconSelectView.swift in Sources */,
 				9228C60C229CCEE300B8972B /* LoadingView.swift in Sources */,
+				9202FFC32313C56E006A8E92 /* YogaViewController.swift in Sources */,
 				9228C605229CCEE300B8972B /* HeadlineView.swift in Sources */,
 				9228C606229CCEE300B8972B /* NavigationOptionView.swift in Sources */,
 				9228C60B229CCEE300B8972B /* BounceScaleImageView.swift in Sources */,
-				923545B4230BCA1000775912 /* NavigationController.swift in Sources */,
 				92096187226EE6FD00FC8E6F /* ViewController.swift in Sources */,
 				920962B3226EFB4700FC8E6F /* NavigationRouter.swift in Sources */,
 				920962A5226EFB2D00FC8E6F /* MainMenuViewController.swift in Sources */,
 				9228C5ED229CCE2200B8972B /* InformationSection.swift in Sources */,
 				9228C5EA229CCE2200B8972B /* HeadlineSection.swift in Sources */,
 				92810CB722D86B0700F8F0DE /* ImageSection.swift in Sources */,
+				9202FFC72313C72E006A8E92 /* YogaBrand.swift in Sources */,
 				923545B6230BCBDF00775912 /* TabBarController.swift in Sources */,
 				9228C5E9229CCE2200B8972B /* SwitchOptionSection.swift in Sources */,
 				92096185226EE6FD00FC8E6F /* AppDelegate.swift in Sources */,
@@ -602,6 +617,7 @@
 				9228C60E229CCEE300B8972B /* TextFieldView.swift in Sources */,
 				920962B4226EFB4700FC8E6F /* DependencyRegistry.swift in Sources */,
 				92810CAD22D5E8C500F8F0DE /* SettingsViewController.swift in Sources */,
+				9202FFC52313C578006A8E92 /* YogaDetailViewController.swift in Sources */,
 				9209629F226EFB2D00FC8E6F /* TypographyViewModel.swift in Sources */,
 				920962AB226EFB2D00FC8E6F /* TypographyOptionView.swift in Sources */,
 				9228C60D229CCEE300B8972B /* SwitchOptionView.swift in Sources */,
