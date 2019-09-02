@@ -14,7 +14,6 @@ extension SectionBuilder {
         return GapSection(colorKey: .secondary, height: .large)
     }
 
-    // Workaround to avoid to be detected as a leak when using system static UIColors
     public func spacing(_ height: CGFloat = .medium, backgroundColorKey: UIColor.Key = .clear) -> GapSection {
         return GapSection(colorKey: backgroundColorKey, height: height)
     }
@@ -37,7 +36,7 @@ extension GapSection: ViewSection {
     }
 
     public func size(in view: UIView, at index: Int) -> SectionCellSize {
-        return SectionCellSize(width: view.bounds.size.width, height: self.height)
+        return SectionCellSize(width: view.bounds.size.width, height: height)
     }
 
     public func configure(_ view: UIView, at index: Int) {

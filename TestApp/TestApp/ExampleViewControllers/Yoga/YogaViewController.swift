@@ -11,4 +11,21 @@ import DesignSystem
 
 class YogaViewController: SectionTableViewController {
 
+    var presenter: YogaPresenter!
+
+    override func viewDidLoad() {
+        title = "TypographyVC"
+        super.viewDidLoad()
+        view.backgroundColor = .background
+        DependencyRegistry.shared.prepare(viewController: self)
+
+    }
+
+    func inject(_ presenter: YogaPresenter) {
+        self.presenter = presenter
+    }
+
+    private func setSections() {
+
+    }
 }

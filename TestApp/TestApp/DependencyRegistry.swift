@@ -44,4 +44,14 @@ class DependencyRegistry {
         let vc = SectionTableViewController()
         viewController.inject(sectionController: vc)
     }
+
+    func prepare(viewController: YogaViewController) {
+        let presenter = YogaPresenter()
+        viewController.inject(presenter)
+    }
+    
+    func prepare(viewController: YogaDetailViewController) {
+        let presenter = YogaDetailPresenter()
+        viewController.inject(presenter)
+    }
 }

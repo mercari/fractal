@@ -8,6 +8,8 @@
 
 import UIKit
 import DesignSystem
+import DeviceCheck
+import AdSupport
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         BrandingManager.set(brand: FractalBrand())
-        //BrandingManager.set(brand: FractalDarkBrand())
         BrandingManager.subscribeToNotifications()
         return true
     }
