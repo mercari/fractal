@@ -10,15 +10,19 @@ import Foundation
 import DesignSystem
 
 class YogaEventView: UIView {
-
+    
+    static var textHeight: CGFloat {
+        return "X\nX".height(typography: .medium, width: CGFloat.greatestFiniteMagnitude)
+    }
+    
     init() {
         super.init(frame: .zero)
         addSubview(imageView)
         addSubview(label)
 
-        imageView.pin(to: self, [.leading, .trailing, .top(.small)])
-        imageView.pin(to: label, [.above(-.xsmall)])
-        label.pin(to: self, [.leading, .trailing, .bottom(-.small)])
+        imageView.pin(to: self, [.leading, .trailing, .top(.small), .bottom(-(YogaEventView.textHeight + .small*2))])
+        label.pin(to: self, [.leading, .trailing])
+        label.pin(to: imageView, [.below(.small)])
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -43,7 +47,7 @@ class YogaEventView: UIView {
     private lazy var label: Label = {
         let label = Label()
         label.apply(typography: .medium, color: .text)
-        label.backgroundColor = .red
+        label.numberOfLines = 2
         return label
     }()
 }

@@ -271,14 +271,20 @@ extension FractalDarkBrand: ButtonBrand {
     }
 
     func heightPin(for size: Button.Size) -> Pin {
-        return .height(asConstant: 48.0)
+        return .height(asConstant: height(for: size.height))
+    }
+    
+    func height(for size: Button.Size.Height) -> CGFloat {
+        return 48.0
     }
 
     func configure(_ button: Button, with style: Button.Style) {
 
         button.layer.cornerRadius = 3.0
         button.setTypography(.large)
-
+        button.contentEdgeInsets = UIEdgeInsets(top: 0.0, left: .keyline, bottom: 0.0, right: .keyline)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0.0, left: -.keyline/2, bottom: 0.0, right: .keyline * 1.5)
+        
         switch style {
         case .primary:
             button.setTitleColor(.text(.light), for: .normal)

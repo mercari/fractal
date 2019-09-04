@@ -11,6 +11,7 @@ import UIKit
 public protocol ButtonBrand {
     func widthPin(for size: Button.Size) -> Pin
     func heightPin(for size: Button.Size) -> Pin
+    func height(for size: Button.Size.Height) -> CGFloat
     func configure(_ button: Button, with style: Button.Style)
 }
 

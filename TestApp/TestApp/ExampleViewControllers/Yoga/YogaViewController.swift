@@ -25,13 +25,24 @@ class YogaViewController: SectionTableViewController, SectionBuilder {
         setSections()
         reload()
     }
-
+    
     private func setSections() {
-        dataSource.sections = [headline("Popular Lessons"),
-                               yogaEventsCarousel(with: self.presenter.popularEvents,
-                                                  selectionClosure: presenter.eventSelected),
-                               headline("New Lessons"),
-                               yogaEventsCarousel(with: self.presenter.newEvents,
-                                                  selectionClosure: presenter.eventSelected)]
+        dataSource.sections = [
+            spacing(30.0),
+            buttonCarousel(with: self.presenter.yogaTypes, selectionClosure: { (index) in
+                print("Button Selected at Index:", index)
+            }),
+            spacing(),
+            headline("Popular Lessons"),
+            yogaEventsCarousel(with: self.presenter.popularEvents,
+                               selectionClosure: presenter.eventSelected),
+            headline("New Lessons"),
+            yogaEventsCarousel(with: self.presenter.newEvents,
+                               selectionClosure: presenter.eventSelected),
+            spacing(60.0),
+            singleButton("Try Premium", tappedClosure: {
+                print("Premium Selected")
+            })
+        ]
     }
 }

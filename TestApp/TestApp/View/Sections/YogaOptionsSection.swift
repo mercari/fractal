@@ -18,7 +18,7 @@ extension SectionBuilder {
 
     public func yogaEventsCarousel(with events: @autoclosure @escaping () -> [YogaSectionOption], selectionClosure:  @escaping (YogaSectionOption) -> Void) -> CarouselSection {
         let sections = [yogaEvents(events: events(), selectionClosure: selectionClosure)]
-        return carousel("Yoga_Events", sections: sections, height: YogaEventsSection.cellSize.height, pagingEnabled: false)
+        return carousel("Yoga_Events", sections: sections, height: YogaEventsSection.height, pagingEnabled: false)
     }
 
     public func yogaEvents(events: @autoclosure @escaping () -> [YogaSectionOption], selectionClosure:  @escaping ( YogaSectionOption) -> Void) -> YogaEventsSection {
@@ -32,7 +32,7 @@ extension YogaEventsSection: EnumeratableSection {
 
 public class YogaEventsSection {
 
-    fileprivate static let cellSize: CGSize = CGSize(width: 200.0, height: 120.0)
+    fileprivate static let height: CGFloat = 160.0
     fileprivate let selectionClosure: (YogaSectionOption) -> Void
 
     public init(selectionClosure: @escaping (YogaSectionOption) -> Void) {
@@ -47,7 +47,7 @@ extension YogaEventsSection: ViewSection {
     }
 
     public func size(in view: UIView, at index: Int) -> SectionCellSize {
-        return SectionCellSize(width: YogaEventsSection.cellSize.width, height: YogaEventsSection.cellSize.height)
+        return SectionCellSize(width: (YogaEventsSection.height * 4/3) - YogaEventView.textHeight, height: YogaEventsSection.height)
     }
 
     public func configure(_ view: UIView, at index: Int) {

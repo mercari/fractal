@@ -236,9 +236,13 @@ extension DefaultBrand: ButtonBrand {
     }
 
     public func heightPin(for size: Button.Size) -> Pin {
-        return .height(asConstant: 52.0)
+        return .height(asConstant: height(for: size.height))
     }
 
+    public func height(for size: Button.Size.Height) -> CGFloat {
+        return 52.0
+    }
+    
     public func configure(_ button: Button, with style: Button.Style) {
         switch style {
         case .primary:

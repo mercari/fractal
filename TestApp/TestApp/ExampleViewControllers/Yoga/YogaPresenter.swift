@@ -11,6 +11,8 @@ import UIKit
 
 class MockYogaPresenter {
     
+    let yogaTypes = ["Vinyasa", "Ashtanga", "Iyengar", "Bikram", "Jivamukti", "Power", "Cat", "Yin", "Vegan"]
+    
     let popularEvents = [YogaModelObject(title: "Bikram Beginner", imageName: "bikram", startDate: Date()),
                          YogaModelObject(title: "Hot Yoga", imageName: "hotyoga", startDate: Date()),
                          YogaModelObject(title: "Advanced", imageName: "adv_yoga", startDate: Date()),
