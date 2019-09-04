@@ -25,7 +25,7 @@ class YogaEventView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func set(title: String, image: UIImage) {
+    func set(title: String, image: UIImage?) {
         label.text = title
         imageView.image = image
     }
@@ -33,15 +33,17 @@ class YogaEventView: UIView {
     // MARK: - Properties
 
     private var imageView: ImageView = {
-        let imageView = ImageView(.detailDisclosure, renderingMode: .alwaysTemplate)
-        imageView.contentMode = .center
-        imageView.tintColor = .atom(.detailDisclosure)
+        let imageView = ImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 4.0
         return imageView
     }()
 
     private lazy var label: Label = {
         let label = Label()
         label.apply(typography: .medium, color: .text)
+        label.backgroundColor = .red
         return label
     }()
 }

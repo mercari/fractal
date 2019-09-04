@@ -358,11 +358,11 @@
 		92096291226EFB2D00FC8E6F /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				9228C5D8229CCE2200B8972B /* HeadlineSection.swift */,
 				9228C5D2229CCE2100B8972B /* ButtonGroupSection.swift */,
 				9228C5D0229CCE2100B8972B /* CarouselSection.swift */,
 				9228C5CD229CCE2100B8972B /* CheckboxOptionsSection.swift */,
 				9228C5D9229CCE2200B8972B /* GapSection.swift */,
-				9228C5D8229CCE2200B8972B /* HeadlineSection.swift */,
 				9228C5DB229CCE2200B8972B /* InformationSection.swift */,
 				9228C5D4229CCE2100B8972B /* LoadingSection.swift */,
 				9228C5CE229CCE2100B8972B /* NavigationGroupSection.swift */,

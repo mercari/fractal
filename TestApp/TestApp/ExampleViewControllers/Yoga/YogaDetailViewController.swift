@@ -9,12 +9,11 @@
 import Foundation
 import DesignSystem
 
-class YogaDetailViewController: SectionTableViewController {
+class YogaDetailViewController: SectionTableViewController, SectionBuilder {
 
     var presenter: YogaDetailPresenter!
 
     override func viewDidLoad() {
-        title = "TypographyVC"
         super.viewDidLoad()
         view.backgroundColor = .background
         DependencyRegistry.shared.prepare(viewController: self)
@@ -22,5 +21,17 @@ class YogaDetailViewController: SectionTableViewController {
 
     func inject(_ presenter: YogaDetailPresenter) {
         self.presenter = presenter
+    }
+    
+    private func setSections() {
+        dataSource.sections = [headline("Popular Lessons"),
+                               headline("New Lessons"),
+                               
+                               
+                               spacing(100.0, backgroundColorKey: .secondary)
+        
+        
+                                
+        ]
     }
 }

@@ -44,19 +44,22 @@ class MainMenuViewController: SectionTableViewController, SectionBuilder {
     private func setSections() {
         dataSource.sections = [
             spacing(52.0),
+            headline("Style"),
             group([
                 navigationOptions(presenter.systemOptions, style: .default, selectionClosure: selection)
                 ]),
             seperator(),
+            headline("Molecules"),
             group([
                 navigationOptions(presenter.exampleOptions, style: .default, selectionClosure: selection)
                 ]),
             seperator(),
+            headline("Examples"),
             group([
                 navigationOptions(presenter.demoOptions, style: .default, selectionClosure: selection)
                 ]),
             spacing(10.0),
-            headline({ [BrandingManager.brand.id] })
+            headline({ [BrandingManager.brand.id] }, .detail)
         ]
     }
 

@@ -46,7 +46,7 @@ class DependencyRegistry {
     }
 
     func prepare(viewController: YogaViewController) {
-        let presenter = YogaPresenter()
+        let presenter = MockYogaPresenter()
         viewController.inject(presenter)
     }
     

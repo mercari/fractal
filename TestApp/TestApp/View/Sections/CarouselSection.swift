@@ -10,21 +10,21 @@ import Foundation
 import DesignSystem
 
 extension SectionBuilder {
-    public func carousel(_ reuseIdentifier: String = UUID().uuidString, dataSource: SectionControllerDataSource, height: CGFloat = 100.0, pagingEnabled: Bool = false) -> CarouselSection {
-        return CarouselSection(id: reuseIdentifier, dataSource: dataSource, height: height, pagingEnabled: pagingEnabled)
+    public func carousel(_ reuseIdentifier: String = UUID().uuidString, sections: [Section], height: CGFloat = 100.0, pagingEnabled: Bool = false) -> CarouselSection {
+        return CarouselSection(id: reuseIdentifier, sections: sections, height: height, pagingEnabled: pagingEnabled)
     }
 }
 
 public class CarouselSection {
 
     private let id: String
-    private let dataSource: SectionControllerDataSource
+    private let sections: [Section]
     private let height: CGFloat
     private let pagingEnabled: Bool
     private var registeredReuseIdentifiers: Set<String> = [defaultReuseIdentifier]
 
-    fileprivate init(id: String, dataSource: SectionControllerDataSource, height: CGFloat, pagingEnabled: Bool) {
-        self.dataSource = dataSource
+    fileprivate init(id: String, sections: [Section], height: CGFloat, pagingEnabled: Bool) {
+        self.sections = sections
         self.id = id
         self.height = height
         self.pagingEnabled = pagingEnabled
@@ -56,15 +56,13 @@ extension CarouselSection: ViewControllerSection {
 
         guard let vc = viewController as? CarouselViewController else { return }
         vc.collectionView.isPagingEnabled = self.pagingEnabled
-        vc.collectionView.dataSource = self.dataSource
-        vc.collectionView.delegate = self.dataSource
-
-        if self.dataSource.newSections {
-            self.dataSource.registerCells(in: vc.collectionView, with: &self.registeredReuseIdentifiers)
-        }
-
+        vc.dataSource.sections = sections
+        
         // move offset logic into other versions too
-        vc.collectionView.setContentOffset(CGPoint(x: vc.collectionView.contentSize.width > self.dataSource.offset ? self.dataSource.offset : 0.0, y: 0.0), animated: false)
-        vc.collectionView.reloadData()
+        // vc.collectionView.setContentOffset(CGPoint(x: vc.collectionView.contentSize.width > self.dataSource.offset ? self.dataSource.offset : 0.0, y: 0.0), animated: false)
+        
+        vc.reload()
+
+
     }
 }

@@ -9,23 +9,29 @@
 import Foundation
 import DesignSystem
 
-class YogaViewController: SectionTableViewController {
+class YogaViewController: SectionTableViewController, SectionBuilder {
 
-    var presenter: YogaPresenter!
+    var presenter: MockYogaPresenter!
 
     override func viewDidLoad() {
-        title = "TypographyVC"
+        title = "Yoga"
         super.viewDidLoad()
         view.backgroundColor = .background
         DependencyRegistry.shared.prepare(viewController: self)
-
     }
 
-    func inject(_ presenter: YogaPresenter) {
+    func inject(_ presenter: MockYogaPresenter) {
         self.presenter = presenter
+        setSections()
+        reload()
     }
 
     private func setSections() {
-
+        dataSource.sections = [headline("Popular Lessons"),
+                               yogaEventsCarousel(with: self.presenter.popularEvents,
+                                                  selectionClosure: presenter.eventSelected),
+                               headline("New Lessons"),
+                               yogaEventsCarousel(with: self.presenter.newEvents,
+                                                  selectionClosure: presenter.eventSelected)]
     }
 }

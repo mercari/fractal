@@ -70,7 +70,8 @@ class MainMenuPresenter  {
     }()
 
     var staticDemo: [NavigationOption] = {
+        let yoga = MenuOption(title: "Yoga", intent: NavigationRouter.Intent.yoga.rawValue)
         let settings = MenuOption(title: "Settings", intent: NavigationRouter.Intent.settings.rawValue)
-        return [settings]
+        return [yoga, settings]
     }()
 }

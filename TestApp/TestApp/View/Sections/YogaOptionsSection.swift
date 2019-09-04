@@ -9,34 +9,33 @@
 import Foundation
 import DesignSystem
 
-public protocol YogaOption {
-    var title: String { get }
-    var image: UIImage { get }
+public protocol YogaSectionOption {
+    var _title: String { get }
+    var _image: UIImage? { get }
 }
 
 extension SectionBuilder {
 
-    public func yogaEventsCarousel(in parent: SectionViewController, events: @escaping () -> [YogaOption], selectionClosure:  @escaping (Int, YogaOption) -> Void) -> CarouselSection {
-        let dataSource = SectionControllerDataSource(viewController: parent)
-        dataSource.sections = [yogaEvents(events: events, selectionClosure: selectionClosure)]
-        return carousel("Yoga_Events", dataSource: dataSource, height: YogaEventsSection.cellSize.height, pagingEnabled: false)
+    public func yogaEventsCarousel(with events: @autoclosure @escaping () -> [YogaSectionOption], selectionClosure:  @escaping (YogaSectionOption) -> Void) -> CarouselSection {
+        let sections = [yogaEvents(events: events(), selectionClosure: selectionClosure)]
+        return carousel("Yoga_Events", sections: sections, height: YogaEventsSection.cellSize.height, pagingEnabled: false)
     }
 
-    public func yogaEvents(events: @escaping () -> [YogaOption], selectionClosure:  @escaping (Int, YogaOption) -> Void) -> YogaEventsSection {
+    public func yogaEvents(events: @autoclosure @escaping () -> [YogaSectionOption], selectionClosure:  @escaping ( YogaSectionOption) -> Void) -> YogaEventsSection {
         return YogaEventsSection(selectionClosure: selectionClosure).enumerate(events) as! YogaEventsSection
     }
 }
 
 extension YogaEventsSection: EnumeratableSection {
-    public typealias DataType = YogaOption
+    public typealias DataType = YogaSectionOption
 }
 
 public class YogaEventsSection {
 
     fileprivate static let cellSize: CGSize = CGSize(width: 200.0, height: 120.0)
-    fileprivate let selectionClosure: (Int, YogaOption) -> Void
+    fileprivate let selectionClosure: (YogaSectionOption) -> Void
 
-    public init(selectionClosure: @escaping (Int, YogaOption) -> Void) {
+    public init(selectionClosure: @escaping (YogaSectionOption) -> Void) {
         self.selectionClosure = selectionClosure
     }
 }
@@ -53,10 +52,23 @@ extension YogaEventsSection: ViewSection {
 
     public func configure(_ view: UIView, at index: Int) {
         let event = data[index]
-        (view as? YogaEventView)?.set(title: event.title, image: event.image)
+        (view as? YogaEventView)?.set(title: event._title, image: event._image)
     }
 
     public func didSelect(_ view: UIView, at index: Int) {
-        selectionClosure(index, data[index])
+        selectionClosure(data[index])
     }
+
+    public var sectionInsets: UIEdgeInsets {
+        return UIEdgeInsets(top: 0.0, left: .keyline, bottom: 0.0, right: .keyline)
+    }
+    
+    public var minimumInteritemSpacing: CGFloat {
+        return .keyline
+    }
+    
+    public var minimumLineSpacing: CGFloat {
+        return .keyline
+    }
+    
 }

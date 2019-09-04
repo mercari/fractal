@@ -388,7 +388,7 @@ extension SectionControllerDataSource: UICollectionViewDataSource, UICollectionV
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         guard sections.count > section else { return .zero }
-        return sections[section].itemInsets
+        return sections[section].sectionInsets
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

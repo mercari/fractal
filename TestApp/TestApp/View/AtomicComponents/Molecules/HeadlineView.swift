@@ -24,7 +24,12 @@ public class HeadlineView: UIView {
         }
 
         public var color: UIColor {
-            return .text(.information)
+            switch self {
+            case .default:
+                return .text(.information)
+            default:
+                return .text
+            }
         }
 
         public var topPadding: CGFloat {

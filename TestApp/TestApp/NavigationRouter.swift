@@ -20,6 +20,7 @@ class NavigationRouter {
         selectionExample,
         filteringExample,
         cardExample,
+        yoga,
         settings
     }
 
@@ -53,6 +54,10 @@ class NavigationRouter {
         perform(intent)
     }
 
+    func yogaEventTapped(_ event: YogaSectionOption) {
+        presentYogaDetail(event)
+    }
+    
     // MARK: - Private
 
     private func perform(_ intent: NavigationRouter.Intent) {
@@ -72,6 +77,8 @@ class NavigationRouter {
             pushFilteringExample()
         case .cardExample:
             presentCardExample()
+        case .yoga:
+            presentYogaExample()
         case .settings:
             presentSettings()
         }
@@ -114,6 +121,16 @@ class NavigationRouter {
         viewController.cardHeight = max(500.0, 800.0 - (100.0 * CGFloat(cardViewController.cardViews.count)))
         let nav = NavigationController(rootViewController: viewController)
         cardViewController.present(nav, options: [.darkBackground, .isFullscreen])
+    }
+    
+    private func presentYogaExample() {
+        let viewController = YogaViewController()
+        currentNavigationController.pushViewController(viewController, animated: true)
+    }
+    
+    private func presentYogaDetail(_ event: YogaSectionOption) {
+        let viewController = YogaDetailViewController()
+        currentNavigationController.pushViewController(viewController, animated: true)
     }
 
     private func presentSettings() {

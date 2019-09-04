@@ -16,7 +16,7 @@ extension SectionBuilder {
 
 public class GroupSection: SectionBuilder {
 
-    // NOTE: ItemInsets, minimumInteritemSpacing, minimumLineSpacing inside a group is not supported.
+    // NOTE: SectionInsets, minimumInteritemSpacing, minimumLineSpacing inside a group is not supported.
     // They will default to zero for all values
 
     fileprivate let sections: [Section]

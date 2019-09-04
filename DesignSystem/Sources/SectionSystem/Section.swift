@@ -28,7 +28,7 @@ public protocol Section: class { // Base for NestedSection and BedrockSection
     // CollectionView specific
     // Section level only sadly
 
-    var itemInsets: UIEdgeInsets { get }
+    var sectionInsets: UIEdgeInsets { get }
     var minimumLineSpacing: CGFloat { get }
     var minimumInteritemSpacing: CGFloat { get }
 }
