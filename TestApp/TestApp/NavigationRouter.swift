@@ -129,7 +129,7 @@ class NavigationRouter {
     }
     
     private func presentYogaDetail(_ event: YogaSectionOption) {
-        guard let event = event as? YogaModelObject else { return }
+        guard let event = event as? YogaEvent else { return }
         let viewController = YogaDetailViewController(event: event)
         currentNavigationController.pushViewController(viewController, animated: true)
     }

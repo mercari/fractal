@@ -13,7 +13,7 @@ class YogaDetailViewController: SectionCollectionViewController, SectionBuilder 
 
     var presenter: YogaDetailPresenter!
 
-    init(event: YogaModelObject) {
+    init(event: YogaEvent) {
         super.init(useRefreshControl: false)
         DependencyRegistry.shared.prepare(viewController: self, with: event)
     }
@@ -38,12 +38,13 @@ class YogaDetailViewController: SectionCollectionViewController, SectionBuilder 
         dataSource.sections = [
             heroImage(self.presenter.event._image),
             eventDetails("Every weekday 19:00\nWeekends 14:00", "$10"),
+            singleButton("Book Session", tappedClosure: { print("Book session tapped") }),
+            spacing(),
             headline("Description"),
             spacing(200.0, backgroundColorKey: .cellSelected),
-            spacing(),
-            singleButton("Book Session", tappedClosure: { print("Book session tapped") }),
             headline("Comments & Reviews"),
-            spacing()
+            spacing(),
+            comments(with: self.presenter.comments)
         ]
     }
 }

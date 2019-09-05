@@ -16,9 +16,9 @@ class EventDetailsView: UIView {
         addSubview(scheduleLabel)
         addSubview(priceLabel)
         
-        priceLabel.pin(to: self, [.trailing(-.keyline), .top(.small)])
-        scheduleLabel.pin(to: self, [.leading(.keyline), .top(.small), .bottom(-.small)])
-        scheduleLabel.pin(to: priceLabel, [.leftOf(-.small)])
+        priceLabel.pin(to: self, [.trailing(-.keyline), .top(.keyline)])
+        scheduleLabel.pin(to: self, [.leading(.keyline), .top(.keyline), .bottom(-.keyline)])
+        scheduleLabel.pin(to: priceLabel, [.leftOf(-.keyline)])
     }
     
     required init?(coder aDecoder: NSCoder) {

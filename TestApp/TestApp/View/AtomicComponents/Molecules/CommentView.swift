@@ -9,11 +9,11 @@
 import Foundation
 import DesignSystem
 
-protocol CommentViewData {
-    var _name: String { get }
-    var _image: UIImage? { get }
-    var _dateString: String { get }
-    var _comment: String { get }
+public protocol CommentViewData {
+    var name: String { get }
+    var image: UIImage? { get }
+    var dateString: String { get }
+    var comment: String { get }
 }
 
 class CommentView: UIView {
@@ -25,11 +25,12 @@ class CommentView: UIView {
         addSubview(dateLabel)
         addSubview(commentLabel)
 
-        imageView.pin(to: self, [.leading(.keyline), .top(.small)])
+        imageView.pin(to: self, [.leading(.keyline), .top, .width(asConstant: CGSize.large.width), .height(asConstant: CGSize.large.height)])
+        nameLabel.pin(to: imageView, [.rightOf(.keyline), .top])
         nameLabel.pin(to: self, [.trailing(-.keyline)])
-        nameLabel.pin(to: imageView, [.rightOf(.small), .top])
         dateLabel.pin(to: nameLabel, [.leading, .below(.small), .trailing])
-        commentLabel.pin(to: imageView, [.leading, .below(.small), .trailing])
+        commentLabel.pin(to: dateLabel, [.leading, .below(.small), .trailing])
+        commentLabel.pin(to: self, [.bottom(-.large)])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,10 +38,10 @@ class CommentView: UIView {
     }
     
     func set(data: CommentViewData) {
-        imageView.image = data._image
-        nameLabel.text = data._name
-        dateLabel.text = data._dateString
-        commentLabel.text = data._comment
+        imageView.image = data.image
+        nameLabel.text = data.name
+        dateLabel.text = data.dateString
+        commentLabel.text = data.comment
     }
     
     // MARK: - Properties

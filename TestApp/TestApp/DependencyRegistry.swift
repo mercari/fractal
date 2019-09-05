@@ -50,7 +50,7 @@ class DependencyRegistry {
         viewController.inject(presenter)
     }
     
-    func prepare(viewController: YogaDetailViewController, with yogaEvent: YogaModelObject) {
+    func prepare(viewController: YogaDetailViewController, with yogaEvent: YogaEvent) {
         let presenter = YogaDetailPresenter(yogaEvent)
         viewController.inject(presenter)
     }

@@ -260,8 +260,6 @@ class FractalDarkBrand: Brand {
             }
         }
     }
-
-
 }
 
 extension FractalDarkBrand: ButtonBrand {
