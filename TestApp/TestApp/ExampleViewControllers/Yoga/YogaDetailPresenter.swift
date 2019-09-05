@@ -10,4 +10,9 @@ import Foundation
 
 class YogaDetailPresenter {
 
+    let event: YogaModelObject
+        
+    init(_ event: YogaModelObject) {
+        self.event = event
+    }
 }

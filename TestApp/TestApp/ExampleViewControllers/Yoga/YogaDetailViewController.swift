@@ -9,29 +9,41 @@
 import Foundation
 import DesignSystem
 
-class YogaDetailViewController: SectionTableViewController, SectionBuilder {
+class YogaDetailViewController: SectionCollectionViewController, SectionBuilder {
 
     var presenter: YogaDetailPresenter!
 
+    init(event: YogaModelObject) {
+        super.init(useRefreshControl: false)
+        DependencyRegistry.shared.prepare(viewController: self, with: event)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
-        DependencyRegistry.shared.prepare(viewController: self)
+        setSections()
+        applyEvent()
+        reload()
     }
 
     func inject(_ presenter: YogaDetailPresenter) {
         self.presenter = presenter
     }
     
+    private func applyEvent() {
+        title = presenter.event.title
+    }
+    
     private func setSections() {
-        dataSource.sections = [headline("Popular Lessons"),
-                               headline("New Lessons"),
-                               
-                               
-                               spacing(100.0, backgroundColorKey: .secondary)
-        
-        
-                                
+        dataSource.sections = [
+            heroImage(self.presenter.event._image),
+            eventDetails("Every weekday 19:00\nWeekends 14:00", "$10"),
+            headline("Description"),
+            spacing(200.0, backgroundColorKey: .cellSelected),
+            spacing(),
+            singleButton("Book Session", tappedClosure: { print("Book session tapped") }),
+            headline("Comments & Reviews"),
+            spacing()
         ]
     }
 }

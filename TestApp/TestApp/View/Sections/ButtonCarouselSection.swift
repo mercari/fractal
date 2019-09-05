@@ -27,6 +27,7 @@ extension ButtonArraySection: EnumeratableSection {
 
 public class ButtonArraySection {
     
+    fileprivate static let tagInflate = 0xbeef
     fileprivate static let buttonHeightType: Button.Size.Height = .medium
     fileprivate static var height: CGFloat {
         
@@ -47,7 +48,9 @@ public class ButtonArraySection {
 extension ButtonArraySection: ViewSection {
     
     public func createView() -> UIView {
-        return Button.init(style: .secondary)
+        let button = Button.init(style: .secondary)
+        button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+        return button
     }
     
     public func size(in view: UIView, at index: Int) -> SectionCellSize {
@@ -56,10 +59,15 @@ extension ButtonArraySection: ViewSection {
     
     public func configure(_ view: UIView, at index: Int) {
         let title = data[index]
-        (view as? Button)?.setTitle(title, for: .normal)
+        guard let button = (view as? Button) else { Assert("Could not cast view as button"); return }
+        button.setTitle(title, for: .normal)
+        button.tag = index + ButtonArraySection.tagInflate
     }
     
-    public func didSelect(_ view: UIView, at index: Int) {
+    @objc private func tapped(_ sender: Any) {
+        guard let button = sender as? Button else { return }
+        let index = button.tag - ButtonArraySection.tagInflate
+        guard index >= 0, index < data.count else { return }
         selectionClosure(index)
     }
     
@@ -74,5 +82,4 @@ extension ButtonArraySection: ViewSection {
     public var minimumLineSpacing: CGFloat {
         return .medium
     }
-    
 }

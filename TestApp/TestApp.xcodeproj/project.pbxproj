@@ -78,6 +78,11 @@
 		922F556722BC9DC3005ABF39 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 922F555922BA8F45005ABF39 /* DesignSystem.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		923545B6230BCBDF00775912 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923545B5230BCBDF00775912 /* TabBarController.swift */; };
 		926095C4231F95A400BF2A85 /* ButtonCarouselSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926095C3231F95A400BF2A85 /* ButtonCarouselSection.swift */; };
+		926095C623209DB600BF2A85 /* HeroImageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926095C523209DB600BF2A85 /* HeroImageSection.swift */; };
+		926095C82320B4B100BF2A85 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926095C72320B4B100BF2A85 /* CommentView.swift */; };
+		926095CA2320BDC200BF2A85 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926095C92320BDC200BF2A85 /* EventDetailsView.swift */; };
+		926095CC2320D66700BF2A85 /* EventDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926095CB2320D66700BF2A85 /* EventDetailSection.swift */; };
+		926095CE2320D67300BF2A85 /* CommentsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926095CD2320D67300BF2A85 /* CommentsSection.swift */; };
 		92810CAD22D5E8C500F8F0DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */; };
 		92810CB122D70A5200F8F0DE /* IconSelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */; };
 		92810CB322D70AAB00F8F0DE /* IconSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB222D70AAB00F8F0DE /* IconSelectView.swift */; };
@@ -193,6 +198,11 @@
 		922F555922BA8F45005ABF39 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		923545B5230BCBDF00775912 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		926095C3231F95A400BF2A85 /* ButtonCarouselSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCarouselSection.swift; sourceTree = "<group>"; };
+		926095C523209DB600BF2A85 /* HeroImageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroImageSection.swift; sourceTree = "<group>"; };
+		926095C72320B4B100BF2A85 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		926095C92320BDC200BF2A85 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
+		926095CB2320D66700BF2A85 /* EventDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailSection.swift; sourceTree = "<group>"; };
+		926095CD2320D67300BF2A85 /* CommentsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsSection.swift; sourceTree = "<group>"; };
 		92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionSection.swift; sourceTree = "<group>"; };
 		92810CB222D70AAB00F8F0DE /* IconSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectView.swift; sourceTree = "<group>"; };
@@ -231,8 +241,8 @@
 			children = (
 				9202FFCC231D0599006A8E92 /* YogaPresenter.swift */,
 				9202FFC22313C56E006A8E92 /* YogaViewController.swift */,
-				9202FFC42313C578006A8E92 /* YogaDetailViewController.swift */,
 				9202FFCE231D05F5006A8E92 /* YogaDetailPresenter.swift */,
+				9202FFC42313C578006A8E92 /* YogaDetailViewController.swift */,
 			);
 			path = Yoga;
 			sourceTree = "<group>";
@@ -384,6 +394,9 @@
 				92810CB622D86B0700F8F0DE /* ImageSection.swift */,
 				9202FFD0231D07A0006A8E92 /* YogaOptionsSection.swift */,
 				926095C3231F95A400BF2A85 /* ButtonCarouselSection.swift */,
+				926095C523209DB600BF2A85 /* HeroImageSection.swift */,
+				926095CB2320D66700BF2A85 /* EventDetailSection.swift */,
+				926095CD2320D67300BF2A85 /* CommentsSection.swift */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -409,6 +422,8 @@
 				9228C5FD229CCEE200B8972B /* TextViewView.swift */,
 				92810CB222D70AAB00F8F0DE /* IconSelectView.swift */,
 				9202FFD2231D105E006A8E92 /* YogaEventView.swift */,
+				926095C72320B4B100BF2A85 /* CommentView.swift */,
+				926095C92320BDC200BF2A85 /* EventDetailsView.swift */,
 			);
 			path = Molecules;
 			sourceTree = "<group>";
@@ -426,8 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				9228C617229CD80C00B8972B /* Brands */,
-				92096291226EFB2D00FC8E6F /* Sections */,
 				9209628D226EFB2D00FC8E6F /* AtomicComponents */,
+				92096291226EFB2D00FC8E6F /* Sections */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -609,6 +624,7 @@
 				9228C609229CCEE300B8972B /* SegmentedControlView.swift in Sources */,
 				9228C5EF229CCE2200B8972B /* ReloadableSection.swift in Sources */,
 				92810CB322D70AAB00F8F0DE /* IconSelectView.swift in Sources */,
+				926095CA2320BDC200BF2A85 /* EventDetailsView.swift in Sources */,
 				9228C60C229CCEE300B8972B /* LoadingView.swift in Sources */,
 				9202FFC32313C56E006A8E92 /* YogaViewController.swift in Sources */,
 				9228C605229CCEE300B8972B /* HeadlineView.swift in Sources */,
@@ -616,6 +632,7 @@
 				9202FFCD231D0599006A8E92 /* YogaPresenter.swift in Sources */,
 				9228C60B229CCEE300B8972B /* BounceScaleImageView.swift in Sources */,
 				92096187226EE6FD00FC8E6F /* ViewController.swift in Sources */,
+				926095CC2320D66700BF2A85 /* EventDetailSection.swift in Sources */,
 				920962B3226EFB4700FC8E6F /* NavigationRouter.swift in Sources */,
 				920962A5226EFB2D00FC8E6F /* MainMenuViewController.swift in Sources */,
 				9228C5ED229CCE2200B8972B /* InformationSection.swift in Sources */,
@@ -630,6 +647,7 @@
 				92096296226EFB2D00FC8E6F /* ButtonExampleViewController.swift in Sources */,
 				92096295226EFB2D00FC8E6F /* ButtonExamplePresenter.swift in Sources */,
 				9228C5DE229CCE2200B8972B /* SingleButtonSection.swift in Sources */,
+				926095CE2320D67300BF2A85 /* CommentsSection.swift in Sources */,
 				9228C60E229CCEE300B8972B /* TextFieldView.swift in Sources */,
 				920962B4226EFB4700FC8E6F /* DependencyRegistry.swift in Sources */,
 				92810CAD22D5E8C500F8F0DE /* SettingsViewController.swift in Sources */,
@@ -642,6 +660,7 @@
 				9209626B226EFB2400FC8E6F /* Helpers.swift in Sources */,
 				9202FFCF231D05F5006A8E92 /* YogaDetailPresenter.swift in Sources */,
 				92810CB122D70A5200F8F0DE /* IconSelectionSection.swift in Sources */,
+				926095C623209DB600BF2A85 /* HeroImageSection.swift in Sources */,
 				926095C4231F95A400BF2A85 /* ButtonCarouselSection.swift in Sources */,
 				920962AF226EFB2D00FC8E6F /* TypographyOptionsSection.swift in Sources */,
 				9209629D226EFB2D00FC8E6F /* SelectionAndInfoViewController.swift in Sources */,
@@ -674,6 +693,7 @@
 				9228C60A229CCEE300B8972B /* TextViewView.swift in Sources */,
 				9228C5E0229CCE2200B8972B /* NavigationGroupSection.swift in Sources */,
 				920962A0226EFB2D00FC8E6F /* TypographyOptionsViewController.swift in Sources */,
+				926095C82320B4B100BF2A85 /* CommentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
