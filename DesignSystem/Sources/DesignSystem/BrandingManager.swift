@@ -33,8 +33,8 @@ public protocol Brand {
     func value(for size: BrandingManager.IconSize) -> CGSize
 
     // Typograhy
-    func fontName(for fontWeight: BrandingManager.Typography) -> String?
-    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight?
+    func fontName(for typography: BrandingManager.Typography) -> String?
+    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight
     func fontSize(for typography: BrandingManager.Typography) -> CGFloat
 
     // Colors
@@ -186,8 +186,7 @@ public class BrandingManager {
         // Apple font weights
         // ultraLight, thin, light, regular, medium, semibold, bold, heavy, strong, black
         public var fontWeight: UIFont.Weight {
-            if let weight = BrandingManager.brand.fontWeight(for: self) { return weight }
-            return isStrong ? .bold : .regular
+            return BrandingManager.brand.fontWeight(for: self)
         }
 
         public var useAccessibility: Bool { return !modifiers.contains(.noAccessibility) }

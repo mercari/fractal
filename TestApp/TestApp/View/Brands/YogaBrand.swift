@@ -77,7 +77,7 @@ class YogaBrand: Brand {
     }
     
     // ultraLight, thin, light, regular, medium, semibold, bold, heavy, strong, black
-    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight? {
+    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight {
         if typography.isStrong {
             switch typography {
             case .xxlarge, .xlarge, .large:

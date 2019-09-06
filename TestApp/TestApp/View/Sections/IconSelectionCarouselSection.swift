@@ -21,9 +21,7 @@ struct FractalIcon: IconOptions {
 }
 
 class IconSelectionCarouselSection {
-
     var offset: CGFloat = 0.0
-
     let icons = [FractalIcon(imageKey: .icon0, isSelected: true),
                  FractalIcon(imageKey: .icon1, isSelected: false),
                  FractalIcon(imageKey: .icon8, isSelected: false),
@@ -33,19 +31,13 @@ class IconSelectionCarouselSection {
                  FractalIcon(imageKey: .icon6, isSelected: false),
                  FractalIcon(imageKey: .icon5, isSelected: false),
                  FractalIcon(imageKey: .icon4, isSelected: false)]
-
-    var options: () -> [IconOptions] {
-        return { [weak self] in
-            self?.icons ?? []
-        }
-    }
 }
 
 extension IconSelectionCarouselSection: ViewControllerSection, SectionBuilder {
 
     public func createViewController() -> UIViewController {
         let vc = CarouselViewController()
-        vc.dataSource.sections = [iconSelection(options)]
+        vc.dataSource.sections = [iconSelection(self.icons)]
         vc.reload()
         return vc
     }

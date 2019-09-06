@@ -76,7 +76,7 @@ public class DefaultBrand: NSObject, Brand {
         return nil
     }
 
-    public func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight? {
+    public func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight {
         if typography.isStrong {
             switch typography {
             case .xxlarge, .xlarge, .large:
