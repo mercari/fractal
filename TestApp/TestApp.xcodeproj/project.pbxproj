@@ -84,6 +84,9 @@
 		926095CC2320D66700BF2A85 /* EventDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926095CB2320D66700BF2A85 /* EventDetailSection.swift */; };
 		926095CE2320D67300BF2A85 /* CommentsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926095CD2320D67300BF2A85 /* CommentsSection.swift */; };
 		9264750423240BDD00F51DBD /* HeroImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264750323240BDD00F51DBD /* HeroImageView.swift */; };
+		9264750723245E8200F51DBD /* Phase1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264750623245E8200F51DBD /* Phase1.swift */; };
+		9264750923245E8B00F51DBD /* Phase2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264750823245E8B00F51DBD /* Phase2.swift */; };
+		9264750B23245E9400F51DBD /* Phase3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9264750A23245E9400F51DBD /* Phase3.swift */; };
 		92810CAD22D5E8C500F8F0DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */; };
 		92810CB122D70A5200F8F0DE /* IconSelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */; };
 		92810CB322D70AAB00F8F0DE /* IconSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92810CB222D70AAB00F8F0DE /* IconSelectView.swift */; };
@@ -205,6 +208,9 @@
 		926095CB2320D66700BF2A85 /* EventDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailSection.swift; sourceTree = "<group>"; };
 		926095CD2320D67300BF2A85 /* CommentsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsSection.swift; sourceTree = "<group>"; };
 		9264750323240BDD00F51DBD /* HeroImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroImageView.swift; sourceTree = "<group>"; };
+		9264750623245E8200F51DBD /* Phase1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase1.swift; sourceTree = "<group>"; };
+		9264750823245E8B00F51DBD /* Phase2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase2.swift; sourceTree = "<group>"; };
+		9264750A23245E9400F51DBD /* Phase3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase3.swift; sourceTree = "<group>"; };
 		92810CAC22D5E8C500F8F0DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		92810CB022D70A5200F8F0DE /* IconSelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionSection.swift; sourceTree = "<group>"; };
 		92810CB222D70AAB00F8F0DE /* IconSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectView.swift; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 		92096183226EE6FD00FC8E6F /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				9264750523245E7300F51DBD /* Phases */,
 				9228C61A229E1DEC00B8972B /* Extensions */,
 				9228C612229CCF3F00B8972B /* View */,
 				92096284226EFB2D00FC8E6F /* ExampleViewControllers */,
@@ -483,6 +490,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9264750523245E7300F51DBD /* Phases */ = {
+			isa = PBXGroup;
+			children = (
+				9264750623245E8200F51DBD /* Phase1.swift */,
+				9264750823245E8B00F51DBD /* Phase2.swift */,
+				9264750A23245E9400F51DBD /* Phase3.swift */,
+			);
+			path = Phases;
+			sourceTree = "<group>";
+		};
 		92810CAB22D5E8B100F8F0DE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,8 +640,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9264750923245E8B00F51DBD /* Phase2.swift in Sources */,
 				9228C5F4229CCE8100B8972B /* CarouselViewController.swift in Sources */,
 				9228C609229CCEE300B8972B /* SegmentedControlView.swift in Sources */,
+				9264750B23245E9400F51DBD /* Phase3.swift in Sources */,
 				9228C5EF229CCE2200B8972B /* ReloadableSection.swift in Sources */,
 				92810CB322D70AAB00F8F0DE /* IconSelectView.swift in Sources */,
 				926095CA2320BDC200BF2A85 /* EventDetailsView.swift in Sources */,
@@ -672,6 +691,7 @@
 				9228C60F229CCEE300B8972B /* SingleButtonView.swift in Sources */,
 				9228C604229CCEE300B8972B /* DividerView.swift in Sources */,
 				9228C5E8229CCE2200B8972B /* TextFieldSection.swift in Sources */,
+				9264750723245E8200F51DBD /* Phase1.swift in Sources */,
 				9228C5EC229CCE2200B8972B /* NavigationSection.swift in Sources */,
 				920962AC226EFB2D00FC8E6F /* SizeOptionView.swift in Sources */,
 				9228C5E1229CCE2200B8972B /* SliderSection.swift in Sources */,

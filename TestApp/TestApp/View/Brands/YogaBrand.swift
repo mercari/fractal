@@ -230,7 +230,7 @@ extension YogaBrand: ButtonBrand {
     }
     
     func heightPin(for size: Button.Size) -> Pin {
-        return .height(asConstant: height(for: size.height))
+        return .height(asConstant: 48.0)
     }
     
     func height(for size: Button.Size.Height) -> CGFloat {
@@ -323,8 +323,8 @@ extension YogaBrand: BrandTest {
     
     var rawPalette: [BrandingManager.PaletteOption] {
 
-        let array = [BrandingManager.PaletteOption(name: "green",       color: .green),
-                     BrandingManager.PaletteOption(name: "light green", color: .lightGreen),
+        let array = [BrandingManager.PaletteOption(name: "light green", color: .lightGreen),
+                     BrandingManager.PaletteOption(name: "green",       color: .green),
                      BrandingManager.PaletteOption(name: "dark green",  color: .darkGreen),
                      BrandingManager.PaletteOption(name: "mono6",       color: .mono6),
                      BrandingManager.PaletteOption(name: "mono5",       color: .mono5),
