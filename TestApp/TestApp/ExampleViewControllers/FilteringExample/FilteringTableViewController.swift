@@ -40,7 +40,7 @@ class FilteringTableViewController: UIViewController, SectionBuilder {
     private func bind() {
         self.sectionController.dataSource.sections = [
             group([checkboxOptions({ [data, fc = filterController] in
-                return (-1, data.filter { $0._title.search(fc.currentFilter) })
+                return (-1, data.filter { $0.title.search(fc.currentFilter) })
                 }, selectionClosure: { _, _ in })]),
         ]
 
@@ -51,13 +51,13 @@ class FilteringTableViewController: UIViewController, SectionBuilder {
 }
 
 extension String: CheckboxOption {
-    public var _id: String {
+    public var id: String {
         return self
     }
-    public var _title: String {
+    public var title: String {
         return self
     }
-    public var _detail: String? {
+    public var detail: String? {
         return nil
     }
 

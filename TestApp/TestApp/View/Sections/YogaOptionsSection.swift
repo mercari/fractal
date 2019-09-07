@@ -10,8 +10,8 @@ import Foundation
 import DesignSystem
 
 public protocol YogaSectionOption {
-    var _title: String { get }
-    var _image: UIImage? { get }
+    var title: String { get }
+    var image: UIImage? { get }
 }
 
 extension SectionBuilder {
@@ -52,7 +52,7 @@ extension YogaEventsSection: ViewSection {
 
     public func configure(_ view: UIView, at index: Int) {
         let event = data[index]
-        (view as? YogaEventView)?.set(title: event._title, image: event._image)
+        (view as? YogaEventView)?.set(title: event.title, image: event.image)
     }
 
     public func didSelect(_ view: UIView, at index: Int) {

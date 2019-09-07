@@ -10,10 +10,9 @@ import Foundation
 import DesignSystem
 
 public protocol CheckboxOption {
-    // _ prefix prevents clashes with model objects
-    var _id: String { get }
-    var _title: String { get }
-    var _detail: String? { get }
+    var id: String { get }
+    var title: String { get }
+    var detail: String? { get }
 }
 
 extension SectionBuilder {
@@ -68,7 +67,7 @@ extension CheckboxOptionSection: ViewSection {
     public func configure(_ view: UIView, at index: Int) {
         guard let checkboxView = view as? CheckboxOptionView else { return }
         let option = staticOptions[index]
-        checkboxView.set(title: option._title, detail: option._detail)
+        checkboxView.set(title: option.title, detail: option.detail)
         checkboxView.set(isSelected: index == selectedIndex)
     }
 

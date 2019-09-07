@@ -81,13 +81,13 @@ fileprivate struct DemoOption {
 }
 
 extension DemoOption: CheckboxOption {
-    var _id: String {
+    var id: String {
         return value1
     }
-    var _title: String {
+    var title: String {
         return value1
     }
-    var _detail: String? {
+    var detail: String? {
         return detailValue
     }
 }

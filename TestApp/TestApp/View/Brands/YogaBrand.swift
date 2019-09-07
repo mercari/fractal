@@ -341,3 +341,13 @@ extension YogaBrand: BrandTest {
         return Palette.allCases.map { BrandingManager.PaletteOption(name: $0.rawValue, color: $0.color) }
     }
 }
+
+extension YogaBrand: HeroImageBrand {
+    var heroCornerRadius: CGFloat {
+        return .medium
+    }
+    
+    var heroEdgeInsets: UIEdgeInsets {
+        return UIEdgeInsets(top: .keyline, left: .keyline, bottom: .keyline, right: .keyline)
+    }
+}
