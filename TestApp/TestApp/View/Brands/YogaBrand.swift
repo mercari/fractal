@@ -194,7 +194,7 @@ class YogaBrand: Brand {
         case .clear:
             return .clear
         case .heroBg:
-            return Palette.mono4.color
+            return .mono4
         case .missing:
             return .red
         default:
