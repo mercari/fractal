@@ -281,6 +281,18 @@ extension DefaultBrand: ButtonBrand {
 
 extension DefaultBrand: NavigationControllerBrand {
     public func applyBrand(to navigationBar: UINavigationBar) {
+        let attributes: [NSAttributedString.Key: AnyObject] = [
+            NSAttributedString.Key.font: BrandingManager.Typography.large.font,
+            NSAttributedString.Key.foregroundColor: UIColor.brand]
         
+        let largeAttributes: [NSAttributedString.Key: AnyObject] = [
+            NSAttributedString.Key.font: BrandingManager.Typography.xxlarge.font,
+            NSAttributedString.Key.foregroundColor: UIColor.brand]
+        
+        navigationBar.titleTextAttributes = attributes
+        navigationBar.largeTitleTextAttributes = largeAttributes
+        navigationBar.shadowImage = UIImage(color: .clear)
+        navigationBar.barTintColor = .background(.cell)
+        navigationBar.tintColor = .brand
     }
 }

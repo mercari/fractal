@@ -25,7 +25,7 @@ class CommentView: UIView {
         addSubview(dateLabel)
         addSubview(commentLabel)
 
-        imageView.pin(to: self, [.leading(.keyline), .top(.small), .width(asConstant: .xxlarge), .height(asConstant: .xxlarge)])
+        imageView.pin(to: self, [.leading(.keyline), .top(.small), .width(asConstant: CGSize.largeIcon.width), .height(asConstant: CGSize.largeIcon.height)])
         nameLabel.pin(to: imageView, [.rightOf(.keyline), .top])
         nameLabel.pin(to: self, [.trailing(-.keyline)])
         dateLabel.pin(to: nameLabel, [.leading, .below(.small), .trailing])

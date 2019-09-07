@@ -61,7 +61,7 @@ public class NavigationController: UINavigationController {
         }
         brand.applyBrand(to: navigationBar)
     }
-
+    
     private func updateViewControllers() {
         
         func updateIfPossible(_ vc: UIViewController) {
