@@ -83,6 +83,7 @@ public class BrandingManager {
         }
     }
 
+    //TODO: change to keys, and use cornerRadius and other spacing types
     public enum Spacing: String, CaseIterable {
         case xxsmall,
         xsmall,
@@ -106,6 +107,7 @@ public class BrandingManager {
         xxlarge
     }
 
+    //TODO: change to keys
     public struct Typography: CaseIterable, Equatable {
 
         public enum Style: String {

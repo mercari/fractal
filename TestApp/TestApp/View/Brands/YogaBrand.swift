@@ -78,16 +78,7 @@ class YogaBrand: Brand {
     
     // ultraLight, thin, light, regular, medium, semibold, bold, heavy, strong, black
     func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight {
-        if typography.isStrong {
-            switch typography {
-            case .xxlarge, .xlarge, .large:
-                return .bold
-            default:
-                return .medium
-            }
-        }
-
-        return .regular
+        return .bold
     }
     
     public func fontSize(for typography: BrandingManager.Typography) -> CGFloat {
@@ -154,36 +145,36 @@ class YogaBrand: Brand {
         case .shadow:
             return .shadow
         case .warning:
-            return .pink1
+            return .red
         case .sliderPositiveTint:
-            return .blue
+            return .green
         case .sliderNegativeTint:
             return .mono3
         case .switchPositiveTint:
-            return .blue
+            return .lightGreen
         case .switchNegativeTint:
-            return .mono6
+            return .mono5
         case .detailDisclosure:
-            return .pink1
+            return .green
         case .check:
-            return .pink1
+            return .green
         case .divider:
-            return .mono4
+            return .mono5
         case .clear:
             return .clear
         default:
-            return .blue
+            return .green
         }
     }
     
     func brandColor(for key: UIColor.Key) -> UIColor {
         switch key {
         case .secondary:
-            return .pink1
+            return .lightGreen
         case .tertiary:
-            return .pink2
+            return .darkGreen
         default:
-            return .blue
+            return .green
         }
     }
     
@@ -193,12 +184,16 @@ class YogaBrand: Brand {
             return UIColor(white: 0.0, alpha: 0.1)
         case .clear:
             return .clear
+        case .secondary:
+            return .mono5
+        case .tertiary:
+            return .mono3
         case .heroBg:
-            return .mono4
+            return .mono5
         case .missing:
             return .red
         default:
-            return .mono5
+            return .mono4
         }
     }
     
@@ -207,25 +202,25 @@ class YogaBrand: Brand {
         case .light:
             return .mono
         case .information:
-            return .brand(.secondary)
+            return .mono2
         default:
-            return .mono6
+            return .mono
         }
     }
 }
 
 fileprivate extension UIColor {
-    static let pink1  = #colorLiteral(red: 0.973, green: 0.522, blue: 0.502, alpha: 1)
-    static let pink2  = #colorLiteral(red: 0.976, green: 0.725, blue: 0.714, alpha: 1)
-    static let pink3  = #colorLiteral(red: 0.961, green: 0.890, blue: 0.890, alpha: 1)
-    static let blue   = #colorLiteral(red: 0.659, green: 0.871, blue: 0.878, alpha: 1)
-    static let mono6  = #colorLiteral(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
-    static let mono5  = #colorLiteral(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
-    static let mono4  = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
-    static let mono3  = #colorLiteral(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-    static let mono2  = #colorLiteral(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
-    static let mono   = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
-    static let shadow = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.18)
+    static let lightGreen = #colorLiteral(red: 0.527, green: 0.802, blue: 0.684, alpha: 1)
+    static let green      = #colorLiteral(red: 0.427, green: 0.702, blue: 0.584, alpha: 1)
+    static let darkGreen  = #colorLiteral(red: 0.327, green: 0.602, blue: 0.484, alpha: 1)
+    static let red        = #colorLiteral(red: 0.714, green: 0.318, blue: 0.325, alpha: 1)
+    static let mono6      = #colorLiteral(red: 0.0, green: 0.0, blue: 0.0, alpha: 1)
+    static let mono5      = #colorLiteral(red: 0.129, green: 0.137, blue: 0.165, alpha: 1)
+    static let mono4      = #colorLiteral(red: 0.176, green: 0.188, blue: 0.212, alpha: 1)
+    static let mono3      = #colorLiteral(red: 0.243, green: 0.263, blue: 0.286, alpha: 1)
+    static let mono2      = #colorLiteral(red: 0.455, green: 0.494, blue: 0.541, alpha: 1)
+    static let mono       = #colorLiteral(red:0.890, green: 0.902, blue: 0.922, alpha: 1)
+    static let shadow     = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.18)
 }
 
 extension YogaBrand: ButtonBrand {
@@ -244,36 +239,43 @@ extension YogaBrand: ButtonBrand {
     
     func configure(_ button: Button, with style: Button.Style) {
         
-        button.layer.cornerRadius = 3.0
-        button.setTypography(.large)
         button.contentEdgeInsets = UIEdgeInsets(top: 0.0, left: .keyline, bottom: 0.0, right: .keyline)
         button.imageEdgeInsets = UIEdgeInsets(top: 0.0, left: -.keyline/2, bottom: 0.0, right: .keyline * 1.5)
         
         switch style {
         case .primary:
-            button.setTitleColor(.text(.light), for: .normal)
-            button.setBackgroundColor(.brand, for: .normal)
-            button.setBackgroundColor(UIColor.brand.lighter(0.1), for: .highlighted)
-            button.layer.borderWidth = 0.0
+            button.setTypography(.medium)
+            button.layer.cornerRadius = 24.0
+            button.setTitleColor(.text, for: .normal)
+            button.setBackgroundColor(.background(.secondary), for: .normal)
+            button.setBackgroundColor(UIColor.background(.secondary).darker(0.1), for: .highlighted)
+            button.layer.borderWidth = 1.0
+            button.layer.borderColor = UIColor.brand.cgColor
         case .secondary:
-            button.setTitleColor(.atom(.warning), for: .normal)
-            button.setTitleColor(.text(.light), for: .highlighted)
+            button.setTypography(.small)
+            button.layer.cornerRadius = 8.0
+            button.setTitleColor(.text, for: .normal)
             button.setBackgroundColor(.clear, for: .normal)
-            button.setBackgroundColor(UIColor.atom(.warning), for: .highlighted)
-            button.layer.borderWidth = 2.0
-            button.layer.borderColor = UIColor.atom(.warning).cgColor
+            button.layer.borderWidth = 1.0
+            button.layer.borderColor = UIColor.background(.tertiary).cgColor
         case .attention:
+            button.setTypography(.medium)
+            button.layer.cornerRadius = 24.0
             button.setTitleColor(.text(.light), for: .normal)
             button.setBackgroundColor(.atom(.warning), for: .normal)
             button.setBackgroundColor(UIColor.atom(.warning).lighter(), for: .highlighted)
             button.layer.borderWidth = 0.0
         case .toggle:
+            button.setTypography(.medium)
+            button.layer.cornerRadius = 24.0
             button.setTitleColor(.text(.light), for: .normal)
             button.setBackgroundColor(.brand, for: .normal)
             button.setBackgroundColor(UIColor.brand.lighter(0.1), for: .highlighted)
             button.setBackgroundColor(UIColor.brand.lighter(0.1), for: .selected)
             button.layer.borderWidth = 0.0
         default:
+            button.setTypography(.medium)
+            button.layer.cornerRadius = 8.0
             button.setTitleColor(.text(.light), for: .normal)
             button.setBackgroundColor(.text, for: .normal)
             button.setBackgroundColor(UIColor.text.lighter(0.1), for: .highlighted)
@@ -287,17 +289,17 @@ extension YogaBrand: NavigationControllerBrand {
         
         let attributes: [NSAttributedString.Key: AnyObject] = [
             NSAttributedString.Key.font: BrandingManager.Typography.large.font,
-            NSAttributedString.Key.foregroundColor: UIColor.brand]
+            NSAttributedString.Key.foregroundColor: UIColor.text(.secondary)]
         
         let largeAttributes: [NSAttributedString.Key: AnyObject] = [
             NSAttributedString.Key.font: BrandingManager.Typography.xxlarge.font,
-            NSAttributedString.Key.foregroundColor: UIColor.brand]
+            NSAttributedString.Key.foregroundColor: UIColor.text(.secondary)]
         
         navigationBar.titleTextAttributes = attributes
         navigationBar.largeTitleTextAttributes = largeAttributes
-        navigationBar.shadowImage = UIImage(color: .atom(.divider))
-        navigationBar.barTintColor = .background
-        navigationBar.tintColor = .brand
+        navigationBar.shadowImage = UIImage(color: .background(.secondary))
+        navigationBar.barTintColor = .background(.secondary)
+        navigationBar.tintColor = .text(.secondary)
         navigationBar.isOpaque = true
     }
 }
@@ -321,17 +323,16 @@ extension YogaBrand: BrandTest {
     
     var rawPalette: [BrandingManager.PaletteOption] {
 
-        let array = [BrandingManager.PaletteOption(name: "pink1",  color: .pink1),
-                     BrandingManager.PaletteOption(name: "pink2",  color: .pink2),
-                     BrandingManager.PaletteOption(name: "pink3",  color: .pink3),
-                     BrandingManager.PaletteOption(name: "blue",   color: .blue),
-                     BrandingManager.PaletteOption(name: "mono6",  color: .mono6),
-                     BrandingManager.PaletteOption(name: "mono5",  color: .mono5),
-                     BrandingManager.PaletteOption(name: "mono4",  color: .mono4),
-                     BrandingManager.PaletteOption(name: "mono3",  color: .mono3),
-                     BrandingManager.PaletteOption(name: "mono2",  color: .mono2),
-                     BrandingManager.PaletteOption(name: "mono",   color: .mono),
-                     BrandingManager.PaletteOption(name: "shadow", color: .shadow)]
+        let array = [BrandingManager.PaletteOption(name: "green",       color: .green),
+                     BrandingManager.PaletteOption(name: "light green", color: .lightGreen),
+                     BrandingManager.PaletteOption(name: "dark green",  color: .darkGreen),
+                     BrandingManager.PaletteOption(name: "mono6",       color: .mono6),
+                     BrandingManager.PaletteOption(name: "mono5",       color: .mono5),
+                     BrandingManager.PaletteOption(name: "mono4",       color: .mono4),
+                     BrandingManager.PaletteOption(name: "mono3",       color: .mono3),
+                     BrandingManager.PaletteOption(name: "mono2",       color: .mono2),
+                     BrandingManager.PaletteOption(name: "mono",        color: .mono),
+                     BrandingManager.PaletteOption(name: "shadow",      color: .shadow)]
         return array
     }
 }
