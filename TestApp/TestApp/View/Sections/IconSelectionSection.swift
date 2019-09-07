@@ -15,9 +15,13 @@ protocol IconOptions {
 }
 
 extension SectionBuilder {
-    func iconSelection(_ optionsClosure: @escaping () -> [IconOptions], layout: IconSelectionSection.Layout = .widthBased) -> IconSelectionSection {
-        return IconSelectionSection(optionsClosure, layout)
+    func iconSelection(_ optionsClosure: @autoclosure @escaping () -> [IconOptions], layout: IconSelectionSection.Layout = .widthBased) -> IconSelectionSection {
+        return IconSelectionSection(optionsClosure, layout).enumerate(optionsClosure) as! IconSelectionSection
     }
+}
+
+extension IconSelectionSection: EnumeratableSection {
+    public typealias DataType = IconOptions
 }
 
 class IconSelectionSection {
@@ -26,13 +30,9 @@ class IconSelectionSection {
         case heightBased, widthBased
     }
 
-    private var staticOptions: [IconOptions]
-    private let optionsClosure: () -> [IconOptions]
     private let layout: Layout
 
     fileprivate init(_ optionsClosure: @escaping () -> [IconOptions], _ layout: Layout) {
-        self.optionsClosure = optionsClosure
-        self.staticOptions = optionsClosure()
         self.layout = layout
     }
 }
@@ -52,11 +52,11 @@ extension IconSelectionSection: ViewSection {
     }
 
     public var itemCount: Int {
-        return staticOptions.count
+        return data.count
     }
 
     public func configure(_ view: UIView, at index: Int) {
-        let option = staticOptions[index]
+        let option = data[index]
         (view as? IconSelectView)?.set(option.imageKey, isSelected: option.isSelected)
     }
 }

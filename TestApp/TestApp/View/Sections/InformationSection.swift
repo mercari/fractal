@@ -37,6 +37,10 @@ extension InformationSection: ViewSection {
         return InformationView()
     }
 
+    public func size(in view: UIView, at index: Int) -> SectionCellSize {
+        return SectionCellSize(width: view.bounds.size.width, height: nil)
+    }
+    
     public func configure(_ view: UIView, at index: Int) {
         (view as? InformationView)?.set(text: title, detail: staticDetail)
     }

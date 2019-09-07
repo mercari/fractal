@@ -13,7 +13,7 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
 
     private let darkMode = Observable<Bool>(BrandingManager.isDarkModeBrand)
     private var blockObservation: Bool = false
-
+    
     override func viewDidLoad() {
         title = "Settings"
         super.viewDidLoad()
@@ -42,10 +42,19 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
                 information("Version", detailClosure: { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "-1.0" })
                 ]),
             spacing(32.0),
+            singleButton("Yoga Brand", tappedClosure: { [weak self] in self?.applyYogaBranding() }),
+            spacing(),
             singleButton("Remove All Branding", tappedClosure: { [weak self] in self?.removeBranding() })
         ]
     }
 
+    private func applyYogaBranding() {
+        blockObservation = true
+        darkMode.value = false
+        blockObservation = false
+        BrandingManager.set(brand: YogaBrand())
+    }
+    
     private func removeBranding() {
         blockObservation = true
         darkMode.value = false
@@ -56,7 +65,7 @@ class SettingsViewController: SectionTableViewController, SectionBuilder {
 
 extension SettingsViewController: BrandUpdateable {
     func brandWasUpdated() {
-        // add wipe
+        // TODO: add wipe
         setStyle()
     }
 }

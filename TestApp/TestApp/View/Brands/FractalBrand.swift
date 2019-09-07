@@ -90,7 +90,7 @@ class FractalBrand: Brand {
         return "Avenir"
     }
 
-    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight? {
+    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight {
 
         guard let name = fontName(for: typography) else { return .regular }
 
@@ -204,6 +204,8 @@ class FractalBrand: Brand {
             return .pink3
         case .clear:
             return .clear
+        case .missing:
+            return .red
         default:
             return .mono
         }

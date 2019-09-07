@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DesignSystem
 
 class YogaDetailPresenter {
 
@@ -17,10 +18,16 @@ class YogaDetailPresenter {
         self.event = event
     }
     
-    let comments = [Comment(user: User(firstName: "Jon", lastName: "Bott", imageName: "ok"), date: Date(), text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-                    
-                    Comment(user: User(firstName: "Tom", lastName: "Oliver", imageName: "restore"), date: Date(), text: "Lorem ipsum dolor sit amet.")
-    
+    let comments = [
+        Comment(user: User(firstName: "Jon", lastName: "Bott", imageName: "jon"),
+                date: Date(timeIntervalSince1970: 1567865610),
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
+        Comment(user: User(firstName: "Tom", lastName: "Oliver", imageName: "tom"),
+                date: Date(timeIntervalSince1970: 1567800000),
+                text: "Lorem ipsum dolor sit amet."),
+        Comment(user: User(firstName: "Anthony", lastName: "Smith", imageName: "anthony"),
+                date: Date(timeIntervalSince1970: 1567000000),
+                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
     ]
 }
 
@@ -47,7 +54,7 @@ extension Comment: CommentViewData {
     }
     
     var dateString: String {
-        return "1st Jan 2001"
+        return BrandingManager.dateManager.string(from: date, style: .fuzzy, placeholder: "Unknown date")
     }
     
     var comment: String {

@@ -36,12 +36,12 @@ class YogaDetailViewController: SectionCollectionViewController, SectionBuilder 
     
     private func setSections() {
         dataSource.sections = [
-            heroImage(self.presenter.event._image),
-            eventDetails("Every weekday 19:00\nWeekends 14:00", "$10"),
+            heroImage(self.presenter.event.image),
+            eventDetails(self.presenter.event.times, "$\(self.presenter.event.price)"),
             singleButton("Book Session", tappedClosure: { print("Book session tapped") }),
             spacing(),
             headline("Description"),
-            spacing(200.0, backgroundColorKey: .cellSelected),
+            spacing(200.0, backgroundColorKey: .missing),
             headline("Comments & Reviews"),
             spacing(),
             comments(with: self.presenter.comments)

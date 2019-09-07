@@ -12,7 +12,7 @@ public protocol NavigationControllerBrand {
     func applyBrand(to navigationBar: UINavigationBar)
 }
 
-public protocol BrandUpdateable {
+public protocol BrandUpdateable: UIViewController { // TODO: maybe doesn't have to be a vc
     func brandWasUpdated()
 }
 
@@ -63,6 +63,14 @@ public class NavigationController: UINavigationController {
     }
 
     private func updateViewControllers() {
-        viewControllers.compactMap { return ($0 as? BrandUpdateable) }.forEach { $0.brandWasUpdated() }
+        
+        func updateIfPossible(_ vc: UIViewController) {
+            if let updateable = vc as? BrandUpdateable { updateable.brandWasUpdated() }
+            for vc in vc.children { updateIfPossible(vc) }
+        }
+        
+        for vc in viewControllers {
+            updateIfPossible(vc)
+        }
     }
 }

@@ -27,10 +27,8 @@ public class HeroImageSection {
 
 extension HeroImageSection: ViewSection {
     
-    public func createView() -> UIView {
-        let imageView = ImageView()
-        imageView.contentMode = .scaleAspectFill
-        return imageView
+    public func createView() -> UIView {        
+        return HeroImageView()
     }
     
     public func size(in view: UIView, at index: Int) -> SectionCellSize {
@@ -38,6 +36,6 @@ extension HeroImageSection: ViewSection {
     }
     
     public func configure(_ view: UIView, at index: Int) {
-        (view as? ImageView)?.image = imageClosure()
+        (view as? HeroImageView)?.set(image: imageClosure())
     }
 }

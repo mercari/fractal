@@ -77,7 +77,7 @@ class YogaBrand: Brand {
     }
     
     // ultraLight, thin, light, regular, medium, semibold, bold, heavy, strong, black
-    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight? {
+    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight {
         if typography.isStrong {
             switch typography {
             case .xxlarge, .xlarge, .large:
@@ -193,6 +193,10 @@ class YogaBrand: Brand {
             return UIColor(white: 0.0, alpha: 0.1)
         case .clear:
             return .clear
+        case .heroBg:
+            return Palette.mono4.color
+        case .missing:
+            return .red
         default:
             return .mono5
         }
@@ -329,5 +333,15 @@ extension YogaBrand: BrandTest {
                      BrandingManager.PaletteOption(name: "mono",   color: .mono),
                      BrandingManager.PaletteOption(name: "shadow", color: .shadow)]
         return array
+    }
+}
+
+extension YogaBrand: HeroImageBrand {
+    var heroCornerRadius: CGFloat {
+        return .medium
+    }
+    
+    var heroEdgeInsets: UIEdgeInsets {
+        return UIEdgeInsets(top: .keyline, left: .keyline, bottom: .keyline, right: .keyline)
     }
 }

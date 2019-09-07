@@ -95,7 +95,7 @@ class FractalDarkBrand: Brand {
     }
 
     // ultraLight, thin, light, regular, medium, semibold, bold, heavy, strong, black
-    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight? {
+    func fontWeight(for typography: BrandingManager.Typography) -> UIFont.Weight {
         guard let name = fontName(for: typography) else { return .regular }
         if name == "Avenir-Black" {
             return .black
@@ -211,6 +211,8 @@ class FractalDarkBrand: Brand {
             return UIColor(white: 0.0, alpha: 0.1)
         case .clear:
             return .clear
+        case .missing:
+            return .red
         default:
             return Palette.mono5.color
         }

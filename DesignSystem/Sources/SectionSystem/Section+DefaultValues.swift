@@ -72,7 +72,19 @@ extension ViewSection {
 
     func decoupleVisibleViews() { mapTable.removeAllObjects() }
 
-    func deleteVisibleViews() { for view in visibleViews { view.removeFromSuperview() } }
+    func deleteVisibleViews() {
+        for view in visibleViews {
+            //TODO: make recursive search
+            if let cell = view.superview?.superview as? SectionCollectionViewCell {
+                cell.sectionView = nil
+            } else if let cell = view.superview?.superview as? SectionTableViewCell {
+                cell.sectionView = nil
+            }
+            
+            view.removeFromSuperview()
+        }
+        mapTable.removeAllObjects()
+    }
 }
 
 extension ViewControllerSection {
@@ -112,11 +124,21 @@ extension ViewControllerSection {
 
     func deleteVisibleViewControllers() {
         for vc in visibleViewControllers {
+            
+            //TODO: make recursive search
+            if let cell = vc.view.superview?.superview?.superview as? SectionCollectionViewCell {
+                cell.sectionViewController = nil
+            } else if let cell = vc.view.superview?.superview?.superview as? SectionTableViewCell {
+                cell.sectionViewController = nil
+            }
+            
             vc.willMove(toParent:nil)
             vc.view.superview?.removeFromSuperview()
             vc.view.removeFromSuperview()
             vc.removeFromParent()
         }
+        
+        mapTable.removeAllObjects()
     }
 }
 
