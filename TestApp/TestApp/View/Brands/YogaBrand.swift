@@ -193,6 +193,10 @@ class YogaBrand: Brand {
             return UIColor(white: 0.0, alpha: 0.1)
         case .clear:
             return .clear
+        case .heroBg:
+            return Palette.mono4.color
+        case .missing:
+            return .red
         default:
             return Palette.mono5.color
         }

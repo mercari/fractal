@@ -67,10 +67,6 @@ public extension UIColor {
     }
 }
 
-extension BrandingManager.Typography.Modifier {
-    static let squigilyFont = BrandingManager.Typography.Modifier("squigilyFont")
-}
-
 public class BrandingManager {
 
     public static let didChange = "BrandingManager_BrandDidChange"

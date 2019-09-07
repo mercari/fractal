@@ -41,7 +41,7 @@ class YogaDetailViewController: SectionCollectionViewController, SectionBuilder 
             singleButton("Book Session", tappedClosure: { print("Book session tapped") }),
             spacing(),
             headline("Description"),
-            spacing(200.0, backgroundColorKey: .cellSelected),
+            spacing(200.0, backgroundColorKey: .missing),
             headline("Comments & Reviews"),
             spacing(),
             comments(with: self.presenter.comments)

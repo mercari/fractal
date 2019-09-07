@@ -204,6 +204,8 @@ class FractalBrand: Brand {
             return .pink3
         case .clear:
             return .clear
+        case .missing:
+            return .red
         default:
             return .mono
         }

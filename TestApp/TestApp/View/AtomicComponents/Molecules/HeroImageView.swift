@@ -14,6 +14,10 @@ protocol HeroImageBrand {
     var heroEdgeInsets: UIEdgeInsets { get }
 }
 
+public extension UIColor.Key {
+    static let heroBg = UIColor.Key("heroBg")
+}
+
 class HeroImageView: UIView {
     
     init() {
@@ -21,6 +25,7 @@ class HeroImageView: UIView {
         addSubview(imageView)
         
         let insets = (BrandingManager.brand as? HeroImageBrand)?.heroEdgeInsets ?? .zero
+        imageView.backgroundColor = .background(.heroBg)
         
         imageView.pin(to: self, [.leading(insets.left),
                                  .top(insets.top),

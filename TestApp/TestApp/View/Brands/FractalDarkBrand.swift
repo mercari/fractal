@@ -211,6 +211,8 @@ class FractalDarkBrand: Brand {
             return UIColor(white: 0.0, alpha: 0.1)
         case .clear:
             return .clear
+        case .missing:
+            return .red
         default:
             return Palette.mono5.color
         }

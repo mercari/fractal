@@ -178,6 +178,8 @@ public class DefaultBrand: NSObject, Brand {
             return .clear
         case .cell:
             return Palette.mono.color
+        case .missing:
+            return .red
         default:
             return Palette.mono2.color
         }
