@@ -50,7 +50,7 @@ protocol BrandTest {
 }
 
 public extension UIColor {
-    struct Key: Equatable, RawRepresentable {
+    public struct Key: Equatable, RawRepresentable {
         public let rawValue: String
 
         public init(_ value: String) {
@@ -64,6 +64,27 @@ public extension UIColor {
         public static func ==(lhs: Key, rhs: Key) -> Bool {
             return lhs.rawValue == rhs.rawValue
         }
+        
+        public static let primary            = UIColor.Key("primary")
+        public static let secondary          = UIColor.Key("secondary")
+        public static let tertiary           = UIColor.Key("tertiary")
+        public static let cell               = UIColor.Key("cell")
+        public static let cellSelected       = UIColor.Key("cellSelected")
+        public static let detail             = UIColor.Key("detail")
+        public static let information        = UIColor.Key("information")
+        public static let light              = UIColor.Key("light")
+        public static let divider            = UIColor.Key("divider")
+        public static let shadow             = UIColor.Key("shadow")
+        public static let placeholder        = UIColor.Key("placeholder")
+        public static let refreshControl     = UIColor.Key("refreshControl")
+        public static let detailDisclosure   = UIColor.Key("detailDisclosure")
+        public static let switchPositiveTint = UIColor.Key("switchPositiveTint")
+        public static let switchNegativeTint = UIColor.Key("switchNegativeTint")
+        public static let sliderPositiveTint = UIColor.Key("sliderPositiveTint")
+        public static let sliderNegativeTint = UIColor.Key("sliderNegativeTint")
+        public static let warning            = UIColor.Key("warning")
+        public static let clear              = UIColor.Key("clear")
+        public static let missing            = UIColor.Key("missing")
     }
 }
 
@@ -300,6 +321,10 @@ public extension UIImage {
         public static func ==(lhs: Key, rhs: Key) -> Bool {
             return lhs.rawValue == rhs.rawValue
         }
+        
+        public static let detailDisclosure = UIImage.Key("icn_disclosure_indicator")
+        public static let check            = UIImage.Key("check")
+        public static let smallArrow       = UIImage.Key("smallArrow")
     }
 
     static func with(_ key: Key, in bundle: Bundle? = nil) -> UIImage? {

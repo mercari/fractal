@@ -12,7 +12,7 @@ public protocol NavigationControllerBrand {
     func applyBrand(to navigationBar: UINavigationBar)
 }
 
-public protocol BrandUpdateable: UIViewController { // TODO: maybe doesn't have to be a vc
+public protocol BrandUpdateable { // TODO: maybe doesn't have to be a vc
     func brandWasUpdated()
 }
 
